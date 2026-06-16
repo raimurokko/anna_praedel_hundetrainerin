@@ -2,6 +2,7 @@
    Figtree – lokal eingebunden (Variable Font, Achse 300–900)
    Quelle: Google Fonts, hier DSGVO-konform selbst gehostet.
    Keine Verbindung zu fonts.googleapis.com / fonts.gstatic.com.
+   Lizenz: SIL OFL 1.1 (siehe ../fonts/Figtree-OFL.txt, ../fonts/README.md).
    ============================================================= */
 
 /* ---------- Normal, latin ---------- */
@@ -54,7 +55,7 @@
 
 /* =============================================================
    OpenDyslexic – Lesehilfe (nur im Barrierefreiheits-Modus aktiv).
-   Lizenz: SIL OFL 1.1 (siehe ../fonts/OpenDyslexic-LICENSE.txt).
+   Lizenz: SIL OFL 1.1 (siehe ../fonts/OpenDyslexic-OFL.txt, ../fonts/README.md).
    Die Dateien werden erst geladen, wenn der Dyslexie-Modus
    eingeschaltet wird (Selektor [data-dyslexia="true"]).
    ============================================================= */

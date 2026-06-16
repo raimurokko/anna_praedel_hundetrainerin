@@ -58,7 +58,8 @@ Priorität: 🔴 hoch · 🟡 mittel · 🟢 niedrig
 ## 🟢 Später / Optional
 
 - [x] GitHub-Remote anlegen & pushen — erledigt (siehe oben)
-- [ ] 🟢 OpenDyslexic-Lizenz (OFL) beim Deployment mitliefern (Datei liegt in assets/fonts/)
+- [x] Schrift-Lizenzen (OFL) verzeichnet: volle Lizenztexte + README in assets/fonts/, Verweise in fonts.css und Barrierefreiheitserklärung
+- [ ] 🟢 Beim Deployment die `*-OFL.txt` + fonts/README.md mit hochladen (liegen in assets/fonts/)
 - [ ] 🟢 Online-/Video-Kurs-Bereich („bald verfügbar") inhaltlich ausbauen
 - [ ] 🟢 Einfaches Kontaktformular (nur falls gewünscht – sonst bleibt es bei Direktkanälen, datensparsamer)
 - [ ] 🟢 Bewertungen/Testimonials (mit `Review`-Schema)
