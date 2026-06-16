@@ -312,7 +312,7 @@
       '<p class="privacy-note__text">🐾 <strong>Datenschutzfreundlich:</strong> Diese Website nutzt ' +
       '<strong>keine Tracking-Cookies</strong> und kein Analyse-Tracking. Nur technisch nötige ' +
       'Einstellungen (z. B. Hell/Dunkel) bleiben lokal auf deinem Gerät. Mehr in der ' +
-      '<a href="/datenschutz.html">Datenschutzerklärung</a>.</p>' +
+      '<a href="datenschutz.html">Datenschutzerklärung</a>.</p>' +
       '<button class="privacy-note__ok" type="button" data-notice-ok>Verstanden</button>';
     document.body.appendChild(bar);
 

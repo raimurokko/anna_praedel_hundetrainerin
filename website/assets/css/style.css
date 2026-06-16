@@ -157,8 +157,8 @@ body { padding-top: var(--header-h); }
 .brand__mark {
   width: 34px; height: 34px; flex: 0 0 auto;
   background-color: var(--wine);
-  -webkit-mask: url('/assets/icons/heart-paw-mark.svg') center / contain no-repeat;
-  mask: url('/assets/icons/heart-paw-mark.svg') center / contain no-repeat;
+  -webkit-mask: url('../icons/heart-paw-mark.svg') center / contain no-repeat;
+  mask: url('../icons/heart-paw-mark.svg') center / contain no-repeat;
 }
 /* alter innerer Punkt nicht mehr nötig (Logo ist jetzt das Herz-mit-Pfote) */
 .brand__mark > span { display: none; }

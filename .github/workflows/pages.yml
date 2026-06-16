@@ -1,0 +1,51 @@
+name: Deploy Preview to GitHub Pages
+
+# Veröffentlicht den Ordner website/ als GitHub-Pages-Vorschau.
+# WICHTIG: Diese Vorschau wird bewusst auf "noindex" gesetzt (siehe Schritt
+# "Preview: noindex"), damit die noch unfertige Seite (Platzhalter in den
+# Rechtstexten) nicht von Suchmaschinen indexiert wird. Die Quelldateien im
+# Repo bleiben unverändert indexierbar – die Änderung passiert nur im Artefakt.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Preview noindex (robots.txt + Meta-Tag)
+        run: |
+          printf 'User-agent: *\nDisallow: /\n' > website/robots.txt
+          find website -name '*.html' -exec \
+            sed -i 's#<meta name="robots" content="[^"]*">#<meta name="robots" content="noindex,nofollow">#g' {} +
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+        with:
+          enablement: true
+
+      - name: Upload artifact (website/)
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: website
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
