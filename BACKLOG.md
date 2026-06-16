@@ -11,8 +11,12 @@ Priorität: 🔴 hoch · 🟡 mittel · 🟢 niedrig
 - [x] Neuaufbau als statische Site (HTML/CSS/JS getrennt)
 - [x] Figtree-Schriften lokal eingebunden (woff2)
 - [x] One-Pager mit allen Sektionen, fixiertem Header, Dark-Mode
+- [x] Hero als Vollbild-Variante (Hintergrundbild über ganze Breite) umgesetzt
 - [x] Scroll-up-Button
-- [x] Barrierefreiheits-Panel (Schrift, Kontrast, Links, Motion)
+- [x] Barrierefreiheits-Panel (Schrift, Kontrast, Links, Motion) – auf allen Seiten via main.js
+- [x] Dyslexie-Schrift OpenDyslexic (lokal, OFL) als A11y-Option
+- [x] Vorlesefunktion (Web Speech API, lokal im Browser)
+- [x] GitHub-Remote verbunden & `main` gepusht (raimurokko/anna_praedel_hundetrainerin)
 - [x] Schema.org-JSON-LD, OG-/Meta-Tags, Canonical
 - [x] Rechtsseiten als Entwurf (Impressum, Datenschutz, Barrierefreiheit)
 - [x] robots.txt, sitemap.xml, llms.txt, security.txt, site.webmanifest, favicon.svg
@@ -53,7 +57,8 @@ Priorität: 🔴 hoch · 🟡 mittel · 🟢 niedrig
 
 ## 🟢 Später / Optional
 
-- [ ] 🟢 GitHub-Remote anlegen & pushen (Kundin/Sophia liefert Repo nach) — Punkt c
+- [x] GitHub-Remote anlegen & pushen — erledigt (siehe oben)
+- [ ] 🟢 OpenDyslexic-Lizenz (OFL) beim Deployment mitliefern (Datei liegt in assets/fonts/)
 - [ ] 🟢 Online-/Video-Kurs-Bereich („bald verfügbar") inhaltlich ausbauen
 - [ ] 🟢 Einfaches Kontaktformular (nur falls gewünscht – sonst bleibt es bei Direktkanälen, datensparsamer)
 - [ ] 🟢 Bewertungen/Testimonials (mit `Review`-Schema)

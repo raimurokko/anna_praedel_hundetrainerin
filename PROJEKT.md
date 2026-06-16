@@ -69,6 +69,10 @@ anna_prädel_hundetrainerin/
 > Die ursprüngliche Bündel-Datei in `website/` war **byte-identisch** mit dem Entwurf in
 > `designentwürfe/` und wurde daher aus `website/` entfernt (das Original bleibt unter
 > `designentwürfe/` erhalten).
+>
+> **Hero-Variante:** Die beiden Entwürfe unterscheiden sich nur in der Hero-Sektion (eine
+> Codezeile im Template). Maßgeblich ist die **Vollbild**-Variante: Foto als vollflächiger
+> Hintergrund über die ganze Breite, dunkler Verlauf, weißer Text darüber. Diese ist umgesetzt.
 
 ---
 
@@ -78,18 +82,21 @@ anna_prädel_hundetrainerin/
   in `assets/`, Bilder in `bilder/`, server-fertige Struktur.
 - **b) Sprache DE-DE, UTF-8, korrekte Umlaute** → erledigt: `<html lang="de">`, `charset=utf-8`,
   alle Umlaute wortgenau übernommen.
-- **c) Lokales Git** → eingerichtet (erster Commit). GitHub-Remote folgt (liefert die Kundin/Sophia nach).
+- **c) Git** → lokales Repo eingerichtet; GitHub-Remote `git@github.com:raimurokko/anna_praedel_hundetrainerin.git` verbunden, `main` gepusht (Upstream gesetzt).
 - **d) sitemap.xml, robots.txt, security.txt, llms.txt** → angelegt. (Hinweis: Der etablierte
   Standard heißt `llms.txt`, nicht `llm.txt` – siehe llmstxt.org.)
 - **e) Bilder/Videos der Kundin** → `bilder/`-Ordner + `bilder/README.md` mit konkreten Specs
   und Liste der benötigten Motive; Platzhalter im Code mit `TODO(Kundin)` markiert.
 - **f) Meta-Integration + Datenschutz, minimal/DSGVO-konform** → Links statt Tracking; Datenschutz
   spiegelt das wider; kein Cookie-Banner nötig.
-- **g) Google-Schriften lokal** → Figtree wird lokal ausgeliefert; keine Verbindung zu Google;
-  in der Datenschutzerklärung entsprechend vermerkt (kein Consent nötig).
+- **g) Google-Schriften lokal** → Figtree (und die Lesehilfe OpenDyslexic) werden lokal
+  ausgeliefert; keine Verbindung zu Google; in der Datenschutzerklärung entsprechend vermerkt
+  (kein Consent nötig).
 - **h) Barrierefreiheit + Button** → A11y-Panel rechts mittig (Rollstuhl-Symbol):
-  Schriftgröße, Kontrast, Links unterstreichen, Animationen reduzieren; dazu semantisches HTML,
-  Skip-Link, Fokus-Stile, Tastaturbedienung.
+  Schriftgröße, **Dyslexie-Schrift (OpenDyslexic)**, Kontrast, Links unterstreichen,
+  Animationen reduzieren und **Vorlesefunktion** (Web Speech API, lokal im Browser);
+  dazu semantisches HTML, Skip-Link, Fokus-Stile, Tastaturbedienung. Panel + Scroll-up
+  werden per `main.js` auf allen Seiten injiziert (eine Quelle der Wahrheit).
 - **i) Scroll-up-Button** → erscheint nach ~60 % Viewport-Scroll, animiert, mit Fokus-Rücksprung.
 - **j) Fixiertes Menü** → Header ist `position: fixed` (vorher nur „sticky"); Body-Offset gesetzt.
 - **k) Schema.org + SEO/AEO/LLM** → JSON-LD-Graph (WebSite, WebPage, LocalBusiness/ProfessionalService,
