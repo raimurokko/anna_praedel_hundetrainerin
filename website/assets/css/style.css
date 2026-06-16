@@ -509,6 +509,29 @@ body { padding-top: var(--header-h); }
 .a11y-toggle[aria-pressed="true"] { background: var(--wine); color: var(--on-wine); border-color: var(--wine); }
 .a11y-panel__reset { margin-top: 14px; width: 100%; background: transparent; border: 1px solid var(--border); border-radius: 10px; padding: 10px; cursor: pointer; color: var(--muted); font-family: inherit; font-weight: 600; }
 
+/* ---------- Datenschutz-Hinweis (reine Information, KEIN Consent-Gate) ---------- */
+.privacy-note {
+  position: fixed; left: 50%; bottom: 16px; transform: translateX(-50%) translateY(150%);
+  z-index: 94; width: min(680px, calc(100vw - 32px));
+  background: var(--surface); color: var(--fg); border: 1px solid var(--border);
+  border-radius: 14px; box-shadow: var(--shadow);
+  padding: 14px 16px; display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
+  transition: transform .4s cubic-bezier(.2, .7, .2, 1); visibility: hidden;
+}
+.privacy-note[data-show="true"] { transform: translateX(-50%) translateY(0); visibility: visible; }
+.privacy-note__text { flex: 1 1 280px; font-size: .92rem; line-height: 1.5; color: var(--muted); margin: 0; }
+.privacy-note__text strong { color: var(--fg); }
+.privacy-note__text a { color: var(--wine); font-weight: 600; }
+.privacy-note__ok {
+  flex: 0 0 auto; background: var(--wine); color: var(--on-wine); border: none;
+  border-radius: 999px; padding: 10px 20px; font-weight: 700; font-family: inherit; cursor: pointer;
+  transition: filter .2s;
+}
+.privacy-note__ok:hover { filter: brightness(1.07); }
+[data-motion="reduce"] .privacy-note { transition: none; }
+/* Genug Abstand zum Scroll-up-Button auf schmalen Schirmen */
+@media (max-width: 560px) { .privacy-note { bottom: 78px; } }
+
 /* ---------- 10. Scroll-Reveal & Reduced Motion ---------- */
 [data-reveal] { opacity: 0; transform: translateY(20px); transition: opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1); }
 [data-reveal].is-visible { opacity: 1; transform: none; }

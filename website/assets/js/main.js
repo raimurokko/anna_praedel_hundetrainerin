@@ -299,4 +299,33 @@
       if (canSpeak) { try { window.speechSynthesis.cancel(); } catch (e) {} }
     });
   }
+
+  /* ---------- 6. Datenschutz-Hinweis (Information, KEIN Consent-Gate) ---------- */
+  (function () {
+    if (get('apht-notice') === 'ok') return;
+    var bar = document.createElement('div');
+    bar.className = 'privacy-note';
+    bar.setAttribute('role', 'region');
+    bar.setAttribute('aria-label', 'Datenschutz-Hinweis');
+    bar.setAttribute('data-show', 'false');
+    bar.innerHTML =
+      '<p class="privacy-note__text">🐾 <strong>Datenschutzfreundlich:</strong> Diese Website nutzt ' +
+      '<strong>keine Tracking-Cookies</strong> und kein Analyse-Tracking. Nur technisch nötige ' +
+      'Einstellungen (z. B. Hell/Dunkel) bleiben lokal auf deinem Gerät. Mehr in der ' +
+      '<a href="/datenschutz.html">Datenschutzerklärung</a>.</p>' +
+      '<button class="privacy-note__ok" type="button" data-notice-ok>Verstanden</button>';
+    document.body.appendChild(bar);
+
+    var done = false;
+    function dismiss() {
+      if (done) return; done = true;
+      bar.setAttribute('data-show', 'false');
+      set('apht-notice', 'ok');
+      setTimeout(function () { if (bar.parentNode) bar.parentNode.removeChild(bar); }, 500);
+    }
+    requestAnimationFrame(function () { requestAnimationFrame(function () { bar.setAttribute('data-show', 'true'); }); });
+    bar.querySelector('[data-notice-ok]').addEventListener('click', dismiss);
+    // Nach 12 Sekunden von selbst ausblenden (und nicht erneut zeigen).
+    setTimeout(dismiss, 12000);
+  })();
 })();

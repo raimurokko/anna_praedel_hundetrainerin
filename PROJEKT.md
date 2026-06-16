@@ -88,7 +88,9 @@ anna_prädel_hundetrainerin/
 - **e) Bilder/Videos der Kundin** → `bilder/`-Ordner + `bilder/README.md` mit konkreten Specs
   und Liste der benötigten Motive; Platzhalter im Code mit `TODO(Kundin)` markiert.
 - **f) Meta-Integration + Datenschutz, minimal/DSGVO-konform** → Links statt Tracking; Datenschutz
-  spiegelt das wider; kein Cookie-Banner nötig.
+  spiegelt das wider. **Kein Consent-Banner** (mangels nicht-notwendiger Cookies nicht erforderlich),
+  stattdessen ein schlanker, nicht-blockierender **Info-Hinweis** (einmalig, wegklickbar, blendet
+  nach 12 s aus), der die Datensparsamkeit aktiv kommuniziert.
 - **g) Google-Schriften lokal** → Figtree (und die Lesehilfe OpenDyslexic) werden lokal
   ausgeliefert; keine Verbindung zu Google; in der Datenschutzerklärung entsprechend vermerkt
   (kein Consent nötig).

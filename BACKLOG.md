@@ -17,6 +17,9 @@ Priorität: 🔴 hoch · 🟡 mittel · 🟢 niedrig
 - [x] Dyslexie-Schrift OpenDyslexic (lokal, OFL) als A11y-Option
 - [x] Vorlesefunktion (Web Speech API, lokal im Browser)
 - [x] GitHub-Remote verbunden & `main` gepusht (raimurokko/anna_praedel_hundetrainerin)
+- [x] Datenschutz-Info-Hinweis (nicht-blockierend, kein Consent-Gate, Auto-Ausblenden)
+- [x] Footer: KITMIR aus „Rechtliches" zu „Folge mir" verschoben (inhaltlich korrekt)
+- [x] Datenschutz §8: Verweis auf verantwortliche Stelle (Punkt 1) bzw. Aufsichtsbehörde (Punkt 9) präzisiert
 - [x] Schema.org-JSON-LD, OG-/Meta-Tags, Canonical
 - [x] Rechtsseiten als Entwurf (Impressum, Datenschutz, Barrierefreiheit)
 - [x] robots.txt, sitemap.xml, llms.txt, security.txt, site.webmanifest, favicon.svg
