@@ -120,7 +120,14 @@ python3 -m http.server 8080
 Wichtig: über einen lokalen Server öffnen (nicht per `file://`), da absolute Pfade (`/assets/…`)
 und das Manifest sonst nicht laden.
 
-**Deployment:** Inhalt von `website/` 1:1 auf den Webspace/Server legen (Document-Root).
+**Vorschau (GitHub Pages):** Live unter
+`https://raimurokko.github.io/anna_praedel_hundetrainerin/` (Workflow
+`.github/workflows/pages.yml`, veröffentlicht `website/`). Bewusst auf **noindex**
+gesetzt (robots.txt + Meta nur im Deploy-Artefakt; die Quelle bleibt indexierbar).
+Einmalige Aktivierung war: Repo → Settings → Pages → Source = „GitHub Actions".
+Jeder Push auf `main` deployt automatisch neu.
+
+**Deployment (Produktion):** Inhalt von `website/` 1:1 auf den Webspace/Server legen (Document-Root).
 Voraussetzungen: HTTPS aktiv, `404.html` als Fehlerseite konfigurieren, korrekte MIME-Typen
 für `.webp`/`.woff2`. Server-Logfile-Aufbewahrung mit der Datenschutzerklärung abgleichen.
 
