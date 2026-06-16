@@ -15,23 +15,35 @@
 
   /* ---------- 1. Theme (Hell/Dunkel) ---------- */
   // Erstes Setzen passiert inline im <head> (kein Flackern). Hier nur Umschalter.
+  // Wichtig: Beim Laden NICHT speichern – sonst wird das automatisch erkannte
+  // System-Theme eingefroren und spätere Systemwechsel ignoriert.
   function currentTheme() { return root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light'; }
-  function applyTheme(theme) {
-    root.setAttribute('data-theme', theme);
-    set('apht-theme', theme);
+  function syncThemeLabels(theme) {
+    var isDark = theme === 'dark';
     document.querySelectorAll('[data-theme-toggle]').forEach(function (btn) {
-      var isDark = theme === 'dark';
       btn.setAttribute('aria-label', isDark ? 'Zum hellen Modus wechseln' : 'Zum dunklen Modus wechseln');
       var text = btn.querySelector('[data-theme-text]');
       if (text) text.textContent = isDark ? 'Hell' : 'Dunkel';
     });
+  }
+  function applyTheme(theme) {
+    root.setAttribute('data-theme', theme);
+    set('apht-theme', theme);
+    syncThemeLabels(theme);
   }
   document.querySelectorAll('[data-theme-toggle]').forEach(function (btn) {
     btn.addEventListener('click', function () {
       applyTheme(currentTheme() === 'dark' ? 'light' : 'dark');
     });
   });
-  applyTheme(currentTheme());
+  syncThemeLabels(currentTheme());
+
+  // Systemwechsel folgen, solange der Nutzer noch nicht selbst gewählt hat.
+  try {
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function (e) {
+      if (get('apht-theme') === null) { var t = e.matches ? 'dark' : 'light'; root.setAttribute('data-theme', t); syncThemeLabels(t); }
+    });
+  } catch (e) {}
 
   /* ---------- 2. Mobile-Menü ---------- */
   var burger = document.querySelector('[data-burger]');
