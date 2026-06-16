@@ -18,6 +18,7 @@
       if (t !== 'dark' && t !== 'light') t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
       document.documentElement.setAttribute('data-theme', t);
       var fs = parseFloat(localStorage.getItem('apht-fontscale')); if (fs) document.documentElement.style.setProperty('--fontscale', fs);
+      if (localStorage.getItem('apht-dyslexia') === 'on') document.documentElement.setAttribute('data-dyslexia', 'true');
       if (localStorage.getItem('apht-contrast') === 'on') document.documentElement.setAttribute('data-contrast', 'high');
       if (localStorage.getItem('apht-underline') === 'on') document.documentElement.setAttribute('data-underline', 'true');
       if (localStorage.getItem('apht-motion') === 'on') document.documentElement.setAttribute('data-motion', 'reduce');

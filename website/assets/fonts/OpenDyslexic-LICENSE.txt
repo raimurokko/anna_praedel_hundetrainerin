@@ -1,0 +1,13 @@
+OpenDyslexic
+============
+Diese Website bindet die Schriftart "OpenDyslexic" lokal ein (Barrierefreiheit:
+Lesehilfe für Menschen mit Legasthenie/Dyslexie).
+
+OpenDyslexic steht unter der SIL Open Font License, Version 1.1 (OFL-1.1).
+Bezogen über das Paket @fontsource/opendyslexic (jsDelivr/npm).
+
+Projekt:  https://opendyslexic.org
+Lizenz:   https://openfontlicense.org  (SIL OFL 1.1)
+
+Die OFL erlaubt das freie Verwenden, Einbetten und Weitergeben der Schrift,
+auch im Bündel mit dieser Website.

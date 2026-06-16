@@ -18,6 +18,7 @@
       if (t !== 'dark' && t !== 'light') t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
       document.documentElement.setAttribute('data-theme', t);
       var fs = parseFloat(localStorage.getItem('apht-fontscale')); if (fs) document.documentElement.style.setProperty('--fontscale', fs);
+      if (localStorage.getItem('apht-dyslexia') === 'on') document.documentElement.setAttribute('data-dyslexia', 'true');
       if (localStorage.getItem('apht-contrast') === 'on') document.documentElement.setAttribute('data-contrast', 'high');
       if (localStorage.getItem('apht-underline') === 'on') document.documentElement.setAttribute('data-underline', 'true');
       if (localStorage.getItem('apht-motion') === 'on') document.documentElement.setAttribute('data-motion', 'reduce');
@@ -56,7 +57,8 @@
         <li>Sprung-Link „Zum Inhalt springen" für die Tastatur- und Screenreader-Nutzung.</li>
         <li>Vollständige Bedienbarkeit per Tastatur und gut sichtbare Fokus-Markierung.</li>
         <li>Ausreichende Farbkontraste sowie ein heller und ein dunkler Modus.</li>
-        <li>Ein Barrierefreiheits-Menü (Symbol „Rollstuhl", rechts mittig) mit den Optionen: Schriftgröße ändern, hoher Kontrast, Links unterstreichen und Animationen reduzieren.</li>
+        <li>Ein Barrierefreiheits-Menü (Symbol „Rollstuhl", rechts mittig) mit den Optionen: Schriftgröße ändern, gut lesbare Schrift für Legasthenie/Dyslexie (<em>OpenDyslexic</em>), hoher Kontrast, Links unterstreichen und Animationen reduzieren.</li>
+        <li>Vorlesefunktion: markierter Text – oder die ganze Seite – kann vorgelesen werden. Die Sprachausgabe erfolgt lokal im Browser; es werden dabei keine Daten an Dritte übertragen.</li>
         <li>Berücksichtigung der Systemeinstellung „Bewegung reduzieren" (<em>prefers-reduced-motion</em>).</li>
         <li>Aussagekräftige Alternativtexte für inhaltsrelevante Bilder (in Vorbereitung, sobald die Bilder vorliegen).</li>
         <li>Responsives Layout und Zoom bis 200 % ohne Verlust von Inhalten.</li>

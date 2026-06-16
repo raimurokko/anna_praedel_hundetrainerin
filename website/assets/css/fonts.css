@@ -51,3 +51,31 @@
     U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0,
     U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
+
+/* =============================================================
+   OpenDyslexic – Lesehilfe (nur im Barrierefreiheits-Modus aktiv).
+   Lizenz: SIL OFL 1.1 (siehe ../fonts/OpenDyslexic-LICENSE.txt).
+   Die Dateien werden erst geladen, wenn der Dyslexie-Modus
+   eingeschaltet wird (Selektor [data-dyslexia="true"]).
+   ============================================================= */
+@font-face {
+  font-family: 'OpenDyslexic';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/opendyslexic-400.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'OpenDyslexic';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/opendyslexic-400-italic.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'OpenDyslexic';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../fonts/opendyslexic-700.woff2') format('woff2');
+}

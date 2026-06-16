@@ -45,6 +45,7 @@
         document.documentElement.setAttribute('data-theme', t);
         var fs = parseFloat(localStorage.getItem('apht-fontscale'));
         if (fs) document.documentElement.style.setProperty('--fontscale', fs);
+        if (localStorage.getItem('apht-dyslexia') === 'on') document.documentElement.setAttribute('data-dyslexia', 'true');
         if (localStorage.getItem('apht-contrast') === 'on') document.documentElement.setAttribute('data-contrast', 'high');
         if (localStorage.getItem('apht-underline') === 'on') document.documentElement.setAttribute('data-underline', 'true');
         if (localStorage.getItem('apht-motion') === 'on') document.documentElement.setAttribute('data-motion', 'reduce');
@@ -185,20 +186,24 @@
 
   <main id="hauptinhalt">
 
-    <!-- ============ HERO (Split) ============ -->
-    <section class="hero" aria-labelledby="hero-title">
-      <div>
-        <span class="pill"><span class="pill__dot" aria-hidden="true"></span>Hundetraining in Berlin Rudow</span>
+    <!-- ============ HERO (Vollbild – Bild als Hintergrund über die ganze Breite) ============ -->
+    <section class="hero-full" aria-labelledby="hero-title">
+      <div class="hero-full__media">
+        <!-- TODO(Kundin): Hero-Foto quer, hochauflösend → /bilder/anna-mit-hund-quer.webp
+             Danach folgendes <img> einkommentieren und den Platzhalter darunter entfernen:
+        <img src="/bilder/anna-mit-hund-quer.webp" alt="Anna Prädel mit einem Hund beim Training in Berlin Rudow" fetchpriority="high" decoding="async"> -->
+        <span class="hero-full__placeholder" aria-hidden="true"></span>
+        <span class="hero-full__hint" aria-hidden="true">FOTO .webp — Anna mit Hund, quer, hochauflösend</span>
+      </div>
+      <div class="hero-full__overlay" aria-hidden="true"></div>
+      <div class="hero-full__inner">
+        <span class="pill pill--on-photo"><span class="pill__dot" aria-hidden="true"></span>Hundetraining in Berlin Rudow</span>
         <h1 id="hero-title">Alles beginnt mit der Beziehung.</h1>
         <p>Einfühlsames Training für dich und deinen Hund – auf Vertrauen gebaut, nicht auf Druck.</p>
         <div class="hero__actions">
           <a class="btn btn--primary" href="#kontakt">Lass uns reden</a>
-          <a class="btn btn--ghost" href="#angebot">Angebot ansehen</a>
+          <a class="btn btn--on-photo" href="#angebot">Angebot ansehen</a>
         </div>
-      </div>
-      <div class="media hero__media">
-        <!-- TODO(Kundin): Foto „Anna mit Hund, hochkant" → /bilder/anna-mit-hund-hochkant.webp -->
-        <span class="media__hint" aria-hidden="true">FOTO .webp — Anna mit Hund, hochkant</span>
       </div>
     </section>
 
@@ -436,48 +441,8 @@
     </div>
   </footer>
 
-  <!-- ============ Scroll-up ============ -->
-  <button class="scroll-top" type="button" data-scroll-top aria-label="Nach oben scrollen">
-    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 15l6-6 6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-  </button>
-
-  <!-- ============ Barrierefreiheit ============ -->
-  <button class="a11y-fab" type="button" data-a11y-fab aria-haspopup="dialog" aria-expanded="false" aria-controls="a11yPanel" aria-label="Barrierefreiheit – Einstellungen öffnen">
-    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4.5a1.6 1.6 0 1 0 0-3.2 1.6 1.6 0 0 0 0 3.2zM5.2 7.3c0-.7.6-1.2 1.3-1.1 1.7.4 3.4.6 5.5.6s3.8-.2 5.5-.6c.7-.1 1.3.4 1.3 1.1 0 .6-.4 1-1 1.2-1.3.3-2.6.5-4 .6v3l2.6 6.4c.3.7-.1 1.5-.8 1.7-.6.2-1.3-.1-1.6-.8L12 16.2 9.6 22c-.3.7-1 1-1.6.8-.7-.2-1.1-1-.8-1.7L9.8 12.7v-3c-1.4-.1-2.7-.3-4-.6-.6-.2-1-.6-1-1.2z"/></svg>
-  </button>
-
-  <div class="a11y-panel" id="a11yPanel" data-a11y-panel data-open="false" role="dialog" aria-modal="false" aria-label="Barrierefreiheit – Einstellungen">
-    <div class="a11y-panel__head">
-      <h2>Barrierefreiheit</h2>
-      <button class="a11y-panel__close" type="button" data-a11y-close aria-label="Schließen">×</button>
-    </div>
-
-    <div class="a11y-row">
-      <span class="a11y-row__label">Schriftgröße</span>
-      <span class="a11y-controls">
-        <button type="button" data-a11y-font="dec" aria-label="Schrift verkleinern">A−</button>
-        <span class="a11y-toggle" aria-hidden="true" data-a11y-fontval style="display:inline-flex;align-items:center;">100%</span>
-        <button type="button" data-a11y-font="inc" aria-label="Schrift vergrößern">A+</button>
-      </span>
-    </div>
-
-    <div class="a11y-row">
-      <span class="a11y-row__label">Hoher Kontrast</span>
-      <button class="a11y-toggle" type="button" data-a11y-toggle="contrast" aria-pressed="false">An/Aus</button>
-    </div>
-
-    <div class="a11y-row">
-      <span class="a11y-row__label">Links unterstreichen</span>
-      <button class="a11y-toggle" type="button" data-a11y-toggle="underline" aria-pressed="false">An/Aus</button>
-    </div>
-
-    <div class="a11y-row">
-      <span class="a11y-row__label">Animationen reduzieren</span>
-      <button class="a11y-toggle" type="button" data-a11y-toggle="motion" aria-pressed="false">An/Aus</button>
-    </div>
-
-    <button class="a11y-panel__reset" type="button" data-a11y-reset>Einstellungen zurücksetzen</button>
-  </div>
+  <!-- Scroll-up-Button und Barrierefreiheits-Panel werden von /assets/js/main.js
+       injiziert (eine Quelle der Wahrheit, identisch auf allen Seiten). -->
 
   <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
   <script src="/assets/js/main.js" defer></script>
