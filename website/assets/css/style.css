@@ -454,6 +454,12 @@ body { padding-top: var(--header-h); }
 .site-footer__bottom { border-top: 1px solid var(--border); }
 .site-footer__bottom p { max-width: var(--maxw); margin-inline: auto; padding: 20px clamp(18px, 5vw, 56px); color: var(--muted); font-size: .9rem; }
 
+/* Herz-mit-Pfote-Icon (ersetzt das Wort „Herz" im Footer) */
+.heart-icon {
+  width: 1.35em; height: 1.35em; vertical-align: -0.28em;
+  color: var(--wine); display: inline-block; margin: 0 .05em;
+}
+
 /* ---------- 8. Skip-Link & Scroll-up ---------- */
 .skip-link {
   position: absolute; left: -9999px; top: 12px; z-index: 200;
