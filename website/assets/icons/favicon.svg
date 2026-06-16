@@ -1,5 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Anna Prädel Hundetraining">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Anna Prädel Hundetraining – Herz mit Pfote">
   <rect width="64" height="64" rx="14" fill="#FBF7F4"/>
-  <circle cx="32" cy="32" r="18" fill="none" stroke="#7E1F2D" stroke-width="5"/>
-  <circle cx="32" cy="32" r="6" fill="#7E1F2D"/>
+  <g transform="translate(8,6.8) scale(2)">
+    <path fill="#7E1F2D" fill-rule="evenodd" d="M12 20.5C12 20.5 3.5 14.3 3.5 8.8C3.5 6.3 5.5 4.7 7.7 4.7C9.4 4.7 10.9 5.8 12 7.2C13.1 5.8 14.6 4.7 16.3 4.7C18.5 4.7 20.5 6.3 20.5 8.8C20.5 14.3 12 20.5 12 20.5ZM9.5 13.6a2.5 2.1 0 1 0 5 0a2.5 2.1 0 1 0 -5 0ZM7.3 10.7a1.2 1.2 0 1 0 2.4 0a1.2 1.2 0 1 0 -2.4 0ZM9.6 9.1a1.2 1.2 0 1 0 2.4 0a1.2 1.2 0 1 0 -2.4 0ZM12 9.1a1.2 1.2 0 1 0 2.4 0a1.2 1.2 0 1 0 -2.4 0ZM14.3 10.7a1.2 1.2 0 1 0 2.4 0a1.2 1.2 0 1 0 -2.4 0Z"/>
+  </g>
 </svg>

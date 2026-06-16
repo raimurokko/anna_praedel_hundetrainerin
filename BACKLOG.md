@@ -45,7 +45,7 @@ Priorität: 🔴 hoch · 🟡 mittel · 🟢 niedrig
 - [ ] 🟡 Social-Sharing-Bild (1200×630) + Logo (512×512) ergänzen
 - [ ] 🟡 Alternativtexte (`alt`) zu allen Bildern
 - [ ] 🟡 Responsive Bilder (`srcset`/`sizes`) + `loading="lazy"`
-- [ ] 🟡 Echte Favicons/Touch-Icons (PNG 192/512, apple-touch-icon, favicon.ico) erzeugen
+- [x] Markenzeichen „Herz mit Pfote": Favicon (SVG + favicon.ico 16/32), Touch-/PWA-Icons (180/192/512), Logo im Header/Footer (CSS-Maske, theme-fähig) und Schema.org-Logo
 - [ ] 🟢 Kurze Videosequenzen einbinden (ohne Autoplay-Ton, mit Controls, ggf. Untertitel)
 
 ## 🟡 Qualität & Technik
