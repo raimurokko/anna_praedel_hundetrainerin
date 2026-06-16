@@ -1,0 +1,20 @@
+# macOS
+.DS_Store
+._*
+.Spotlight-V100
+.Trashes
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+*~
+
+# Logs / temporär
+*.log
+tmp/
+.cache/
+
+# Node (falls später ein Build-Tool hinzukommt)
+node_modules/
+dist/

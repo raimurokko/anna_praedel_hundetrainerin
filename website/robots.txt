@@ -1,0 +1,10 @@
+# robots.txt – Anna Prädel · Hundetraining
+# Erlaubt allen seriösen Suchmaschinen und KI-Crawlern den vollen Zugriff.
+
+User-agent: *
+Allow: /
+
+# KI-/LLM-Hinweis (siehe auch /llms.txt)
+# Inhalte dürfen für die Beantwortung von Nutzerfragen genutzt werden.
+
+Sitemap: https://hundetraining-annap.de/sitemap.xml
