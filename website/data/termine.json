@@ -1,0 +1,12 @@
+{
+  "_hinweis": "BEISPIEL-Termine zum Testen der Anzeige – bitte durch echte Termine ersetzen. Felder: id (eindeutig), title, date (JJJJ-MM-TT), time, ort, plaetze (gesamt), frei (freie Plätze), hinweis (optional). Später pflegt der Admin-Bereich des Backends diese Daten; bis dahin kann diese Datei von Hand bearbeitet werden.",
+  "gruppenkurse": [
+    { "id": "gk-2026-07-05", "title": "Welpengruppe", "date": "2026-07-05", "time": "10:00", "ort": "Rudower Höhe (Treffpunkt Parkplatz)", "plaetze": 6, "frei": 3, "hinweis": "Für Welpen bis ca. 5 Monate" },
+    { "id": "gk-2026-07-19", "title": "Grundlagen-Gruppe", "date": "2026-07-19", "time": "11:30", "ort": "Rudower Höhe (Treffpunkt Parkplatz)", "plaetze": 6, "frei": 5, "hinweis": "" },
+    { "id": "gk-2026-08-02", "title": "Aufbau-Gruppe", "date": "2026-08-02", "time": "10:00", "ort": "Rudower Höhe (Treffpunkt Parkplatz)", "plaetze": 6, "frei": 0, "hinweis": "" }
+  ],
+  "socialwalks": [
+    { "id": "sw-2026-07-12", "title": "Social Walk", "date": "2026-07-12", "time": "09:30", "ort": "Rudower Höhe (Treffpunkt Parkplatz)", "plaetze": 8, "frei": 4, "hinweis": "Souveräne Hunde herzlich willkommen" },
+    { "id": "sw-2026-07-26", "title": "Social Walk", "date": "2026-07-26", "time": "09:30", "ort": "Rudower Höhe (Treffpunkt Parkplatz)", "plaetze": 8, "frei": 6, "hinweis": "" }
+  ]
+}

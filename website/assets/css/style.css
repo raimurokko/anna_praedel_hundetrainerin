@@ -379,6 +379,49 @@ a.card { text-decoration: none; color: inherit; }
 .termine-box p { margin: 0; }
 .termine-box .btn { margin-top: 4px; }
 
+/* Terminliste */
+.termine-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; width: 100%; }
+.termine-item {
+  display: flex; align-items: center; justify-content: space-between; gap: 14px; flex-wrap: wrap;
+  padding: 14px 16px; border: 1px solid var(--border); border-radius: 14px; background: var(--bg);
+}
+.termine-item__info { display: flex; flex-direction: column; gap: 2px; }
+.termine-item__date { font-weight: 700; }
+.termine-item__title { color: var(--wine); font-weight: 700; font-size: .95rem; }
+.termine-item__meta { color: var(--muted); font-size: .9rem; }
+.termine-item__spots { color: var(--muted); font-size: .85rem; margin-top: 2px; }
+.termine-item__spots.is-full { color: var(--wine); font-weight: 700; }
+.termine-item__btn { flex: 0 0 auto; }
+
+/* Anmelde-Modal */
+.booking-modal { position: fixed; inset: 0; z-index: 200; display: none; }
+.booking-modal[data-open="true"] { display: block; }
+.booking-modal__backdrop { position: absolute; inset: 0; background: rgba(20, 12, 11, .55); backdrop-filter: blur(2px); }
+.booking-modal__dialog {
+  position: relative; max-width: 520px; width: calc(100% - 32px);
+  margin: clamp(20px, 6vh, 70px) auto; max-height: 90vh; overflow-y: auto;
+  background: var(--surface); color: var(--fg); border: 1px solid var(--border);
+  border-radius: 18px; box-shadow: var(--shadow); padding: clamp(22px, 4vw, 34px);
+}
+.booking-modal__close { position: absolute; top: 12px; right: 12px; width: 36px; height: 36px; border-radius: 9px; border: 1px solid var(--border); background: transparent; color: var(--fg); font-size: 20px; line-height: 1; cursor: pointer; }
+.booking-modal h2 { margin: 0 0 .2em; font-size: 1.5rem; }
+.booking-modal__termin { color: var(--muted); margin: 0 0 1.2em; font-weight: 600; }
+.booking-modal form { display: flex; flex-direction: column; gap: 12px; }
+.booking-modal label { display: flex; flex-direction: column; gap: 5px; font-weight: 600; font-size: .92rem; }
+.booking-modal input, .booking-modal textarea {
+  font-family: inherit; font-size: 1rem; padding: 11px 13px; border: 1px solid var(--border);
+  border-radius: 10px; background: var(--bg); color: var(--fg); width: 100%;
+}
+.booking-modal input:focus, .booking-modal textarea:focus { outline: 2px solid var(--wine); outline-offset: 1px; border-color: var(--wine); }
+.booking-modal__consent { flex-direction: row; align-items: flex-start; gap: 9px; font-weight: 400; font-size: .88rem; color: var(--muted); }
+.booking-modal__consent input { width: auto; margin-top: 2px; flex: 0 0 auto; }
+.booking-modal__consent a { color: var(--wine); }
+.booking-modal__error { color: var(--wine); font-weight: 700; font-size: .9rem; margin: 0; }
+.booking-modal__hint { color: var(--muted); font-size: .82rem; margin: 4px 0 0; }
+.booking-modal__actions { display: flex; gap: 10px; justify-content: flex-end; margin-top: 6px; flex-wrap: wrap; }
+.booking-modal__success { text-align: center; padding: 10px 0; }
+.booking-modal__success p { margin: 0 0 16px; font-size: 1.05rem; }
+
 /* Über mich / Tierschutz – zweispaltig */
 .split2 {
   display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));

@@ -280,11 +280,11 @@
           <p>Lernen in der Gruppe – Erfahrung, die im Alltag trägt. Hier könnt ihr nachsehen, welche Gruppenkurse aktuell angeboten werden.</p>
           <p class="muted">Die Kurse finden mit max. 6 Teilnehmern auf der Rudower Höhe in 12355 Berlin-Rudow statt. Wir treffen uns am Parkplatz Rudower Höhe und laufen dann gemeinsam zur Trainingswiese.</p>
         </div>
-        <!-- TODO(Feature): dynamischer Termin-Kalender + Online-Anmeldung (siehe Backlog/Rückfrage) -->
-        <div class="termine-box">
+        <div class="termine-box" data-termine="gruppenkurse">
           <span class="termine-box__label">Aktuelle Termine &amp; Anmeldung</span>
-          <p class="muted">Die kommenden Termine pflege ich hier laufend ein. Für die Anmeldung schreib mir kurz – ich bestätige dir deinen Platz.</p>
-          <a class="btn btn--primary" href="#kontakt">Zur Anmeldung</a>
+          <ul class="termine-list" data-termine-list hidden></ul>
+          <p class="muted" data-termine-empty>Die kommenden Termine pflege ich hier laufend ein. Für die Anmeldung schreib mir kurz – ich bestätige dir deinen Platz.</p>
+          <a class="btn btn--primary" href="#kontakt" data-termine-fallback>Zur Anmeldung</a>
         </div>
       </div>
 
@@ -296,10 +296,11 @@
           <p><strong>Für die Zweibeiner:</strong> Kommunikation und Körpersprache des Vierbeiners noch besser verstehen lernen und angemessen darauf reagieren.</p>
           <p class="muted">Herzlich willkommen sind natürlich auch alle souveränen Hunde, die der Gruppe guttun, und deren Halter, die einfach Lust auf einen gemeinsamen Spaziergang mit Lerneffekt haben!</p>
         </div>
-        <div class="termine-box">
+        <div class="termine-box" data-termine="socialwalks">
           <span class="termine-box__label">Nächste Social-Walk-Termine</span>
-          <p class="muted">Die anstehenden Termine findest du hier. Melde dich kurz bei mir, dann bist du dabei.</p>
-          <a class="btn btn--primary" href="#kontakt">Termin anfragen</a>
+          <ul class="termine-list" data-termine-list hidden></ul>
+          <p class="muted" data-termine-empty>Die anstehenden Termine findest du hier. Melde dich kurz bei mir, dann bist du dabei.</p>
+          <a class="btn btn--primary" href="#kontakt" data-termine-fallback>Termin anfragen</a>
         </div>
       </div>
 
@@ -469,5 +470,6 @@
 
   <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
   <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/termine.js" defer></script>
 </body>
 </html>
