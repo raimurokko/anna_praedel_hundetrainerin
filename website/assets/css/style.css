@@ -398,6 +398,7 @@ a.card { text-decoration: none; color: inherit; }
 .preise__list li:last-child { border-bottom: 0; padding-bottom: 0; }
 .preise__leistung { color: var(--fg); }
 .preise__betrag { font-weight: 800; white-space: nowrap; color: var(--wine); }
+.preis-hinweis { color: var(--muted); font-size: .9rem; margin: 14px 0 0; }
 
 /* Termine / Anmeldung (Gruppenkurse, Social Walks) */
 .termine-box {

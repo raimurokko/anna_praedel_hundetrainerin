@@ -42,7 +42,7 @@ Priorität: 🔴 hoch · 🟡 mittel · 🟢 niedrig
 - [ ] 🔴 Facebook-Seiten-URL eintragen **oder** Facebook-Karte entfernen
 - [ ] 🔴 „Stand:"-Datum in den drei Rechtsseiten setzen
 - [ ] 🔴 Rechtstexte vor Veröffentlichung juristisch prüfen (lassen)
-- [ ] 🔴 Preisauszeichnung prüfen (PAngV): USt-Hinweis ergänzen – bei §19 UStG „keine USt ausgewiesen", sonst Brutto. Klären, ob Beträge Brutto sind.
+- [x] Preisauszeichnung (PAngV): Kleinunternehmerregelung §19 UStG bestätigt → Endpreis-/§19-Hinweis bei den Preisen, in der FAQ und im Impressum ergänzt.
 
 ## 🟠 Funktion: Termin-Kalender & Online-Anmeldung (Kundenwunsch)
 
