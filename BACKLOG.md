@@ -20,6 +20,10 @@ Priorität: 🔴 hoch · 🟡 mittel · 🟢 niedrig
 - [x] Datenschutz-Info-Hinweis (nicht-blockierend, kein Consent-Gate, Auto-Ausblenden)
 - [x] Footer: KITMIR aus „Rechtliches" zu „Folge mir" verschoben (inhaltlich korrekt)
 - [x] Datenschutz §8: Verweis auf verantwortliche Stelle (Punkt 1) bzw. Aufsichtsbehörde (Punkt 9) präzisiert
+- [x] Inhalte überarbeitet (Hero, Beziehung, Über mich, Rassen, Angebot-Struktur)
+- [x] Tierschutz-Sektion: Text + Vereinsname „Kitmir Tierhilfe Demirtas e.V." (auch Footer/Schema)
+- [x] Angebot als einklappbare, einheitliche Akkordeons (Einzeltrainings/Gruppenkurse/Social Walks/Beratung)
+- [x] Preise sichtbar bei den Angeboten + FAQ; Schema.org OfferCatalog mit priceSpecification
 - [x] Schema.org-JSON-LD, OG-/Meta-Tags, Canonical
 - [x] Rechtsseiten als Entwurf (Impressum, Datenschutz, Barrierefreiheit)
 - [x] robots.txt, sitemap.xml, llms.txt, security.txt, site.webmanifest, favicon.svg
@@ -38,6 +42,7 @@ Priorität: 🔴 hoch · 🟡 mittel · 🟢 niedrig
 - [ ] 🔴 Facebook-Seiten-URL eintragen **oder** Facebook-Karte entfernen
 - [ ] 🔴 „Stand:"-Datum in den drei Rechtsseiten setzen
 - [ ] 🔴 Rechtstexte vor Veröffentlichung juristisch prüfen (lassen)
+- [ ] 🔴 Preisauszeichnung prüfen (PAngV): USt-Hinweis ergänzen – bei §19 UStG „keine USt ausgewiesen", sonst Brutto. Klären, ob Beträge Brutto sind.
 
 ## 🟠 Funktion: Termin-Kalender & Online-Anmeldung (Kundenwunsch)
 
@@ -47,12 +52,18 @@ Terminen, die sie selbst pflegen kann; Besucher melden sich pro Termin online an
 kurze Bestätigung. Aktuell führen die Buttons „Zur Anmeldung"/„Termin anfragen" zur
 Kontakt-Sektion (Übergangslösung).
 
-- [ ] 🟠 Umsetzungsweg festlegen (statisches Hosting kann das nicht allein) – Optionen:
-  Formular-Dienst (z. B. Formspree/Web3Forms) + einfacher Termin-Datensatz, **oder** Buchungstool
-  (Calendly/Cal.com), **oder** kleines eigenes Backend. ⚠️ DSGVO: Auftragsverarbeitung (AVV)
-  + Ergänzung der Datenschutzerklärung erforderlich (passt zur datensparsamen Linie prüfen).
-- [ ] 🟠 Termin-Pflege für Anna ohne Code (z. B. einfache Datendatei/CMS/Tool)
-- [ ] 🟠 Anmeldeformular je Termin + E-Mail-Benachrichtigung + Bestätigungsworkflow
+**Entscheidung (Kundin):** **eigenes kleines Backend** (volle Kontrolle, datensparsam).
+**Wichtig:** Kundin ist **PHP gegenüber aus Sicherheitsgründen skeptisch** → Umsetzung daher
+**bevorzugt in Node.js** (nicht PHP). Konkret zurückgestellt, bis **Produktiv-Hosting** und
+**E-Mail-Postfach/SMTP** der Domain feststehen (das Backend kann nicht auf GitHub Pages laufen).
+
+- [x] Frontend vorbereitet: Terminliste (`data/termine.json`) + barrierefreies Anmeldeformular
+  (`assets/js/termine.js`); Übergangslösung per vorausgefüllter E-Mail. Andocken ans Backend
+  später via `window.APHT_BOOKING_API`.
+- [ ] 🟠 Hosting/Runtime festlegen (Node-fähig; PHP von Kundin nicht gewünscht) + E-Mail/SMTP klären
+- [ ] 🟠 Backend (Node + SQLite): API (Termine, Anmeldung), Admin-Bereich für Termin-Pflege
+- [ ] 🟠 Anmeldung je Termin: Speicherung + E-Mail-Benachrichtigung an Anna + Bestätigungsworkflow
+- [ ] 🟠 DSGVO: AVV mit Hoster, Datenschutzerklärung ergänzen, Löschkonzept (z. B. nach dem Kurs), Spam-Schutz/TLS
 
 ## 🟡 Inhalte & Medien
 

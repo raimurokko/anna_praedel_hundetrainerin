@@ -100,18 +100,48 @@
         "sameAs": [
           "https://www.instagram.com/hundetraining_anna_p"
         ],
-        "memberOf": { "@type": "Organization", "name": "KITMIR e.V.", "url": "https://kitmir.de" },
-        "makesOffer": [
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Einzeltraining" } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Alles rund um die Beziehung" } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Grundgehorsam" } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Mentale Beschäftigung" } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Alleine zuhause bleiben" } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Alltagssituationen" } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Gruppenkurse (max. 6 Teilnehmer)" } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Social Walks" } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Beratung vor der Anschaffung eines Hundes" } }
-        ]
+        "memberOf": { "@type": "Organization", "name": "Kitmir Tierhilfe Demirtas e.V.", "url": "https://kitmir.de" },
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Hundetraining – Angebote & Preise",
+          "itemListElement": [
+            {
+              "@type": "Offer", "price": "70", "priceCurrency": "EUR",
+              "itemOffered": { "@type": "Service", "name": "Einzeltraining – Ersttermin (60 Min.)", "serviceType": "Hundetraining", "provider": { "@id": "https://hundetraining-annap.de/#business" } },
+              "priceSpecification": { "@type": "UnitPriceSpecification", "price": "70", "priceCurrency": "EUR", "referenceQuantity": { "@type": "QuantitativeValue", "value": "60", "unitCode": "MIN" } }
+            },
+            {
+              "@type": "Offer", "price": "60", "priceCurrency": "EUR",
+              "itemOffered": { "@type": "Service", "name": "Einzeltraining – Folgetermin (45 Min.)", "serviceType": "Hundetraining", "provider": { "@id": "https://hundetraining-annap.de/#business" } },
+              "priceSpecification": { "@type": "UnitPriceSpecification", "price": "60", "priceCurrency": "EUR", "referenceQuantity": { "@type": "QuantitativeValue", "value": "45", "unitCode": "MIN" } }
+            },
+            {
+              "@type": "Offer", "price": "15", "priceCurrency": "EUR",
+              "itemOffered": { "@type": "Service", "name": "Gruppentraining – Gruppenstunde (60 Min., max. 6 Teilnehmer)", "serviceType": "Hundetraining", "provider": { "@id": "https://hundetraining-annap.de/#business" } },
+              "priceSpecification": { "@type": "UnitPriceSpecification", "price": "15", "priceCurrency": "EUR", "referenceQuantity": { "@type": "QuantitativeValue", "value": "60", "unitCode": "MIN" } }
+            },
+            {
+              "@type": "Offer", "price": "20", "priceCurrency": "EUR",
+              "itemOffered": { "@type": "Service", "name": "Social Walk (60 Min., ruhige Umgebung Rudower Höhe)", "serviceType": "Hundetraining", "provider": { "@id": "https://hundetraining-annap.de/#business" } },
+              "priceSpecification": { "@type": "UnitPriceSpecification", "price": "20", "priceCurrency": "EUR", "referenceQuantity": { "@type": "QuantitativeValue", "value": "60", "unitCode": "MIN" } }
+            },
+            {
+              "@type": "Offer", "price": "30", "priceCurrency": "EUR",
+              "itemOffered": { "@type": "Service", "name": "Social Walk (90 Min., belebtere Umgebung Richtung Alt-Rudow)", "serviceType": "Hundetraining", "provider": { "@id": "https://hundetraining-annap.de/#business" } },
+              "priceSpecification": { "@type": "UnitPriceSpecification", "price": "30", "priceCurrency": "EUR", "referenceQuantity": { "@type": "QuantitativeValue", "value": "90", "unitCode": "MIN" } }
+            },
+            {
+              "@type": "Offer", "price": "25", "priceCurrency": "EUR",
+              "itemOffered": { "@type": "Service", "name": "Beratung vor der Anschaffung – via Videochat (60 Min.)", "serviceType": "Hundeberatung", "provider": { "@id": "https://hundetraining-annap.de/#business" } },
+              "priceSpecification": { "@type": "UnitPriceSpecification", "price": "25", "priceCurrency": "EUR", "referenceQuantity": { "@type": "QuantitativeValue", "value": "60", "unitCode": "MIN" } }
+            },
+            {
+              "@type": "Offer", "price": "50", "priceCurrency": "EUR",
+              "itemOffered": { "@type": "Service", "name": "Beratung vor der Anschaffung – bei euch zu Hause (60 Min.)", "serviceType": "Hundeberatung", "provider": { "@id": "https://hundetraining-annap.de/#business" } },
+              "priceSpecification": { "@type": "UnitPriceSpecification", "price": "50", "priceCurrency": "EUR", "referenceQuantity": { "@type": "QuantitativeValue", "value": "60", "unitCode": "MIN" } }
+            }
+          ]
+        }
       },
       {
         "@type": "Person",
@@ -129,7 +159,8 @@
           { "@type": "Question", "name": "Für welche Hunde ist dein Training geeignet?", "acceptedAnswer": { "@type": "Answer", "text": "Für alle Rassen und Größen – vom Welpen über den Familienbegleiter bis zum Arbeits- und Tierschutzhund. Ich arbeite individuell und passe das Training an euch beide an." } },
           { "@type": "Question", "name": "Wo finden die Gruppenkurse statt?", "acceptedAnswer": { "@type": "Answer", "text": "Die Gruppenkurse finden auf der Rudower Höhe in 12355 Berlin-Rudow statt, in kleinen Gruppen mit max. 6 Teilnehmern. Treffpunkt ist der Parkplatz Rudower Höhe, von dort gehen wir gemeinsam zur Trainingswiese. Einzeltraining biete ich bei euch zu Hause an." } },
           { "@type": "Question", "name": "Bietest du Online-Kurse an?", "acceptedAnswer": { "@type": "Answer", "text": "Online- und Video-Kurse sind in Vorbereitung. Du kannst dich unverbindlich vormerken lassen und bist dann zuerst dabei." } },
-          { "@type": "Question", "name": "Wie nehme ich am besten Kontakt auf?", "acceptedAnswer": { "@type": "Answer", "text": "Am schnellsten per WhatsApp, per Instagram-Nachricht oder E-Mail. Schreib mir einfach – du entscheidest, welcher Weg dir am liebsten ist." } }
+          { "@type": "Question", "name": "Wie nehme ich am besten Kontakt auf?", "acceptedAnswer": { "@type": "Answer", "text": "Am schnellsten per WhatsApp, per Instagram-Nachricht oder E-Mail. Schreib mir einfach – du entscheidest, welcher Weg dir am liebsten ist." } },
+          { "@type": "Question", "name": "Was kostet das Training?", "acceptedAnswer": { "@type": "Answer", "text": "Einzeltraining: Ersttermin 60 Min. 70 €, Folgetermine 45 Min. 60 €. Gruppentraining: Gruppenstunde 60 Min. 15 €. Social Walks: 60 Min. 20 €, 90 Min. 30 €. Beratung vor der Anschaffung eines Hundes: 60 Min. via Videochat 25 €, bei euch zu Hause 50 €." } }
         ]
       }
     ]
@@ -239,80 +270,132 @@
         <p>Wir starten dort, wo ihr gerade steht – und bauen Schritt für Schritt auf. Alles individuell, fair und ohne Druck.</p>
       </div>
       <!-- Einzeltrainings -->
-      <div class="offer-group" data-reveal>
-        <div class="offer-group__head">
-          <h3>Einzeltrainings</h3>
+      <details class="offer-acc" data-reveal open>
+        <summary class="offer-acc__summary">
+          <span class="offer-acc__titles">
+            <h3>Einzeltrainings</h3>
+            <span class="tagline">Ganz auf euch zugeschnitten, bei euch zu Hause · ab 60&nbsp;€</span>
+          </span>
+          <span class="offer-acc__sign" aria-hidden="true">+</span>
+        </summary>
+        <div class="offer-acc__body">
           <p>Ganz auf euch zugeschnitten, in eurem gewohnten Umfeld bei euch zu Hause.</p>
+          <div class="cards">
+            <a class="card" href="#kontakt">
+              <span class="card__icon" aria-hidden="true"><span></span></span>
+              <h3>Alles rund um die Beziehung</h3>
+              <p>Wie bekomme ich meinen Hund dazu, mir mehr Aufmerksamkeit zu schenken, nicht mehr an der Leine zu ziehen oder zu mir zurückzukommen, wenn ich ihn rufe? Egal ob Welpe oder Senior: ein Fundament, das zu euch beiden passt.</p>
+            </a>
+            <a class="card" href="#kontakt">
+              <span class="card__icon" aria-hidden="true"><span></span></span>
+              <h3>Grundgehorsam</h3>
+              <p>Sitz, Platz, Bleib &amp; Rückruf – verlässlich, fair und ohne Druck.</p>
+            </a>
+            <a class="card" href="#kontakt">
+              <span class="card__icon" aria-hidden="true"><span></span></span>
+              <h3>Mentale Beschäftigung</h3>
+              <p>Kopfarbeit drinnen und draußen, die auslastet und Bindung schafft. Egal ob Energiebolzen oder eher Typ Schlaftablette, wir finden die Beschäftigung, die euch beiden Spaß macht!</p>
+            </a>
+            <a class="card" href="#kontakt">
+              <span class="card__icon" aria-hidden="true"><span></span></span>
+              <h3>Alleine zuhause bleiben</h3>
+              <p>Schritt für Schritt wird deinem Vierbeiner geholfen, die Momente, in denen du einmal nicht da bist, entspannt zu erleben.</p>
+            </a>
+            <a class="card" href="#kontakt">
+              <span class="card__icon" aria-hidden="true"><span></span></span>
+              <h3>Alltagssituationen</h3>
+              <p>Besuch, Café, Bus, Begegnungen – souverän durch den ganz normalen Tag.</p>
+            </a>
+          </div>
+          <div class="preise">
+            <span class="preise__label">Preise</span>
+            <ul class="preise__list">
+              <li><span class="preise__leistung">Ersttermin · 60&nbsp;Min.</span><span class="preise__betrag">70&nbsp;€</span></li>
+              <li><span class="preise__leistung">Folgetermin · 45&nbsp;Min.</span><span class="preise__betrag">60&nbsp;€</span></li>
+            </ul>
+          </div>
+          <a class="btn btn--primary" href="#kontakt">Termin anfragen</a>
         </div>
-        <div class="cards">
-          <a class="card" href="#kontakt">
-            <span class="card__icon" aria-hidden="true"><span></span></span>
-            <h3>Alles rund um die Beziehung</h3>
-            <p>Wie bekomme ich meinen Hund dazu, mir mehr Aufmerksamkeit zu schenken, nicht mehr an der Leine zu ziehen oder zu mir zurückzukommen, wenn ich ihn rufe? Egal ob Welpe oder Senior: ein Fundament, das zu euch beiden passt.</p>
-          </a>
-          <a class="card" href="#kontakt">
-            <span class="card__icon" aria-hidden="true"><span></span></span>
-            <h3>Grundgehorsam</h3>
-            <p>Sitz, Platz, Bleib &amp; Rückruf – verlässlich, fair und ohne Druck.</p>
-          </a>
-          <a class="card" href="#kontakt">
-            <span class="card__icon" aria-hidden="true"><span></span></span>
-            <h3>Mentale Beschäftigung</h3>
-            <p>Kopfarbeit drinnen und draußen, die auslastet und Bindung schafft. Egal ob Energiebolzen oder eher Typ Schlaftablette, wir finden die Beschäftigung, die euch beiden Spaß macht!</p>
-          </a>
-          <a class="card" href="#kontakt">
-            <span class="card__icon" aria-hidden="true"><span></span></span>
-            <h3>Alleine zuhause bleiben</h3>
-            <p>Schritt für Schritt wird deinem Vierbeiner geholfen, die Momente, in denen du einmal nicht da bist, entspannt zu erleben.</p>
-          </a>
-          <a class="card" href="#kontakt">
-            <span class="card__icon" aria-hidden="true"><span></span></span>
-            <h3>Alltagssituationen</h3>
-            <p>Besuch, Café, Bus, Begegnungen – souverän durch den ganz normalen Tag.</p>
-          </a>
-        </div>
-      </div>
+      </details>
 
       <!-- Gruppenkurse -->
-      <div class="offer-group" data-reveal>
-        <div class="offer-group__head">
-          <h3>Gruppenkurse</h3>
+      <details class="offer-acc" data-reveal>
+        <summary class="offer-acc__summary">
+          <span class="offer-acc__titles">
+            <h3>Gruppenkurse</h3>
+            <span class="tagline">In der Gruppe lernen · 15&nbsp;€ / Stunde · Rudower Höhe</span>
+          </span>
+          <span class="offer-acc__sign" aria-hidden="true">+</span>
+        </summary>
+        <div class="offer-acc__body">
           <p>Lernen in der Gruppe – Erfahrung, die im Alltag trägt. Hier könnt ihr nachsehen, welche Gruppenkurse aktuell angeboten werden.</p>
           <p class="muted">Die Kurse finden mit max. 6 Teilnehmern auf der Rudower Höhe in 12355 Berlin-Rudow statt. Wir treffen uns am Parkplatz Rudower Höhe und laufen dann gemeinsam zur Trainingswiese.</p>
+          <div class="preise">
+            <span class="preise__label">Preise</span>
+            <ul class="preise__list">
+              <li><span class="preise__leistung">Gruppenstunde · 60&nbsp;Min.</span><span class="preise__betrag">15&nbsp;€</span></li>
+            </ul>
+          </div>
+          <div class="termine-box" data-termine="gruppenkurse">
+            <span class="termine-box__label">Aktuelle Termine &amp; Anmeldung</span>
+            <ul class="termine-list" data-termine-list hidden></ul>
+            <p class="muted" data-termine-empty>Die kommenden Termine pflege ich hier laufend ein. Für die Anmeldung schreib mir kurz – ich bestätige dir deinen Platz.</p>
+            <a class="btn btn--primary" href="#kontakt" data-termine-fallback>Zur Anmeldung</a>
+          </div>
         </div>
-        <div class="termine-box" data-termine="gruppenkurse">
-          <span class="termine-box__label">Aktuelle Termine &amp; Anmeldung</span>
-          <ul class="termine-list" data-termine-list hidden></ul>
-          <p class="muted" data-termine-empty>Die kommenden Termine pflege ich hier laufend ein. Für die Anmeldung schreib mir kurz – ich bestätige dir deinen Platz.</p>
-          <a class="btn btn--primary" href="#kontakt" data-termine-fallback>Zur Anmeldung</a>
-        </div>
-      </div>
+      </details>
 
       <!-- Social Walks -->
-      <div class="offer-group" data-reveal>
-        <div class="offer-group__head">
-          <h3>Social Walks in Berlin Rudow</h3>
+      <details class="offer-acc" data-reveal>
+        <summary class="offer-acc__summary">
+          <span class="offer-acc__titles">
+            <h3>Social Walks in Berlin Rudow</h3>
+            <span class="tagline">Gemeinsam spazieren mit Lerneffekt · ab 20&nbsp;€</span>
+          </span>
+          <span class="offer-acc__sign" aria-hidden="true">+</span>
+        </summary>
+        <div class="offer-acc__body">
           <p><strong>Für den Vierbeiner:</strong> Bei einem Spaziergang in der Gruppe lernen, im Beisein anderer Hunde entspannt zu bleiben und sich auf seinen Menschen einzulassen.</p>
           <p><strong>Für die Zweibeiner:</strong> Kommunikation und Körpersprache des Vierbeiners noch besser verstehen lernen und angemessen darauf reagieren.</p>
           <p class="muted">Herzlich willkommen sind natürlich auch alle souveränen Hunde, die der Gruppe guttun, und deren Halter, die einfach Lust auf einen gemeinsamen Spaziergang mit Lerneffekt haben!</p>
+          <div class="preise">
+            <span class="preise__label">Preise</span>
+            <ul class="preise__list">
+              <li><span class="preise__leistung">60&nbsp;Min. · ruhige Umgebung (Rudower Höhe)</span><span class="preise__betrag">20&nbsp;€</span></li>
+              <li><span class="preise__leistung">90&nbsp;Min. · belebter, Richtung Alt-Rudow</span><span class="preise__betrag">30&nbsp;€</span></li>
+            </ul>
+          </div>
+          <div class="termine-box" data-termine="socialwalks">
+            <span class="termine-box__label">Nächste Social-Walk-Termine</span>
+            <ul class="termine-list" data-termine-list hidden></ul>
+            <p class="muted" data-termine-empty>Die anstehenden Termine findest du hier. Melde dich kurz bei mir, dann bist du dabei.</p>
+            <a class="btn btn--primary" href="#kontakt" data-termine-fallback>Termin anfragen</a>
+          </div>
         </div>
-        <div class="termine-box" data-termine="socialwalks">
-          <span class="termine-box__label">Nächste Social-Walk-Termine</span>
-          <ul class="termine-list" data-termine-list hidden></ul>
-          <p class="muted" data-termine-empty>Die anstehenden Termine findest du hier. Melde dich kurz bei mir, dann bist du dabei.</p>
-          <a class="btn btn--primary" href="#kontakt" data-termine-fallback>Termin anfragen</a>
-        </div>
-      </div>
+      </details>
 
       <!-- Beratung vor der Anschaffung -->
-      <div class="offer-group" data-reveal>
-        <div class="offer-group__head">
-          <h3>Beratung vor der Anschaffung eines Hundes</h3>
+      <details class="offer-acc" data-reveal>
+        <summary class="offer-acc__summary">
+          <span class="offer-acc__titles">
+            <h3>Beratung vor der Anschaffung eines Hundes</h3>
+            <span class="tagline">Vor der Entscheidung gut beraten · ab 25&nbsp;€</span>
+          </span>
+          <span class="offer-acc__sign" aria-hidden="true">+</span>
+        </summary>
+        <div class="offer-acc__body">
           <p>Du möchtest ein neues Mitglied in deine Familie aufnehmen und bist vielleicht noch nicht ganz sicher, ob es ein Welpe vom Züchter oder ein erwachsener Hund aus dem Tierschutz sein soll? Egal, ob du dich schon entschieden hast oder noch schwankst – ich stehe dir gerne bei deinen Überlegungen zur Seite und wir besprechen gemeinsam, welcher Hund am besten zu dir passt und welche Vorbereitungen noch getroffen werden sollten.</p>
           <p class="muted">Das Angebot gilt selbstverständlich auch, wenn du überlegst, einen Zweithund bei dir aufzunehmen, denn auch hier sollte gut überlegt sein, welcher Vierbeiner zu eurer aktuellen Konstellation passt, um ein harmonisches Zusammenleben zu gewährleisten.</p>
+          <div class="preise">
+            <span class="preise__label">Preise · 60&nbsp;Min.</span>
+            <ul class="preise__list">
+              <li><span class="preise__leistung">Via Videochat</span><span class="preise__betrag">25&nbsp;€</span></li>
+              <li><span class="preise__leistung">Bei euch zu Hause</span><span class="preise__betrag">50&nbsp;€</span></li>
+            </ul>
+          </div>
+          <a class="btn btn--primary" href="#kontakt">Beratung anfragen</a>
         </div>
-        <a class="btn btn--primary" href="#kontakt">Beratung anfragen</a>
-      </div>
+      </details>
     </section>
 
     <!-- ============ ÜBER MICH ============ -->
@@ -359,16 +442,16 @@
         <div>
           <span class="eyebrow heart-eyebrow">
             <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 14C8 14 1 9.5 1 5.2C1 2.8 2.8 1.5 4.4 1.5C6 1.5 7 2.6 8 3.8C9 2.6 10 1.5 11.6 1.5C13.2 1.5 15 2.8 15 5.2C15 9.5 8 14 8 14Z"/></svg>
-            Herzensthema
+            Herzensthema Tierschutzhunde
           </span>
-          <h2>Aktiv im Tierschutz – mit KITMIR.</h2>
-          <p class="intro">Tierschutz liegt mir am Herzen. Ich engagiere mich aktiv bei <strong>KITMIR</strong> und setze mich für Hunde ein, die einen guten Start ins neue Leben brauchen.</p>
-          <p class="muted">Viele meiner liebsten Begegnungen beginnen als Tierschutzhund. Genau dieses Wissen fließt in mein Training ein – mit besonders viel Geduld und Verständnis.</p>
-          <a class="link-arrow" href="https://kitmir.de" target="_blank" rel="noopener noreferrer">KITMIR kennenlernen<span aria-hidden="true">→</span></a>
+          <h2>Aktiv im Tierschutz mit Kitmir Tierhilfe Demirtas e.V.</h2>
+          <p class="intro">Das aktive Engagement für den Tierschutz und insbesondere für den Verein <strong>Kitmir Tierhilfe Demirtas e.V.</strong> ist ein fester Bestandteil meines Lebens geworden.</p>
+          <p class="muted">Neben der ehrenamtlichen Arbeit für den Verein kläre ich gern über die Vorurteile gegenüber Tierschutzhunden auf und zeige, was für liebenswerte Familienmitglieder auf ein eigenes Zuhause warten.</p>
+          <a class="link-arrow" href="https://kitmir.de" target="_blank" rel="noopener noreferrer">Kitmir Tierhilfe Demirtas e.V. kennenlernen<span aria-hidden="true">→</span></a>
         </div>
         <div class="media media--wide">
-          <!-- TODO(Kundin): Foto Tierschutzhund / KITMIR → /bilder/kitmir-tierschutzhund.webp -->
-          <span class="media__hint" aria-hidden="true">FOTO .webp — Tierschutzhund / KITMIR</span>
+          <!-- TODO(Kundin): Foto Tierschutzhund / Kitmir → bilder/kitmir-tierschutzhund.webp -->
+          <span class="media__hint" aria-hidden="true">FOTO .webp — Tierschutzhund / Kitmir</span>
         </div>
       </div>
     </section>
@@ -395,6 +478,18 @@
         <details>
           <summary>Wie nehme ich am besten Kontakt auf?<span class="sign" aria-hidden="true">+</span></summary>
           <p>Am schnellsten per WhatsApp, per Instagram-Nachricht oder E-Mail. Schreib mir einfach – du entscheidest, welcher Weg dir am liebsten ist.</p>
+        </details>
+        <details>
+          <summary>Was kostet das Training?<span class="sign" aria-hidden="true">+</span></summary>
+          <div class="faq-preise">
+            <p>Eine Übersicht aller Preise findest du direkt bei den Angeboten. Kurz zusammengefasst:</p>
+            <ul>
+              <li><strong>Einzeltraining:</strong> Ersttermin 60&nbsp;Min. 70&nbsp;€, Folgetermine 45&nbsp;Min. 60&nbsp;€</li>
+              <li><strong>Gruppentraining:</strong> Gruppenstunde 60&nbsp;Min. 15&nbsp;€</li>
+              <li><strong>Social Walks:</strong> 60&nbsp;Min. 20&nbsp;€, 90&nbsp;Min. 30&nbsp;€</li>
+              <li><strong>Beratung vor der Anschaffung:</strong> 60&nbsp;Min. via Videochat 25&nbsp;€, bei euch zu Hause 50&nbsp;€</li>
+            </ul>
+          </div>
         </details>
       </div>
     </section>
@@ -451,7 +546,7 @@
         <a href="https://www.instagram.com/hundetraining_anna_p" target="_blank" rel="noopener noreferrer">Instagram</a>
         <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">Facebook</a>
         <a href="https://wa.me/49XXXXXXXXXXX" target="_blank" rel="noopener noreferrer">WhatsApp</a>
-        <a href="https://kitmir.de" target="_blank" rel="noopener noreferrer">KITMIR e.V. (Tierschutz)</a>
+        <a href="https://kitmir.de" target="_blank" rel="noopener noreferrer">Kitmir Tierhilfe Demirtas e.V.</a>
       </nav>
       <nav class="footer-nav" aria-label="Rechtliches">
         <span class="footer-nav__title">Rechtliches</span>

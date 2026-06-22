@@ -362,12 +362,42 @@ body { padding-top: var(--header-h); }
 .card p { color: var(--muted); font-size: .99rem; line-height: 1.55; margin: 0; }
 a.card { text-decoration: none; color: inherit; }
 
-/* Angebot: Kategorien (Oberbegriffe) */
-.offer-group { margin-top: clamp(40px, 6vw, 72px); }
-.offer-group__head { max-width: 72ch; margin-bottom: clamp(20px, 3vw, 30px); }
-.offer-group__head h3 { font-size: clamp(1.4rem, 3vw, 2.05rem); font-weight: 800; letter-spacing: -.01em; margin: 0; }
-.offer-group__head p { color: var(--muted); font-size: clamp(1.02rem, 1.6vw, 1.15rem); line-height: 1.6; margin: .7em 0 0; }
-.offer-group__head p strong { color: var(--fg); }
+/* Angebot: Kategorien als einklappbare Akkordeons */
+.offer-acc {
+  border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface);
+  box-shadow: var(--shadow); margin-top: 16px; overflow: hidden;
+}
+.offer-acc__summary {
+  cursor: pointer; list-style: none; display: flex; align-items: center; justify-content: space-between;
+  gap: 16px; padding: clamp(18px, 2.4vw, 26px) clamp(20px, 2.6vw, 30px);
+}
+.offer-acc__summary::-webkit-details-marker { display: none; }
+.offer-acc__summary:focus-visible { outline: 3px solid var(--wine); outline-offset: -3px; }
+.offer-acc__titles { display: flex; flex-direction: column; gap: 3px; }
+.offer-acc__titles h3 { font-size: clamp(1.25rem, 2.4vw, 1.7rem); font-weight: 800; letter-spacing: -.01em; margin: 0; }
+.offer-acc__titles .tagline { color: var(--muted); font-size: .98rem; }
+.offer-acc__sign {
+  flex: 0 0 auto; width: 30px; height: 30px; border-radius: 50%; border: 2px solid var(--wine);
+  color: var(--wine); display: flex; align-items: center; justify-content: center; font-size: 1.3rem;
+  line-height: 1; transition: transform .2s;
+}
+.offer-acc[open] .offer-acc__sign { transform: rotate(45deg); }
+.offer-acc__body {
+  padding: 0 clamp(20px, 2.6vw, 30px) clamp(22px, 2.8vw, 30px);
+  display: flex; flex-direction: column; gap: 16px;
+}
+.offer-acc__body > p { margin: 0; color: var(--muted); line-height: 1.6; }
+.offer-acc__body > p strong { color: var(--fg); }
+.offer-acc__body .btn { align-self: flex-start; }
+
+/* Preis-Block (einheitlich in allen Angebots-Rubriken) */
+.preise { border-top: 1px solid var(--border); padding-top: 14px; }
+.preise__label { font-weight: 800; font-size: .8rem; letter-spacing: .12em; text-transform: uppercase; color: var(--wine); }
+.preise__list { list-style: none; margin: 8px 0 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+.preise__list li { display: flex; justify-content: space-between; gap: 14px; align-items: baseline; border-bottom: 1px dashed var(--border); padding-bottom: 6px; }
+.preise__list li:last-child { border-bottom: 0; padding-bottom: 0; }
+.preise__leistung { color: var(--fg); }
+.preise__betrag { font-weight: 800; white-space: nowrap; color: var(--wine); }
 
 /* Termine / Anmeldung (Gruppenkurse, Social Walks) */
 .termine-box {
