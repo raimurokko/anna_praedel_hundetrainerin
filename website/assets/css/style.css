@@ -360,6 +360,24 @@ body { padding-top: var(--header-h); }
 .card__icon span { width: 14px; height: 14px; border-radius: 50%; background: var(--wine-tint); border: 2px solid var(--wine); }
 .card h3 { font-size: 1.22rem; font-weight: 700; letter-spacing: -.01em; margin: 4px 0 0; }
 .card p { color: var(--muted); font-size: .99rem; line-height: 1.55; margin: 0; }
+a.card { text-decoration: none; color: inherit; }
+
+/* Angebot: Kategorien (Oberbegriffe) */
+.offer-group { margin-top: clamp(40px, 6vw, 72px); }
+.offer-group__head { max-width: 72ch; margin-bottom: clamp(20px, 3vw, 30px); }
+.offer-group__head h3 { font-size: clamp(1.4rem, 3vw, 2.05rem); font-weight: 800; letter-spacing: -.01em; margin: 0; }
+.offer-group__head p { color: var(--muted); font-size: clamp(1.02rem, 1.6vw, 1.15rem); line-height: 1.6; margin: .7em 0 0; }
+.offer-group__head p strong { color: var(--fg); }
+
+/* Termine / Anmeldung (Gruppenkurse, Social Walks) */
+.termine-box {
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+  padding: clamp(22px, 2.6vw, 32px); box-shadow: var(--shadow);
+  display: flex; flex-direction: column; gap: 12px; align-items: flex-start;
+}
+.termine-box__label { font-weight: 800; font-size: 1.1rem; }
+.termine-box p { margin: 0; }
+.termine-box .btn { margin-top: 4px; }
 
 /* Über mich / Tierschutz – zweispaltig */
 .split2 {

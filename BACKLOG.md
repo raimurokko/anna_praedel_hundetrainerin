@@ -39,9 +39,24 @@ Priorität: 🔴 hoch · 🟡 mittel · 🟢 niedrig
 - [ ] 🔴 „Stand:"-Datum in den drei Rechtsseiten setzen
 - [ ] 🔴 Rechtstexte vor Veröffentlichung juristisch prüfen (lassen)
 
+## 🟠 Funktion: Termin-Kalender & Online-Anmeldung (Kundenwunsch)
+
+Wunsch der Kundin für **Gruppenkurse** und **Social Walks**: ein dynamischer Kalender mit
+Terminen, die sie selbst pflegen kann; Besucher melden sich pro Termin online an
+(Name, Hund, Telefon, E-Mail, Anmerkungen); Anna erhält eine E-Mail und schickt eine
+kurze Bestätigung. Aktuell führen die Buttons „Zur Anmeldung"/„Termin anfragen" zur
+Kontakt-Sektion (Übergangslösung).
+
+- [ ] 🟠 Umsetzungsweg festlegen (statisches Hosting kann das nicht allein) – Optionen:
+  Formular-Dienst (z. B. Formspree/Web3Forms) + einfacher Termin-Datensatz, **oder** Buchungstool
+  (Calendly/Cal.com), **oder** kleines eigenes Backend. ⚠️ DSGVO: Auftragsverarbeitung (AVV)
+  + Ergänzung der Datenschutzerklärung erforderlich (passt zur datensparsamen Linie prüfen).
+- [ ] 🟠 Termin-Pflege für Anna ohne Code (z. B. einfache Datendatei/CMS/Tool)
+- [ ] 🟠 Anmeldeformular je Termin + E-Mail-Benachrichtigung + Bestätigungsworkflow
+
 ## 🟡 Inhalte & Medien
 
-- [ ] 🟡 Fotos der Kundin einpflegen (Hero, Porträt, KITMIR) – siehe `website/bilder/README.md`
+- [~] 🟡 Fotos der Kundin einpflegen – **Porträt „Über mich" erledigt (Anna02)**; noch offen: Hero, KITMIR – siehe `website/bilder/README.md`
 - [ ] 🟡 Social-Sharing-Bild (1200×630) + Logo (512×512) ergänzen
 - [ ] 🟡 Alternativtexte (`alt`) zu allen Bildern
 - [ ] 🟡 Responsive Bilder (`srcset`/`sizes`) + `loading="lazy"`
