@@ -307,10 +307,18 @@ body { padding-top: var(--header-h); }
   color: #fff; font-size: clamp(2.4rem, 6.4vw, 5rem); line-height: 1.02;
   letter-spacing: -.03em; font-weight: 800; margin: 18px 0 0; max-width: 18ch;
 }
-/* Wortmarke „beziehungsweise" – Stamm „beziehung" hervorgehoben, „sweise" abgesetzt */
-.hero-word { display: block; }
+/* Wortmarke „beziehungsweise" – Verlauf in Weinrot-/Rosé-Tönen (gut lesbar auf dunklem Foto) */
+.hero-word {
+  display: block;
+  color: #E07A8B; /* Fallback, falls background-clip:text nicht unterstützt wird */
+  background-image: linear-gradient(96deg, #EE9DAC 0%, #DC6F82 45%, #BE4459 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 2px 10px rgba(40, 12, 18, .35));
+}
 .hero-word__stem { font-weight: 800; }
-.hero-word__rest { font-weight: 600; opacity: .5; }
+.hero-word__rest { font-weight: 700; }
 .hero-claim {
   display: block; margin-top: .3em; max-width: 22ch;
   font-size: clamp(1.25rem, 2.8vw, 2.1rem); line-height: 1.12;
