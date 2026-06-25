@@ -32,11 +32,27 @@ Priorität: 🔴 hoch · 🟡 mittel · 🟢 niedrig
 
 ---
 
+## ✅ Anmerkungen-PDFs (Teil 1 + Teil 2) eingearbeitet — 25.06.2026
+
+Quelle: `designentwürfe/Anmerkungen Website.pdf` + `…Teil 2.pdf`. Der Großteil von Teil 1 war
+bereits umgesetzt; folgende Deltas (v. a. aus dem neueren Teil 2) wurden ergänzt:
+- [x] Angebot-Karte „Mentale Beschäftigung" → „Beschäftigung"
+- [x] „Grundgehorsam" aus SEO/Schema entfernt (Meta-Description, JSON-LD-Beschreibung, `knowsAbout`) + `llms.txt` angeglichen
+- [x] FAQ „Für alle Rassen" gekürzt (Teilsatz „vom Welpen … Tierschutzhund" raus) — sichtbar + Schema
+- [x] FAQ „Online-Kurse" gekürzt („… unverbindlich vormerken …" raus) — sichtbar + Schema
+- [x] Beratung-Untertitel „· ab 25 €" entfernt (Konsistenz: keine „ab-Preise")
+- [x] Einzeltraining-Untertitel entdoppelt → „Individuell für dich und deinen Hund" (Fließtext „Ganz auf euch zugeschnitten …" bleibt)
+- [x] Impressum-PLZ auf 12355 korrigiert
+- **Offen (Entscheidung Kundin):** Schriftart Verdana? · Opener-Zeile „Beziehungsweise – mit Vertrauen Bindung schaffen" zusätzlich als Abschnitts-Überschrift?
+- **Offen (Rückfrage Kundin):** Sollen die Angebot-Karten beim Klick auf eine Übersicht führen statt zum Kontakt?
+
+---
+
 ## 🔴 Blockierend für Go-Live (Daten/Inhalte der Kundin)
 
 - [x] Domain gesetzt: **beziehungsweise.com** (Canonical/Sitemap/OG/Schema/security.txt/llms.txt aktualisiert)
-- [~] 🔴 Impressum: Anschrift (Neudecker Weg 49a, 12344 Berlin), Steuernummer 16/477/01055 und § 11-Erlaubnis eingetragen — **PLZ 12344 bitte gegenprüfen** (Rudow ist i. d. R. 12349/12351/12355); noch offen: Telefon
-- [ ] 🔴 PLZ im Impressum verifizieren (12344 ungewöhnlich für Berlin-Rudow)
+- [~] 🔴 Impressum: Anschrift (Neudecker Weg 49a, 12355 Berlin), Steuernummer 16/477/01055 und § 11-Erlaubnis eingetragen; noch offen: Telefon
+- [x] 🔴 PLZ im Impressum korrigiert: **12355** (von Kundin bestätigt, 25.06.2026)
 - [ ] 🔴 Datenschutz: Hosting-Anbieter + Logfile-Aufbewahrungsdauer eintragen
 - [ ] 🔴 Echte WhatsApp-Nummer eintragen (`wa.me/49…`)
 - [~] 🔴 E-Mail-Adresse bestätigen — vorläufig auf **hallo@beziehungsweise.com** gezogen (mit Domain); bitte bestätigen
@@ -45,6 +61,7 @@ Priorität: 🔴 hoch · 🟡 mittel · 🟢 niedrig
 - [ ] 🔴 Rechtstexte vor Veröffentlichung juristisch prüfen (lassen)
 - [x] Preisauszeichnung (PAngV): **regulär USt-pflichtig** (nicht §19) → Preise als „inkl. gesetzlicher USt" ausgewiesen; Steuernummer im Impressum.
 - [x] Standardschrift: **DejaVu Sans** (frei, Verdana-nah) lokal eingebunden, Figtree als Fallback. (Verdana selbst ist proprietär/nicht einbettbar.)
+- [ ] 🟡 Kundenwunsch (Teil 2): **Verdana ausprobieren**. Vorschlag: Verdana als erste Wahl (Systemschrift, nicht gehostet), DejaVu Sans als gehosteter Fallback → rechts-/DSGVO-sicher. **Entscheidung Kundin offen.**
 - [ ] 🟢 Perf: DejaVu-Sans-woff2 sind groß (~250 KB je Schnitt) – bei Bedarf auf genutzte Glyphen subsetten.
 - [x] Corporate-Paket angelegt: CORPORATE.md (Farben HEX+RGB, Schriften, Logos).
 
@@ -90,6 +107,18 @@ Kontakt-Sektion (Übergangslösung).
 - [ ] 🟡 HTML-/Linkvalidierung (W3C, tote Links)
 - [ ] 🟢 Server-Header: Caching (fonts/assets), Kompression (gzip/brotli), Security-Header (CSP, HSTS)
 - [ ] 🟢 OpeningHours/Geo-Koordinaten in LocalBusiness ergänzen (falls gewünscht)
+
+## 🟡 SEO & Content (laufendes Arbeitspaket — Kundenwunsch 25.06.2026)
+
+Vereinbart: SEO als eigenes, fortlaufendes Paket (Artikel/Blog schreiben, Content posten).
+Die **On-Page-Technik** (Schema.org, Meta/OG, Canonical, sitemap.xml, robots.txt, llms.txt) steht
+bereits — hier geht es um **Inhalte & Reichweite**.
+- [ ] 🟡 Themen-/Keyword-Liste (z. B. Berlin-Rudow, Tierschutzhund, Welpenerziehung, Leinenführigkeit, Social Walk, Alleinbleiben)
+- [ ] 🟡 Blog-/Ratgeber-Bereich anlegen (Seitenstruktur, URL-Schema, `Article`/`BlogPosting`-Schema, Übersichts- & Detailseiten)
+- [ ] 🟡 Redaktionsplan: regelmäßig Artikel verfassen & veröffentlichen
+- [ ] 🟢 Lokale Sichtbarkeit: Google-Business-Profil & lokale Verzeichnisse (sobald Adresse/Telefon final)
+- [ ] 🟢 Interne Verlinkung Artikel ↔ Angebote; FAQ aus echten Kundenfragen wachsen lassen
+- [ ] 🟢 Bilder-SEO (sprechende Dateinamen, `alt`-Texte, WebP) für Artikelmedien
 
 ## 🟢 Später / Optional
 
