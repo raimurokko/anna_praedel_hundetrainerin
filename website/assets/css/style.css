@@ -315,7 +315,10 @@ body { padding-top: var(--header-h); }
 }
 /* Touch / kein Hover: ehrliche 2-Spalten-Galerie statt Akkordeon */
 @media (hover: none) {
-  .media.ts-media { aspect-ratio: auto; }
+  /* Touch: das 2×2-Raster deckt den Container nicht voll ab -> reservierte Höhe (aspect-ratio 5/4)
+     und Platzhalter-Schraffur (.split2 .media) entfernen, sonst scheint sie in Lücken/Ecken durch.
+     Höhere Spezifität als „.split2 .media--wide", damit es auch wirklich greift. */
+  .split2 .media--wide.ts-media { aspect-ratio: auto; background: none; }
   .ts-gallery { position: static; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; height: auto; }
   .ts-panel { flex: none; aspect-ratio: 4/3; border-radius: 16px; filter: none; }
   /* Unterschrift dezent halten – das Foto soll dominieren */
