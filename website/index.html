@@ -29,6 +29,12 @@
   <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
   <link rel="manifest" href="site.webmanifest">
 
+  <!-- Hinweis LCP: Das erste Hero-Foto ist das LCP-Element. Es lädt eager mit
+       fetchpriority="high" (siehe <img> im Hero) und steht als erstes Element im
+       Body – der Preload-Scanner findet es sofort. KEIN separater <link rel=preload
+       as=image>, da der responsive Preload sonst eine andere srcset-Kandidatengröße
+       wählen kann als das <img> → Doppel-Download. -->
+
   <!-- Schriften lokal (DSGVO-konform, keine Google-Server) -->
   <link rel="preload" href="assets/fonts/dejavusans-latin-400.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/css/fonts.css">
