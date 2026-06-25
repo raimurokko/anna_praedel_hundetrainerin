@@ -305,7 +305,16 @@ body { padding-top: var(--header-h); }
 }
 .hero-full h1 {
   color: #fff; font-size: clamp(2.4rem, 6.4vw, 5rem); line-height: 1.02;
-  letter-spacing: -.03em; font-weight: 800; margin: 18px 0 0; max-width: 16ch;
+  letter-spacing: -.03em; font-weight: 800; margin: 18px 0 0; max-width: 18ch;
+}
+/* Wortmarke „beziehungsweise" – Stamm „beziehung" hervorgehoben, „sweise" abgesetzt */
+.hero-word { display: block; }
+.hero-word__stem { font-weight: 800; }
+.hero-word__rest { font-weight: 600; opacity: .5; }
+.hero-claim {
+  display: block; margin-top: .3em; max-width: 22ch;
+  font-size: clamp(1.25rem, 2.8vw, 2.1rem); line-height: 1.12;
+  letter-spacing: -.01em; font-weight: 600; color: rgba(255, 255, 255, .95);
 }
 .hero-full p {
   color: rgba(255, 255, 255, .9); font-size: clamp(1.05rem, 2vw, 1.3rem);
