@@ -69,6 +69,7 @@ html {
   scroll-padding-top: calc(var(--header-h) + 16px);
   font-size: calc(100% * var(--fontscale));
   -webkit-text-size-adjust: 100%;
+  overflow-x: clip; /* kappt horizontalen Overflow inkl. off-canvas fixed-Elemente; bricht position:sticky nicht */
 }
 
 body {
