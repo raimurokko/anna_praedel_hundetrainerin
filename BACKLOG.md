@@ -44,7 +44,8 @@ Priorität: 🔴 hoch · 🟡 mittel · 🟢 niedrig
 - [ ] 🔴 „Stand:"-Datum in den drei Rechtsseiten setzen
 - [ ] 🔴 Rechtstexte vor Veröffentlichung juristisch prüfen (lassen)
 - [x] Preisauszeichnung (PAngV): **regulär USt-pflichtig** (nicht §19) → Preise als „inkl. gesetzlicher USt" ausgewiesen; Steuernummer im Impressum.
-- [ ] 🟡 Schriftart „VERANDA"/Verdana klären (Lizenz/Quelle) – siehe Rückfrage; danach als Standardschrift mit Figtree-Fallback einbinden.
+- [x] Standardschrift: **DejaVu Sans** (frei, Verdana-nah) lokal eingebunden, Figtree als Fallback. (Verdana selbst ist proprietär/nicht einbettbar.)
+- [ ] 🟢 Perf: DejaVu-Sans-woff2 sind groß (~250 KB je Schnitt) – bei Bedarf auf genutzte Glyphen subsetten.
 - [x] Corporate-Paket angelegt: CORPORATE.md (Farben HEX+RGB, Schriften, Logos).
 
 ## 🟠 Funktion: Termin-Kalender & Online-Anmeldung (Kundenwunsch)

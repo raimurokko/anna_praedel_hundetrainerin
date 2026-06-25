@@ -1,5 +1,25 @@
 /* =============================================================
-   Figtree – lokal eingebunden (Variable Font, Achse 300–900)
+   DejaVu Sans – Standardschrift (Verdana-Alternative), lokal eingebunden.
+   Frei lizenziert (Bitstream Vera / Public Domain – siehe ../fonts/DejaVuSans-LICENSE.txt).
+   Figtree (unten) dient als Fallback.
+   ============================================================= */
+@font-face {
+  font-family: 'DejaVu Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/dejavusans-latin-400.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'DejaVu Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../fonts/dejavusans-latin-700.woff2') format('woff2');
+}
+
+/* =============================================================
+   Figtree – Fallback-Schrift (Variable Font, Achse 300–900)
    Quelle: Google Fonts, hier DSGVO-konform selbst gehostet.
    Keine Verbindung zu fonts.googleapis.com / fonts.gstatic.com.
    Lizenz: SIL OFL 1.1 (siehe ../fonts/Figtree-OFL.txt, ../fonts/README.md).

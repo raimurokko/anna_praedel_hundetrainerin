@@ -62,16 +62,18 @@ Bildmarke + Wortmarke bilden zusammen das Logo (siehe Kopfzeile der Website).
 
 ## 3. Schriften
 
-**Aktuell (Website):** **Figtree** – moderne, freundliche Grotesk.
-- Lizenz: SIL Open Font License 1.1 (frei nutzbar, auch im Druck).
-- Lokal eingebunden unter `website/assets/fonts/` (`figtree-*.woff2`).
-- Gewichte u. a.: 400 (normal), 600/700/800 (Überschriften).
+**Standardschrift:** **DejaVu Sans** – gut lesbare, Verdana-nahe Grotesk (gewählte
+Verdana-Alternative, frei lizenzierbar/lokal einbettbar).
+- Lizenz: Bitstream Vera / Public Domain (siehe `website/assets/fonts/DejaVuSans-LICENSE.txt`).
+- Lokal eingebunden (`dejavusans-latin-400/700.woff2`); Gewichte 400 (normal) und 700 (fett).
+
+**Fallback-Schrift:** **Figtree** – moderne Grotesk, SIL OFL 1.1, lokal (`figtree-*.woff2`).
+Greift, falls DejaVu Sans nicht lädt.
 
 **Lesehilfe (Barrierefreiheit):** OpenDyslexic (OFL) – nur im A11y-Modus der Website.
 
-> **Offen:** Die gewünschte Standardschrift „VERANDA" ist noch zu klären (Lizenz/Quelle) –
-> siehe Rückfrage. Sobald geklärt, ergänze ich sie hier als neue Hauptschrift mit
-> Figtree als Fallback.
+> Druck: Für Drucksachen empfehle ich, dieselbe Schrift (DejaVu Sans) oder ersatzweise
+> Verdana zu verwenden, damit Web und Print konsistent wirken.
 
 ---
 
