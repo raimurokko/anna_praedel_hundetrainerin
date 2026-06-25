@@ -6,7 +6,7 @@
     { "id": "gk-2026-08-02", "title": "Aufbau-Gruppe", "date": "2026-08-02", "time": "10:00", "ort": "Rudower Höhe (Treffpunkt Parkplatz)", "plaetze": 6, "frei": 0, "hinweis": "" }
   ],
   "socialwalks": [
-    { "id": "sw-2026-07-12", "title": "Social Walk", "date": "2026-07-12", "time": "09:30", "ort": "Rudower Höhe (Treffpunkt Parkplatz)", "plaetze": 8, "frei": 4, "hinweis": "Souveräne Hunde herzlich willkommen" },
-    { "id": "sw-2026-07-26", "title": "Social Walk", "date": "2026-07-26", "time": "09:30", "ort": "Rudower Höhe (Treffpunkt Parkplatz)", "plaetze": 8, "frei": 6, "hinweis": "" }
+    { "id": "sw-2026-07-12", "title": "Social Walk", "date": "2026-07-12", "time": "09:30", "ort": "Rudower Höhe (Treffpunkt Parkplatz)", "plaetze": 4, "frei": 2, "hinweis": "Souveräne Hunde herzlich willkommen" },
+    { "id": "sw-2026-07-26", "title": "Social Walk", "date": "2026-07-26", "time": "09:30", "ort": "Rudower Höhe (Treffpunkt Parkplatz)", "plaetze": 4, "frei": 4, "hinweis": "" }
   ]
 }

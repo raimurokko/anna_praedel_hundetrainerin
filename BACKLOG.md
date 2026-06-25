@@ -34,15 +34,18 @@ Priorität: 🔴 hoch · 🟡 mittel · 🟢 niedrig
 
 ## 🔴 Blockierend für Go-Live (Daten/Inhalte der Kundin)
 
-- [ ] 🔴 Domain bestätigen (sonst Canonical/Sitemap/OG/Schema/security.txt anpassen)
-- [ ] 🔴 Impressum vervollständigen (Anschrift, Tel., USt./§19, § 11 TierSchG)
+- [x] Domain gesetzt: **beziehungsweise.com** (Canonical/Sitemap/OG/Schema/security.txt/llms.txt aktualisiert)
+- [~] 🔴 Impressum: Anschrift (Neudecker Weg 49a, 12344 Berlin), Steuernummer 16/477/01055 und § 11-Erlaubnis eingetragen — **PLZ 12344 bitte gegenprüfen** (Rudow ist i. d. R. 12349/12351/12355); noch offen: Telefon
+- [ ] 🔴 PLZ im Impressum verifizieren (12344 ungewöhnlich für Berlin-Rudow)
 - [ ] 🔴 Datenschutz: Hosting-Anbieter + Logfile-Aufbewahrungsdauer eintragen
 - [ ] 🔴 Echte WhatsApp-Nummer eintragen (`wa.me/49…`)
-- [ ] 🔴 E-Mail-Adresse bestätigen (überall `hallo@hundetraining-annap.de`)
+- [~] 🔴 E-Mail-Adresse bestätigen — vorläufig auf **hallo@beziehungsweise.com** gezogen (mit Domain); bitte bestätigen
 - [ ] 🔴 Facebook-Seiten-URL eintragen **oder** Facebook-Karte entfernen
 - [ ] 🔴 „Stand:"-Datum in den drei Rechtsseiten setzen
 - [ ] 🔴 Rechtstexte vor Veröffentlichung juristisch prüfen (lassen)
-- [x] Preisauszeichnung (PAngV): Kleinunternehmerregelung §19 UStG bestätigt → Endpreis-/§19-Hinweis bei den Preisen, in der FAQ und im Impressum ergänzt.
+- [x] Preisauszeichnung (PAngV): **regulär USt-pflichtig** (nicht §19) → Preise als „inkl. gesetzlicher USt" ausgewiesen; Steuernummer im Impressum.
+- [ ] 🟡 Schriftart „VERANDA"/Verdana klären (Lizenz/Quelle) – siehe Rückfrage; danach als Standardschrift mit Figtree-Fallback einbinden.
+- [x] Corporate-Paket angelegt: CORPORATE.md (Farben HEX+RGB, Schriften, Logos).
 
 ## 🟠 Funktion: Termin-Kalender & Online-Anmeldung (Kundenwunsch)
 
@@ -62,6 +65,9 @@ Kontakt-Sektion (Übergangslösung).
   später via `window.APHT_BOOKING_API`.
 - [ ] 🟠 Hosting/Runtime festlegen (Node-fähig; PHP von Kundin nicht gewünscht) + E-Mail/SMTP klären
 - [ ] 🟠 Backend (Node + SQLite): API (Termine, Anmeldung), Admin-Bereich für Termin-Pflege
+  – Anna soll Termine künftig **selbst** anlegen/ändern (Antwort auf Rückfrage: ja, über den Admin-Bereich).
+  – Gruppenkurse: keine freie-Plätze-Zahl, aber Status **„voll belegt"** umschaltbar (Frontend zeigt das bereits so).
+  – Social Walks: Plätze sichtbar, auf 4 begrenzt.
 - [ ] 🟠 Anmeldung je Termin: Speicherung + E-Mail-Benachrichtigung an Anna + Bestätigungsworkflow
 - [ ] 🟠 DSGVO: AVV mit Hoster, Datenschutzerklärung ergänzen, Löschkonzept (z. B. nach dem Kurs), Spam-Schutz/TLS
 

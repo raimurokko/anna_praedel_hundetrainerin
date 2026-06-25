@@ -137,7 +137,7 @@ für `.webp`/`.woff2`. Server-Logfile-Aufbewahrung mit der Datenschutzerklärung
 
 Diese Angaben sind im Code als `TODO(Kundin)` bzw. in den Rechtsseiten als `[Platzhalter]` markiert:
 
-1. **Domain** bestätigen (aktuell überall `hundetraining-annap.de`).
+1. **Domain**: gesetzt auf `beziehungsweise.com` (überall: Canonical/OG/Sitemap/Schema/security.txt/llms.txt). E-Mail vorläufig `hallo@beziehungsweise.com` (bestätigen).
 2. **Impressum:** ladungsfähige Anschrift, Telefon, E-Mail; Kleinunternehmer (§19 UStG) oder USt-IdNr.;
    Erlaubnis nach § 11 TierSchG (Behörde/Aktenzeichen).
 3. **Hosting-Anbieter** (Name/Anschrift, Logfile-Aufbewahrungsdauer) für die Datenschutzerklärung.

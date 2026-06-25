@@ -16,7 +16,7 @@
   'use strict';
 
   var DATA_URL = 'data/termine.json';
-  var BOOKING_EMAIL = 'hallo@hundetraining-annap.de'; // TODO(Kundin): bestätigen
+  var BOOKING_EMAIL = 'hallo@beziehungsweise.com'; // TODO(Kundin): bestätigen
   var API = (typeof window.APHT_BOOKING_API === 'string' && window.APHT_BOOKING_API) || null;
 
   var boxes = document.querySelectorAll('[data-termine]');
@@ -57,6 +57,8 @@
     var empty = box.querySelector('[data-termine-empty]');
     var fallback = box.querySelector('[data-termine-fallback]');
     if (!list || !items.length) return; // ohne Termine: Fallback bleibt sichtbar
+    // Gruppenkurse: keine freie-Plätze-Zahl anzeigen, nur "Ausgebucht" wenn voll.
+    var showCount = box.getAttribute('data-termine') !== 'gruppenkurse';
 
     list.innerHTML = '';
     items.forEach(function (x) {
@@ -71,7 +73,8 @@
           '<span class="termine-item__title">' + esc(t.title || 'Termin') + '</span>' +
           (t.ort ? '<span class="termine-item__meta">' + esc(t.ort) + '</span>' : '') +
           (t.hinweis ? '<span class="termine-item__meta">' + esc(t.hinweis) + '</span>' : '') +
-          (frei !== null ? '<span class="termine-item__spots' + (ausgebucht ? ' is-full' : '') + '">' + (ausgebucht ? 'Ausgebucht' : (frei + ' von ' + (t.plaetze || frei) + ' Plätzen frei')) + '</span>' : '') +
+          (ausgebucht ? '<span class="termine-item__spots is-full">Ausgebucht</span>'
+            : (showCount && frei !== null ? '<span class="termine-item__spots">' + frei + ' von ' + (t.plaetze || frei) + ' Plätzen frei</span>' : '')) +
         '</div>';
       var btn = document.createElement('button');
       btn.type = 'button';
