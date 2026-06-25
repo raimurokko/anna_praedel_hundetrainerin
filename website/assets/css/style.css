@@ -310,6 +310,8 @@ body { padding-top: var(--header-h); }
 /* Wortmarke „beziehungsweise" – Verlauf in Weinrot-/Rosé-Tönen (gut lesbar auf dunklem Foto) */
 .hero-word {
   display: block;
+  line-height: 1.14;        /* Platz für Unterlängen (z. B. „g") */
+  padding-bottom: .08em;     /* verhindert Abschneiden bei background-clip:text */
   color: #E07A8B; /* Fallback, falls background-clip:text nicht unterstützt wird */
   background-image: linear-gradient(96deg, #EE9DAC 0%, #DC6F82 45%, #BE4459 100%);
   -webkit-background-clip: text;
