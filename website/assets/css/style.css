@@ -275,6 +275,52 @@ body { padding-top: var(--header-h); }
   color: var(--muted); text-align: center; padding: 24px;
 }
 
+/* ---------- Tierschutz: Bild-Akkordeon (aufklappende Streifen) ---------- */
+.ts-gallery { position: absolute; inset: 0; display: flex; gap: 4px; border-radius: inherit; }
+.ts-panel {
+  position: relative; flex: 1 1 0; min-width: 0; height: 100%;
+  margin: 0; padding: 0; border: 0; cursor: pointer; outline: none; overflow: hidden;
+  background-color: var(--surface-3); background-position: center; background-size: cover; background-repeat: no-repeat;
+  /* background-image wird je Panel inline gesetzt (relativ zum Dokument, subpfad-sicher) */
+  transition: flex-grow .55s cubic-bezier(.22, .61, .36, 1), filter .45s ease;
+  filter: saturate(.92) brightness(.97);
+}
+.ts-panel::after { /* Scrim für die Lesbarkeit der Bildunterschrift */
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(to top, rgba(20, 12, 11, .66) 0%, rgba(20, 12, 11, 0) 46%);
+  opacity: .55; transition: opacity .45s ease;
+}
+.ts-panel__caption {
+  position: absolute; left: 16px; right: 16px; bottom: 14px; z-index: 1; pointer-events: none;
+  color: #fff; font-weight: 600; font-size: .98rem; line-height: 1.3;
+  opacity: 0; transform: translateY(8px); transition: opacity .45s ease, transform .45s ease;
+  text-shadow: 0 1px 10px rgba(0, 0, 0, .45);
+}
+/* Zeigegeräte: Drüberfahren öffnet, Weggehen schließt */
+@media (hover: hover) {
+  .ts-gallery:hover .ts-panel { flex-grow: .6; }
+  .ts-gallery .ts-panel:hover { flex-grow: 4.6; filter: none; }
+  .ts-gallery .ts-panel:hover::after { opacity: .85; }
+  .ts-gallery .ts-panel:hover .ts-panel__caption { opacity: 1; transform: none; }
+}
+/* Tastatur: fokussiertes Panel öffnet */
+.ts-gallery:focus-within .ts-panel { flex-grow: .6; }
+.ts-gallery .ts-panel:focus-visible { flex-grow: 4.6; filter: none; box-shadow: inset 0 0 0 3px var(--wine); }
+.ts-gallery .ts-panel:focus-visible::after { opacity: .85; }
+.ts-gallery .ts-panel:focus-visible .ts-panel__caption { opacity: 1; transform: none; }
+/* Reduced Motion: kein Schieben, nur Ein-/Ausblenden */
+@media (prefers-reduced-motion: reduce) {
+  .ts-panel, .ts-panel::after, .ts-panel__caption { transition: opacity .2s ease; }
+}
+/* Touch / kein Hover: ehrliche 2-Spalten-Galerie statt Akkordeon */
+@media (hover: none) {
+  .media.ts-media { aspect-ratio: auto; }
+  .ts-gallery { position: static; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; height: auto; }
+  .ts-panel { flex: none; aspect-ratio: 4/3; border-radius: 16px; filter: none; }
+  .ts-panel::after { opacity: .7; }
+  .ts-panel__caption { opacity: 1; transform: none; }
+}
+
 /* Hero – Vollbild (Foto als Hintergrund über die gesamte Breite) */
 .hero-full {
   position: relative;

@@ -74,7 +74,7 @@ Kontakt-Sektion (Übergangslösung).
 
 ## 🟡 Inhalte & Medien
 
-- [~] 🟡 Fotos der Kundin einpflegen – **Porträt „Über mich" erledigt (Anna02)**; noch offen: Hero, KITMIR – siehe `website/bilder/README.md`
+- [~] 🟡 Fotos der Kundin einpflegen – **Porträt „Über mich" (Anna02) und Tierschutz-Bildakkordeon (tierschutz01–04) erledigt**; noch offen: Hero-Foto – siehe `website/bilder/README.md`
 - [ ] 🟡 Social-Sharing-Bild (1200×630) + Logo (512×512) ergänzen
 - [ ] 🟡 Alternativtexte (`alt`) zu allen Bildern
 - [ ] 🟡 Responsive Bilder (`srcset`/`sizes`) + `loading="lazy"`
