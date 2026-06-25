@@ -45,7 +45,7 @@ bereits umgesetzt; folgende Deltas (v. a. aus dem neueren Teil 2) wurden ergänz
 - [x] Impressum-PLZ auf 12355 korrigiert
 - [x] Opener-Zeile „Beziehungsweise – mit Vertrauen Bindung schaffen." als Beziehungs-Überschrift gesetzt (26.06.2026)
 - [x] Schriftart-Entscheidung: **bei DejaVu Sans bleiben** (Verdana nicht gewünscht, 26.06.2026)
-- **Offen (Rückfrage Kundin):** Angebot-Karten → „Übersicht" (Kundin: ja). Ziel der Übersicht noch zu klären (welche Seite/welcher Abschnitt?).
+- [x] Angebot-Karten → **Info-Karten ohne Link** umgesetzt + auf Desktop **4 nebeneinander** (mobil gestapelt, 1/2/4). Aktion läuft über „Termin anfragen" (26.06.2026).
 
 ---
 
@@ -123,6 +123,8 @@ bereits — hier geht es um **Inhalte & Reichweite**.
 - [ ] 🟢 Bilder-SEO (sprechende Dateinamen, `alt`-Texte, WebP) für Artikelmedien
 
 ## 🟢 Später / Optional
+
+- [ ] 🟢 Angebot-Karten: eigene **Detail-/Übersichtsseite je Thema** (Alles rund um die Beziehung, Beschäftigung, Alleine bleiben, Alltagssituationen) – Texte/Inhalte von Kundin nötig (Wunsch 26.06.2026, vorerst zurückgestellt). Eignet sich auch als SEO-/Content-Bausteine.
 
 - [x] GitHub-Remote anlegen & pushen — erledigt (siehe oben)
 - [x] GitHub-Pages-Vorschau live (noindex): https://raimurokko.github.io/anna_praedel_hundetrainerin/
