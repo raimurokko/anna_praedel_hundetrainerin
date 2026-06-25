@@ -398,9 +398,9 @@ body { padding-top: var(--header-h); }
    beim Seitenaufruf SOFORT voll sichtbar ist – kein Einblenden von 0 → bestes LCP
    (dieses Bild ist das LCP-Element). Die anderen sind anfangs unsichtbar und blenden
    erst im Verlauf ein. Abstand bleibt 7s (= 1/3 Zyklus). */
-.hero-seq__frame:nth-child(1) { animation-delay: -2s; }
-.hero-seq__frame:nth-child(2) { animation-delay: -9s; }
-.hero-seq__frame:nth-child(3) { animation-delay: -16s; }
+.hero-seq__frame[data-frame="1"] { animation-delay: -2s; }
+.hero-seq__frame[data-frame="2"] { animation-delay: -9s; }
+.hero-seq__frame[data-frame="3"] { animation-delay: -16s; }
 @keyframes heroCycle {
   0%   { opacity: 0; transform: scale(1.05); }
   7%   { opacity: 1; }
@@ -425,11 +425,11 @@ body { padding-top: var(--header-h); }
    Gilt für OS-Einstellung UND den A11y-Schalter ([data-motion="reduce"] killt animation global). */
 @media (prefers-reduced-motion: reduce) {
   .hero-seq__frame { animation: none; opacity: 0; transform: none; }
-  .hero-seq__frame:nth-child(1) { opacity: 1; }
+  .hero-seq__frame[data-frame="1"] { opacity: 1; }
   .hero-pause { display: none; }
 }
 [data-motion="reduce"] .hero-seq__frame { opacity: 0; transform: none; }
-[data-motion="reduce"] .hero-seq__frame:nth-child(1) { opacity: 1; }
+[data-motion="reduce"] .hero-seq__frame[data-frame="1"] { opacity: 1; }
 [data-motion="reduce"] .hero-pause { display: none; }
 
 /* Beziehung */
