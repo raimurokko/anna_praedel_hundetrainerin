@@ -659,13 +659,16 @@ a.card { text-decoration: none; color: inherit; }
 .a11y-fab svg { width: 30px; height: 30px; fill: currentColor; }
 
 .a11y-panel {
-  position: fixed; right: 0; top: 50%; transform: translateY(-50%) translateX(110%);
+  position: fixed; right: 0; top: 50%; transform: translateY(-50%) scale(.96);
+  transform-origin: right center;
   z-index: 96; width: min(340px, 94vw); max-height: 92vh; overflow-y: auto;
   background: var(--surface); color: var(--fg); border: 1px solid var(--border);
   border-radius: 16px 0 0 16px; box-shadow: var(--shadow);
-  padding: 20px; transition: transform .3s ease; visibility: hidden;
+  padding: 20px; transition: opacity .25s ease, transform .25s ease, visibility .25s;
+  opacity: 0; visibility: hidden; pointer-events: none;
 }
-.a11y-panel[data-open="true"] { transform: translateY(-50%) translateX(0); visibility: visible; }
+/* Wird in der Box ein-/ausgeblendet (kein Off-Canvas), damit kein horizontaler Scroll entsteht. */
+.a11y-panel[data-open="true"] { transform: translateY(-50%) scale(1); opacity: 1; visibility: visible; pointer-events: auto; }
 .a11y-panel__head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; }
 .a11y-panel__head h2 { font-size: 1.1rem; margin: 0; font-weight: 800; }
 .a11y-panel__close { background: transparent; border: 1px solid var(--border); border-radius: 8px; width: 34px; height: 34px; flex: 0 0 auto; cursor: pointer; color: var(--fg); font-size: 18px; line-height: 1; }
