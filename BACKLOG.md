@@ -43,8 +43,9 @@ bereits umgesetzt; folgende Deltas (v. a. aus dem neueren Teil 2) wurden ergänz
 - [x] Beratung-Untertitel „· ab 25 €" entfernt (Konsistenz: keine „ab-Preise")
 - [x] Einzeltraining-Untertitel entdoppelt → „Individuell für dich und deinen Hund" (Fließtext „Ganz auf euch zugeschnitten …" bleibt)
 - [x] Impressum-PLZ auf 12355 korrigiert
-- **Offen (Entscheidung Kundin):** Schriftart Verdana? · Opener-Zeile „Beziehungsweise – mit Vertrauen Bindung schaffen" zusätzlich als Abschnitts-Überschrift?
-- **Offen (Rückfrage Kundin):** Sollen die Angebot-Karten beim Klick auf eine Übersicht führen statt zum Kontakt?
+- [x] Opener-Zeile „Beziehungsweise – mit Vertrauen Bindung schaffen." als Beziehungs-Überschrift gesetzt (26.06.2026)
+- [x] Schriftart-Entscheidung: **bei DejaVu Sans bleiben** (Verdana nicht gewünscht, 26.06.2026)
+- **Offen (Rückfrage Kundin):** Angebot-Karten → „Übersicht" (Kundin: ja). Ziel der Übersicht noch zu klären (welche Seite/welcher Abschnitt?).
 
 ---
 
@@ -61,7 +62,7 @@ bereits umgesetzt; folgende Deltas (v. a. aus dem neueren Teil 2) wurden ergänz
 - [ ] 🔴 Rechtstexte vor Veröffentlichung juristisch prüfen (lassen)
 - [x] Preisauszeichnung (PAngV): **regulär USt-pflichtig** (nicht §19) → Preise als „inkl. gesetzlicher USt" ausgewiesen; Steuernummer im Impressum.
 - [x] Standardschrift: **DejaVu Sans** (frei, Verdana-nah) lokal eingebunden, Figtree als Fallback. (Verdana selbst ist proprietär/nicht einbettbar.)
-- [ ] 🟡 Kundenwunsch (Teil 2): **Verdana ausprobieren**. Vorschlag: Verdana als erste Wahl (Systemschrift, nicht gehostet), DejaVu Sans als gehosteter Fallback → rechts-/DSGVO-sicher. **Entscheidung Kundin offen.**
+- [x] 🟡 Kundenwunsch (Teil 2): Verdana ausprobieren? → **Entscheidung Kundin (26.06.2026): bei DejaVu Sans bleiben.**
 - [ ] 🟢 Perf: DejaVu-Sans-woff2 sind groß (~250 KB je Schnitt) – bei Bedarf auf genutzte Glyphen subsetten.
 - [x] Corporate-Paket angelegt: CORPORATE.md (Farben HEX+RGB, Schriften, Logos).
 
@@ -91,7 +92,8 @@ Kontakt-Sektion (Übergangslösung).
 
 ## 🟡 Inhalte & Medien
 
-- [~] 🟡 Fotos der Kundin einpflegen – **Porträt „Über mich" (Anna02) und Tierschutz-Bildakkordeon (tierschutz01–04) erledigt**; noch offen: Hero-Foto – siehe `website/bilder/README.md`
+- [x] 🟡 Fotos der Kundin einpflegen – Porträt „Über mich" (Anna02), Tierschutz-Bildakkordeon (tierschutz01–04) **und Hero-Bildsequenz (hero01–03, je WebP + 960px-Variante) erledigt**
+- [x] 🟡 Neue Hero-Sektion lt. Kundin-Vorlage: automatische 3-Bild-Sequenz (Ken-Burns-Überblendung) + barrierefreier Pause-Button + Reduced-Motion-Fallback (nur 1. Bild)
 - [ ] 🟡 Social-Sharing-Bild (1200×630) + Logo (512×512) ergänzen
 - [ ] 🟡 Alternativtexte (`alt`) zu allen Bildern
 - [ ] 🟡 Responsive Bilder (`srcset`/`sizes`) + `loading="lazy"`

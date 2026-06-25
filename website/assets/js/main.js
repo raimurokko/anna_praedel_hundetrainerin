@@ -328,4 +328,19 @@
     // Nach 12 Sekunden von selbst ausblenden (und nicht erneut zeigen).
     setTimeout(dismiss, 12000);
   })();
+
+  // Hero-Bildsequenz: Pause/Weiter umschalten (nur auf der Startseite vorhanden)
+  (function () {
+    var seq = document.querySelector('[data-hero-seq]');
+    var btn = document.querySelector('[data-hero-pause]');
+    if (!seq || !btn) return;
+    var icon = btn.querySelector('[data-hero-pause-icon]');
+    var label = btn.querySelector('[data-hero-pause-label]');
+    btn.addEventListener('click', function () {
+      var paused = seq.classList.toggle('is-paused');
+      btn.setAttribute('aria-pressed', paused ? 'true' : 'false');
+      if (icon) icon.innerHTML = paused ? '&#9654;' : '&#10074;&#10074;';
+      if (label) label.textContent = paused ? 'Weiter' : 'Pause';
+    });
+  })();
 })();

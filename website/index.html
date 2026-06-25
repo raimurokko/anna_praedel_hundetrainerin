@@ -218,13 +218,23 @@
     <!-- ============ HERO (Vollbild – Bild als Hintergrund über die ganze Breite) ============ -->
     <section class="hero-full" aria-labelledby="hero-title">
       <div class="hero-full__media">
-        <!-- TODO(Kundin): Hero-Foto quer, hochauflösend → /bilder/anna-mit-hund-quer.webp
-             Danach folgendes <img> einkommentieren und den Platzhalter darunter entfernen:
-        <img src="bilder/anna-mit-hund-quer.webp" alt="Anna Prädel mit einem Hund beim Training in Berlin Rudow" fetchpriority="high" decoding="async"> -->
-        <span class="hero-full__placeholder" aria-hidden="true"></span>
-        <span class="hero-full__hint" aria-hidden="true">FOTO .webp — Anna mit Hund, quer, hochauflösend</span>
+        <div class="hero-seq" data-hero-seq role="img" aria-label="Anna Prädel beim Training mit verschiedenen Hunden in der Natur rund um Berlin Rudow">
+          <img class="hero-seq__frame" alt="" style="object-position:55% 60%"
+               src="bilder/hero01-960.webp" srcset="bilder/hero01-960.webp 960w, bilder/hero01.webp 1600w" sizes="100vw"
+               width="1600" height="1200" fetchpriority="high" decoding="async">
+          <img class="hero-seq__frame" alt="" style="object-position:50% 48%"
+               src="bilder/hero02-960.webp" srcset="bilder/hero02-960.webp 960w, bilder/hero02.webp 1384w" sizes="100vw"
+               width="1384" height="842" loading="lazy" decoding="async">
+          <img class="hero-seq__frame" alt="" style="object-position:50% 50%"
+               src="bilder/hero03-960.webp" srcset="bilder/hero03-960.webp 960w, bilder/hero03.webp 1600w" sizes="100vw"
+               width="1600" height="900" loading="lazy" decoding="async">
+        </div>
       </div>
       <div class="hero-full__overlay" aria-hidden="true"></div>
+      <button class="hero-pause" type="button" aria-pressed="false" data-hero-pause>
+        <span class="hero-pause__icon" aria-hidden="true" data-hero-pause-icon>&#10074;&#10074;</span>
+        <span data-hero-pause-label>Pause</span>
+      </button>
       <div class="hero-full__inner">
         <span class="pill pill--on-photo"><span class="pill__dot" aria-hidden="true"></span>Hundetraining in Berlin Rudow</span>
         <h1 id="hero-title">
@@ -244,7 +254,7 @@
       <div class="beziehung__grid" data-reveal>
         <div class="beziehung__sticky">
           <span class="eyebrow">Meine Haltung</span>
-          <h2>Eine gesunde Beziehung ist das Fundament.</h2>
+          <h2>Beziehungsweise – mit Vertrauen Bindung schaffen.</h2>
         </div>
         <div class="beziehung__body">
           <p class="lead-strong">Wenn mich jemand fragt, was das Wichtigste im Bezug auf das Zusammenleben mit einem Hund ist, dann wird meine Antwort immer lauten: <strong>die Beziehung!</strong></p>
