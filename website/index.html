@@ -29,9 +29,13 @@
   <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
   <link rel="manifest" href="site.webmanifest">
 
-  <!-- LCP-Bild = erstes Hero-Foto (Frame 1): lädt eager mit fetchpriority="high" und
-       steht als erstes Body-Element → früh geladen. AVIF (klein) mit WebP-Fallback,
-       siehe <picture> im Hero. AVIF mit avifenc/aom erzeugt (Standard 8-bit/YUV420). -->
+  <!-- LCP-Bild = erstes Hero-Foto (Frame 1), AVIF (klein) mit WebP-Fallback, siehe
+       <picture> im Hero. AVIF mit avifenc/aom (Standard 8-bit/YUV420).
+       AVIF-Preload: da das Bild jetzt klein ist (~54 KB), startet es parallel zum CSS
+       und ist meist schon zum ersten Paint fertig → LCP ≈ FCP. type="image/avif" → nur
+       AVIF-fähige Browser laden es (kein Doppel-Download mit dem WebP-Fallback). -->
+  <link rel="preload" as="image" type="image/avif"
+        imagesrcset="bilder/hero01-960.avif 960w, bilder/hero01-1280.avif 1280w, bilder/hero01.avif 1600w" imagesizes="100vw" fetchpriority="high">
 
   <!-- Schriften lokal (DSGVO-konform, keine Google-Server) -->
   <link rel="preload" href="assets/fonts/dejavusans-latin-400.woff2" as="font" type="font/woff2" crossorigin>
