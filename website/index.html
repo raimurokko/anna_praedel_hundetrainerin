@@ -29,11 +29,11 @@
   <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
   <link rel="manifest" href="site.webmanifest">
 
-  <!-- Hinweis LCP: Das erste Hero-Foto ist das LCP-Element. Es lädt eager mit
-       fetchpriority="high" (siehe <img> im Hero) und steht als erstes Element im
-       Body – der Preload-Scanner findet es sofort. KEIN separater <link rel=preload
-       as=image>, da der responsive Preload sonst eine andere srcset-Kandidatengröße
-       wählen kann als das <img> → Doppel-Download. -->
+  <!-- LCP-Bild (erstes Hero-Foto) früh vorladen, damit es PARALLEL zum CSS startet
+       (schließt die FCP→LCP-Lücke). imagesrcset/imagesizes identisch zum <img> →
+       gleiche Kandidaten-Wahl, kein Doppel-Download auf stabilen Geräten. -->
+  <link rel="preload" as="image" href="bilder/hero01-960.webp"
+        imagesrcset="bilder/hero01-960.webp 960w, bilder/hero01-1280.webp 1280w, bilder/hero01.webp 1600w" imagesizes="100vw" fetchpriority="high">
 
   <!-- Schriften lokal (DSGVO-konform, keine Google-Server) -->
   <link rel="preload" href="assets/fonts/dejavusans-latin-400.woff2" as="font" type="font/woff2" crossorigin>
@@ -244,7 +244,7 @@
       <div class="hero-full__inner">
         <span class="pill pill--on-photo"><span class="pill__dot" aria-hidden="true"></span>Hundetraining in Berlin Rudow</span>
         <h1 id="hero-title">
-          <span class="hero-word"><span class="hero-word__stem">beziehung</span><span class="hero-word__rest">sweise</span></span>
+          <span class="hero-word"><span class="hero-word__stem">Beziehung</span><span class="hero-word__rest">sweise</span></span>
           <span class="hero-claim">mit Vertrauen Bindung schaffen</span>
         </h1>
         <p>Einfühlsames Training für dich und deinen Hund – auf Vertrauen gebaut, nicht auf Druck.</p>
@@ -461,18 +461,10 @@
         </div>
         <div class="media media--wide ts-media">
           <div class="ts-gallery" role="group" aria-label="Eindrücke aus dem Tierschutz">
-            <button class="ts-panel" type="button" style="background-image:url('bilder/tierschutz01.webp')" aria-label="Anna sitzt lächelnd und hält zwei Welpen aus dem Tierschutz im Arm">
-              <span class="ts-panel__caption">Anna mit Tierschutz-Welpen</span>
-            </button>
-            <button class="ts-panel" type="button" style="background-image:url('bilder/tierschutz02.webp')" aria-label="Schlafender Tierschutz-Welpe, im Hintergrund weitere Welpen">
-              <span class="ts-panel__caption">Müde nach dem Toben</span>
-            </button>
-            <button class="ts-panel" type="button" style="background-image:url('bilder/tierschutz03.webp')" aria-label="Mehrere gerettete Hunde, darunter ein Welpe, auf einer Treppe vor Ort">
-              <span class="ts-panel__caption">Unsere Schützlinge vor Ort</span>
-            </button>
-            <button class="ts-panel" type="button" style="background-image:url('bilder/tierschutz04.webp')" aria-label="Zwei junge Hunde im Freien, einer blickt neugierig in die Kamera">
-              <span class="ts-panel__caption">Neugierig unterwegs</span>
-            </button>
+            <button class="ts-panel" type="button" style="background-image:url('bilder/tierschutz01.webp')" aria-label="Anna sitzt lächelnd und hält zwei Welpen aus dem Tierschutz im Arm">            </button>
+            <button class="ts-panel" type="button" style="background-image:url('bilder/tierschutz02.webp')" aria-label="Schlafender Tierschutz-Welpe, im Hintergrund weitere Welpen">            </button>
+            <button class="ts-panel" type="button" style="background-image:url('bilder/tierschutz03.webp')" aria-label="Mehrere gerettete Hunde, darunter ein Welpe, auf einer Treppe vor Ort">            </button>
+            <button class="ts-panel" type="button" style="background-image:url('bilder/tierschutz04.webp')" aria-label="Zwei junge Hunde im Freien, einer blickt neugierig in die Kamera">            </button>
           </div>
         </div>
       </div>
