@@ -93,7 +93,7 @@ Kontakt-Sektion (Übergangslösung).
 ## 🟡 Inhalte & Medien
 
 - [x] 🟡 Fotos der Kundin einpflegen – Porträt „Über mich" (Anna02), Tierschutz-Bildakkordeon (tierschutz01–04) **und Hero-Bildsequenz (hero01–03, je WebP + 960px-Variante) erledigt**
-- [x] 🟡 Neue Hero-Sektion lt. Kundin-Vorlage: automatische 3-Bild-Sequenz (Ken-Burns-Überblendung) + barrierefreier Pause-Button + Reduced-Motion-Fallback (nur 1. Bild)
+- [x] 🟡 Hero-Sektion: **statisches Einzelfoto** (hero01, Bergfoto) als `<picture>` (AVIF + WebP-Fallback, responsiv, vorgeladen). Die anfängliche 3-Bild-Fade-Sequenz war auf Kundinwunsch (26.06.2026) wieder entfernt (mochte das Fade nicht); hero02/03 stehen als Fotos bereit, falls woanders genutzt.
 - [ ] 🟡 Social-Sharing-Bild (1200×630) + Logo (512×512) ergänzen
 - [ ] 🟡 Alternativtexte (`alt`) zu allen Bildern
 - [ ] 🟡 Responsive Bilder (`srcset`/`sizes`) + `loading="lazy"`
