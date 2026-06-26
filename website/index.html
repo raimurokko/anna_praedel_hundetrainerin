@@ -225,24 +225,15 @@
     <section class="hero-full" aria-labelledby="hero-title">
       <div class="hero-full__media">
         <div class="hero-seq" data-hero-seq role="img" aria-label="Anna Prädel beim Training mit verschiedenen Hunden in der Natur rund um Berlin Rudow">
-          <picture>
-            <source type="image/avif" srcset="bilder/hero01-960.avif 960w, bilder/hero01.avif 1600w" sizes="100vw">
-            <source type="image/webp" srcset="bilder/hero01-960.webp 960w, bilder/hero01.webp 1600w" sizes="100vw">
-            <img class="hero-seq__frame" data-frame="1" alt="" style="object-position:55% 60%"
-                 src="bilder/hero01-960.webp" width="1600" height="1200" fetchpriority="high" decoding="async">
-          </picture>
-          <picture>
-            <source type="image/avif" srcset="bilder/hero02-960.avif 960w, bilder/hero02.avif 1384w" sizes="100vw">
-            <source type="image/webp" srcset="bilder/hero02-960.webp 960w, bilder/hero02.webp 1384w" sizes="100vw">
-            <img class="hero-seq__frame" data-frame="2" alt="" style="object-position:50% 48%"
-                 src="bilder/hero02-960.webp" width="1384" height="842" loading="lazy" decoding="async">
-          </picture>
-          <picture>
-            <source type="image/avif" srcset="bilder/hero03-960.avif 960w, bilder/hero03.avif 1600w" sizes="100vw">
-            <source type="image/webp" srcset="bilder/hero03-960.webp 960w, bilder/hero03.webp 1600w" sizes="100vw">
-            <img class="hero-seq__frame" data-frame="3" alt="" style="object-position:50% 50%"
-                 src="bilder/hero03-960.webp" width="1600" height="900" loading="lazy" decoding="async">
-          </picture>
+          <img class="hero-seq__frame" data-frame="1" alt="" style="object-position:55% 60%"
+               src="bilder/hero01-960.webp" srcset="bilder/hero01-960.webp 960w, bilder/hero01-1280.webp 1280w, bilder/hero01.webp 1600w" sizes="100vw"
+               width="1600" height="1200" fetchpriority="high" decoding="async">
+          <img class="hero-seq__frame" data-frame="2" alt="" style="object-position:50% 48%"
+               src="bilder/hero02-960.webp" srcset="bilder/hero02-960.webp 960w, bilder/hero02-1280.webp 1280w, bilder/hero02.webp 1384w" sizes="100vw"
+               width="1384" height="842" loading="lazy" fetchpriority="low" decoding="async">
+          <img class="hero-seq__frame" data-frame="3" alt="" style="object-position:50% 50%"
+               src="bilder/hero03-960.webp" srcset="bilder/hero03-960.webp 960w, bilder/hero03-1280.webp 1280w, bilder/hero03.webp 1600w" sizes="100vw"
+               width="1600" height="900" loading="lazy" fetchpriority="low" decoding="async">
         </div>
       </div>
       <div class="hero-full__overlay" aria-hidden="true"></div>
