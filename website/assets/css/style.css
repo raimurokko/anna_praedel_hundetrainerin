@@ -259,22 +259,16 @@ body { padding-top: var(--header-h); }
 
 /* ---------- 6. Sektionen ---------- */
 
-/* Foto-Platzhalter (bis echte Bilder geliefert werden) */
+/* Bild-Container (Seitenverhältnis reserviert, dezenter Ton bis das Bild geladen ist – kein Streifen-Platzhalter) */
 .media {
   position: relative; overflow: hidden; border-radius: 26px;
   background: var(--surface-2);
-  background-image: repeating-linear-gradient(135deg, var(--surface-2) 0 22px, var(--surface-3) 22px 44px);
   border: 1px solid var(--border);
 }
 .media img, .media video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; border-radius: inherit; }
 .media picture { position: absolute; inset: 0; border-radius: inherit; }
 /* Foto-Variante: deutlich sichtbar abgerundete Ecken */
 .media--photo { border-radius: 28px; }
-.media__hint {
-  position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
-  font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 13px;
-  color: var(--muted); text-align: center; padding: 24px;
-}
 
 /* ---------- Tierschutz: Bild-Akkordeon (aufklappende Streifen) ---------- */
 .ts-gallery { position: absolute; inset: 0; display: flex; gap: 4px; border-radius: inherit; }
@@ -341,18 +335,9 @@ body { padding-top: var(--header-h); }
 }
 .hero-full__media { position: absolute; inset: 0; }
 .hero-full__media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-.hero-full__placeholder {
-  position: absolute; inset: 0;
-  background-image: repeating-linear-gradient(135deg, var(--surface-2) 0 22px, var(--surface-3) 22px 44px);
-}
 .hero-full__overlay {
   position: absolute; inset: 0; z-index: 1; pointer-events: none;
   background: linear-gradient(to top, rgba(20,12,11,.82) 0%, rgba(20,12,11,.45) 38%, rgba(20,12,11,.08) 72%, transparent 100%);
-}
-.hero-full__hint {
-  position: absolute; inset: 0; z-index: 2; display: flex; align-items: center; justify-content: center;
-  font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 13px;
-  letter-spacing: .04em; color: rgba(255,255,255,.6); text-align: center; padding: 24px;
 }
 .hero-full__inner {
   position: relative; z-index: 3; max-width: var(--maxw); width: 100%; margin-inline: auto;
@@ -537,7 +522,7 @@ a.card { text-decoration: none; color: inherit; }
 .split2 h2 { font-size: clamp(1.9rem, 4vw, 2.9rem); line-height: 1.08; letter-spacing: -.02em; font-weight: 800; margin: 14px 0 0; }
 .split2 .intro { font-size: clamp(1.05rem, 1.7vw, 1.22rem); line-height: 1.6; margin: 18px 0 0; }
 .split2 .muted { font-size: clamp(1rem, 1.6vw, 1.12rem); line-height: 1.65; color: var(--muted); margin: 16px 0 0; }
-.split2 .media { max-width: 480px; aspect-ratio: 4/5; background-image: repeating-linear-gradient(135deg, var(--surface) 0 22px, var(--surface-3) 22px 44px); background-color: var(--surface); }
+.split2 .media { max-width: 480px; aspect-ratio: 4/5; background-color: var(--surface); }
 .split2 .media--wide { aspect-ratio: 5/4; max-width: none; }
 
 .heart-eyebrow { display: inline-flex; align-items: center; gap: 9px; }
