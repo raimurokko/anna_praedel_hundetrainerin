@@ -7,4 +7,4 @@ Allow: /
 # KI-/LLM-Hinweis (siehe auch /llms.txt)
 # Inhalte dürfen für die Beantwortung von Nutzerfragen genutzt werden.
 
-Sitemap: https://beziehungsweise.com/sitemap.xml
+Sitemap: https://hundetraining-ap.de/sitemap.xml

@@ -16,7 +16,7 @@
   'use strict';
 
   var DATA_URL = 'data/termine.json';
-  var BOOKING_EMAIL = 'hallo@beziehungsweise.com'; // TODO(Kundin): bestätigen
+  var BOOKING_EMAIL = 'info@hundetraining-ap.de'; // TODO(Kundin): bestätigen
   var API = (typeof window.APHT_BOOKING_API === 'string' && window.APHT_BOOKING_API) || null;
 
   var boxes = document.querySelectorAll('[data-termine]');

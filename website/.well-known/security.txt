@@ -1,10 +1,10 @@
 # security.txt – Anna Prädel · Hundetraining (RFC 9116)
 # Kontakt für sicherheitsrelevante Hinweise zu dieser Website.
 
-Contact: mailto:hallo@beziehungsweise.com
+Contact: mailto:info@hundetraining-ap.de
 Expires: 2027-06-16T00:00:00.000Z
 Preferred-Languages: de, en
-Canonical: https://beziehungsweise.com/.well-known/security.txt
+Canonical: https://hundetraining-ap.de/.well-known/security.txt
 
 # Hinweis: Bitte vor Veröffentlichung die Kontakt-E-Mail bestätigen
 # und das Expires-Datum jährlich aktualisieren.
