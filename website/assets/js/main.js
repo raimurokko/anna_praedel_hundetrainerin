@@ -68,19 +68,19 @@
         '</div>' +
         '<div class="a11y-row">' +
           '<span class="a11y-row__label">Lesbare Schrift (Dyslexie)</span>' +
-          '<button class="a11y-toggle" type="button" data-a11y-toggle="dyslexia" aria-pressed="false">An/Aus</button>' +
+          '<button class="a11y-toggle" type="button" data-a11y-toggle="dyslexia" aria-pressed="false" aria-label="Lesbare Schrift (Dyslexie)">An/Aus</button>' +
         '</div>' +
         '<div class="a11y-row">' +
           '<span class="a11y-row__label">Hoher Kontrast</span>' +
-          '<button class="a11y-toggle" type="button" data-a11y-toggle="contrast" aria-pressed="false">An/Aus</button>' +
+          '<button class="a11y-toggle" type="button" data-a11y-toggle="contrast" aria-pressed="false" aria-label="Hoher Kontrast">An/Aus</button>' +
         '</div>' +
         '<div class="a11y-row">' +
           '<span class="a11y-row__label">Links unterstreichen</span>' +
-          '<button class="a11y-toggle" type="button" data-a11y-toggle="underline" aria-pressed="false">An/Aus</button>' +
+          '<button class="a11y-toggle" type="button" data-a11y-toggle="underline" aria-pressed="false" aria-label="Links unterstreichen">An/Aus</button>' +
         '</div>' +
         '<div class="a11y-row">' +
           '<span class="a11y-row__label">Animationen reduzieren</span>' +
-          '<button class="a11y-toggle" type="button" data-a11y-toggle="motion" aria-pressed="false">An/Aus</button>' +
+          '<button class="a11y-toggle" type="button" data-a11y-toggle="motion" aria-pressed="false" aria-label="Animationen reduzieren">An/Aus</button>' +
         '</div>' +
         (canSpeak ?
         '<div class="a11y-row" style="flex-direction:column;align-items:stretch;gap:8px;">' +
