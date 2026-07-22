@@ -329,28 +329,13 @@
     setTimeout(dismiss, 12000);
   })();
 
-  // Hero-Bildsequenz: Pause/Weiter umschalten (nur auf der Startseite vorhanden)
-  (function () {
-    var seq = document.querySelector('[data-hero-seq]');
-    var btn = document.querySelector('[data-hero-pause]');
-    if (!seq || !btn) return;
-    var icon = btn.querySelector('[data-hero-pause-icon]');
-    var label = btn.querySelector('[data-hero-pause-label]');
-    btn.addEventListener('click', function () {
-      var paused = seq.classList.toggle('is-paused');
-      btn.setAttribute('aria-pressed', paused ? 'true' : 'false');
-      if (icon) icon.innerHTML = paused ? '&#9654;' : '&#10074;&#10074;';
-      if (label) label.textContent = paused ? 'Weiter' : 'Pause';
-    });
-  })();
-
   /* ---------- 7. E-Mail-Konfigurator (Dialog) ----------
      Fortschrittliche Verbesserung: Ohne JS bzw. ohne <dialog>-Unterstützung
      bleibt die E-Mail-Karte ein normaler mailto:-Link (Fallback). */
   (function () {
     var dialog = document.getElementById('mail-configurator');
     var trigger = document.querySelector('[data-mail-configurator]');
-    if (!dialog || !trigger || typeof dialog.showModal !== 'function') return;
+    if (!dialog || !trigger || typeof dialog.show !== 'function') return;
 
     var MAIL = 'info@hundetraining-ap.de';
     var TOPICS = {
@@ -409,25 +394,50 @@
     // Da JS den Dialog jetzt bereitstellt: Karte als Dialog-Öffner auszeichnen.
     trigger.setAttribute('aria-haspopup', 'dialog');
 
-    // Öffnen statt direkt ins Mailprogramm zu springen
-    trigger.addEventListener('click', function (e) {
-      e.preventDefault();
+    // Eigener Backdrop: Der Dialog ist bewusst NICHT-modal (dialog.show()), damit der
+    // Barrierefreiheits-Button erreichbar bleibt – ein modaler Dialog (showModal) würde
+    // alles außerhalb inert schalten. Der Backdrop fängt Klicks daneben ab (schließt),
+    // A11y-FAB/Panel liegen per z-index darüber und bleiben bedienbar.
+    var backdrop = document.createElement('div');
+    backdrop.className = 'maildlg-backdrop';
+    document.body.appendChild(backdrop);
+
+    var lastFocus = null;
+    function cleanup() {
+      backdrop.classList.remove('is-visible');
+      document.documentElement.style.overflow = '';
+      resetCopyLabel();
+      if (lastFocus && typeof lastFocus.focus === 'function') { try { lastFocus.focus(); } catch (e) {} }
+    }
+    function openDialog() {
+      lastFocus = document.activeElement;
       resetCopyLabel();
       render();
-      dialog.showModal();
+      backdrop.classList.add('is-visible');
+      dialog.show();
+      document.documentElement.style.overflow = 'hidden';
+      var first = dialog.querySelector('#mail-topic');
+      if (first) { try { first.focus(); } catch (e) {} }
+    }
+    function closeDialog() {
+      if (!dialog.open) return;
+      dialog.close();
+      cleanup();   // direkt aufräumen – das native close-Event feuert bei nicht-modalen Dialogen nicht zuverlässig
+    }
+
+    // Öffnen statt direkt ins Mailprogramm zu springen
+    trigger.addEventListener('click', function (e) { e.preventDefault(); openDialog(); });
+
+    dialog.querySelectorAll('[data-mail-close]').forEach(function (b) {
+      b.addEventListener('click', closeDialog);
+    });
+    backdrop.addEventListener('click', closeDialog);
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && dialog.open) { e.preventDefault(); closeDialog(); }
     });
 
-    // Schließen
-    dialog.querySelectorAll('[data-mail-close]').forEach(function (b) {
-      b.addEventListener('click', function () { dialog.close(); });
-    });
-    // Klick auf den Backdrop (außerhalb des Panels) schließt
-    dialog.addEventListener('mousedown', function (e) {
-      var r = panel.getBoundingClientRect();
-      var inside = e.clientX >= r.left && e.clientX <= r.right && e.clientY >= r.top && e.clientY <= r.bottom;
-      if (!inside) dialog.close();
-    });
-    dialog.addEventListener('close', resetCopyLabel);
+    // Sicherheitsnetz, falls der Dialog anderweitig geschlossen wird (idempotent).
+    dialog.addEventListener('close', cleanup);
 
     // Kopieren (mit Fallback)
     if (copyBtn) {

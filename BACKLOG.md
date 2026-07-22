@@ -5,6 +5,27 @@ Priorität: 🔴 hoch · 🟡 mittel · 🟢 niedrig
 
 ---
 
+## ✅ Session 22.07.2026
+
+Erledigt: Einzeltraining-Karten-Icons (Herz/Pfote/Haus/Tasse), Kontakt-Icons
+(WhatsApp/Instagram/Facebook/Briefumschlag als echte SVG-Glyphen), **E-Mail-Konfigurator**
+(nicht-modaler Dialog, damit der Barrierefreiheits-Button erreichbar bleibt; Themenauswahl,
+Live-Vorschau, mailto-Öffnen + Kopieren, mailto-Fallback ohne JS), **Social-Bild 1200×630**
+aus dem Über-mich-Foto, **IPTC „human-made"** (DigitalSourceType=digitalCapture) in allen Fotos,
+Provenienz per Meta + JSON-LD, `llms.txt` erweitert, PLZ im Schema, FAQ-Schema angeglichen,
+toter Code entfernt (`.hero-word/.hero-claim`, `.termine-*`, `.booking-modal*`, hero-seq-JS,
+`termine.js`, `data/termine.json`), **hero02/03 entfernt** (LCP).
+
+**Neu offen (warten auf Input der Kundin):**
+- [ ] 🟡 **E-E-A-T (SEO/GEO):** Annas Qualifikation/Erfahrung + § 11 TierSchG sichtbar in „Über mich"
+  ergänzen (bisher nur im Impressum). Braucht Text-/Angaben-Input.
+- [ ] 🟢 Dyslexie-Modus: Auswahl-Optionen werden im **offenen** Dropdown je nach Browser
+  systemseitig gerendert (native Popup-Schrift) — nur bedingt per CSS beeinflussbar. Falls
+  konsequent nötig: Custom-Listbox (Aufwand). Aktuell Labels gekürzt + `optgroup`, Font auf
+  `select/option` gesetzt.
+
+---
+
 ## ✅ Erledigt (Grundgerüst)
 
 - [x] Bündel-Datei analysiert & Assets/Inhalte extrahiert
@@ -93,8 +114,8 @@ Kontakt-Sektion (Übergangslösung).
 ## 🟡 Inhalte & Medien
 
 - [x] 🟡 Fotos der Kundin einpflegen – Porträt „Über mich" (Anna02), Tierschutz-Bildakkordeon (tierschutz01–04) **und Hero-Bildsequenz (hero01–03, je WebP + 960px-Variante) erledigt**
-- [x] 🟡 Hero-Sektion: **statisches Einzelfoto** (hero01, Bergfoto) als `<picture>` (AVIF + WebP-Fallback, responsiv, vorgeladen). Die anfängliche 3-Bild-Fade-Sequenz war auf Kundinwunsch (26.06.2026) wieder entfernt (mochte das Fade nicht); hero02/03 stehen als Fotos bereit, falls woanders genutzt.
-- [ ] 🟡 Social-Sharing-Bild (1200×630) + Logo (512×512) ergänzen
+- [x] 🟡 Hero-Sektion: **statisches Einzelfoto** (hero01, Bergfoto) als `<picture>` (AVIF + WebP-Fallback, responsiv, vorgeladen). Die anfängliche 3-Bild-Fade-Sequenz war auf Kundinwunsch (26.06.2026) wieder entfernt (mochte das Fade nicht). **hero02/03 am 22.07.2026 entfernt** (wegen LCP nicht genutzt).
+- [x] 🟡 Social-Sharing-Bild (1200×630) ergänzt (22.07.2026: `bilder/social/anna-mit-hund.jpg`, Crop aus Über-mich-Foto; Logo 512×512 als icon-512.png vorhanden)
 - [ ] 🟡 Alternativtexte (`alt`) zu allen Bildern
 - [ ] 🟡 Responsive Bilder (`srcset`/`sizes`) + `loading="lazy"`
 - [x] Markenzeichen „Herz mit Pfote": Favicon (SVG + favicon.ico 16/32), Touch-/PWA-Icons (180/192/512), Logo im Header/Footer (CSS-Maske, theme-fähig) und Schema.org-Logo

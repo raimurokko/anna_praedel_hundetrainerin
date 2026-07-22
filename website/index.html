@@ -481,12 +481,18 @@
           <p class="maildlg__field maildlg__field--full">
             <label for="mail-topic">Worum geht es?</label>
             <select id="mail-topic" data-mail-field="topic">
-              <option value="beziehung">Einzeltraining – Alles rund um die Beziehung</option>
-              <option value="beschaeftigung">Einzeltraining – Beschäftigung</option>
-              <option value="alleine">Einzeltraining – Alleine bleiben</option>
-              <option value="alltag">Einzeltraining – Alltagssituationen</option>
-              <option value="beratung">Beratung vor der Anschaffung eines Hundes</option>
-              <option value="allgemein">Allgemeine Anfrage / etwas anderes</option>
+              <optgroup label="Einzeltraining">
+                <option value="beziehung">Alles rund um die Beziehung</option>
+                <option value="beschaeftigung">Beschäftigung</option>
+                <option value="alleine">Alleine bleiben</option>
+                <option value="alltag">Alltagssituationen</option>
+              </optgroup>
+              <optgroup label="Beratung">
+                <option value="beratung">Vor der Anschaffung eines Hundes</option>
+              </optgroup>
+              <optgroup label="Sonstiges">
+                <option value="allgemein">Allgemeine Anfrage</option>
+              </optgroup>
             </select>
           </p>
           <p class="maildlg__field">

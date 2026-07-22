@@ -18,3 +18,6 @@ tmp/
 # Node (falls später ein Build-Tool hinzukommt)
 node_modules/
 dist/
+
+# Design-Entwürfe (Roh-Zips gehören nicht ins Deploy)
+designentwürfe/*.zip
