@@ -708,8 +708,16 @@ a.card { text-decoration: none; color: inherit; }
 .maildlg__field--full { grid-column: 1 / -1; }
 .maildlg__field label { font-weight: 600; font-size: .95rem; }
 .maildlg__opt { font-weight: 400; color: var(--muted); }
-.maildlg select, .maildlg input, .maildlg textarea { font: inherit; color: var(--fg); background: var(--surface-2); border: 1px solid var(--border); border-radius: 12px; padding: 10px 12px; width: 100%; }
-.maildlg select:focus, .maildlg input:focus, .maildlg textarea:focus { outline: 2px solid var(--wine); outline-offset: 1px; border-color: var(--wine); }
+.maildlg input[type="text"], .maildlg textarea { font: inherit; color: var(--fg); background: var(--surface-2); border: 1px solid var(--border); border-radius: 12px; padding: 10px 12px; width: 100%; }
+.maildlg input[type="text"]:focus, .maildlg textarea:focus { outline: 2px solid var(--wine); outline-offset: 1px; border-color: var(--wine); }
+/* Themenauswahl als Radio-Gruppe (Dyslexie-Schrift greift, keine native Popup-Grenze) */
+.maildlg__topics { border: 1px solid var(--border); border-radius: 12px; padding: 10px 14px 14px; margin: 0; min-width: 0; }
+.maildlg__topics legend { font-weight: 600; font-size: .95rem; padding: 0 4px; }
+.maildlg__topicgroup { font-size: .78rem; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin: 12px 0 2px; }
+.maildlg__radio { display: flex; align-items: center; gap: 10px; padding: 7px 8px; border-radius: 8px; cursor: pointer; font-size: 1rem; line-height: 1.35; }
+.maildlg__radio:hover { background: var(--surface-2); }
+.maildlg__radio input[type="radio"] { width: 20px; height: 20px; flex: 0 0 auto; margin: 0; padding: 0; accent-color: var(--wine); cursor: pointer; }
+.maildlg__radio:focus-within { outline: 2px solid var(--wine); outline-offset: 1px; background: var(--surface-2); }
 .maildlg textarea { resize: vertical; min-height: 72px; line-height: 1.5; }
 .maildlg__preview { background: var(--surface-2); border: 1px solid var(--border); border-radius: 14px; padding: 14px 16px; }
 .maildlg__preview-label { display: block; font-size: .78rem; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin-bottom: 8px; }

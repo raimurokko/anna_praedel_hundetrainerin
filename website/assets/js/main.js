@@ -358,7 +358,13 @@
     function fields() {
       var out = {};
       dialog.querySelectorAll('[data-mail-field]').forEach(function (el) {
-        out[el.getAttribute('data-mail-field')] = (el.value || '').trim();
+        var key = el.getAttribute('data-mail-field');
+        if (el.tagName === 'FIELDSET') {
+          var checked = el.querySelector('input[type="radio"]:checked');
+          out[key] = checked ? checked.value : '';
+        } else {
+          out[key] = (el.value || '').trim();
+        }
       });
       return out;
     }
@@ -416,7 +422,7 @@
       backdrop.classList.add('is-visible');
       dialog.show();
       document.documentElement.style.overflow = 'hidden';
-      var first = dialog.querySelector('#mail-topic');
+      var first = dialog.querySelector('input[name="mail-topic"]:checked') || dialog.querySelector('input[name="mail-topic"]');
       if (first) { try { first.focus(); } catch (e) {} }
     }
     function closeDialog() {
