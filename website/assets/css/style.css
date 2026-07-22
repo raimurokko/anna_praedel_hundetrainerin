@@ -708,7 +708,7 @@ a.card { text-decoration: none; color: inherit; }
 .maildlg__field--full { grid-column: 1 / -1; }
 .maildlg__field label { font-weight: 600; font-size: .95rem; }
 .maildlg__opt { font-weight: 400; color: var(--muted); }
-.maildlg input[type="text"], .maildlg textarea { font: inherit; color: var(--fg); background: var(--surface-2); border: 1px solid var(--border); border-radius: 12px; padding: 10px 12px; width: 100%; }
+.maildlg input[type="text"], .maildlg textarea { font: inherit; color: var(--fg); background: var(--surface-2); border: 1px solid var(--muted); border-radius: 12px; padding: 10px 12px; width: 100%; }
 .maildlg input[type="text"]:focus, .maildlg textarea:focus { outline: 2px solid var(--wine); outline-offset: 1px; border-color: var(--wine); }
 /* Themenauswahl als Radio-Gruppe (Dyslexie-Schrift greift, keine native Popup-Grenze) */
 .maildlg__topics { border: 1px solid var(--border); border-radius: 12px; padding: 10px 14px 14px; margin: 0; min-width: 0; }

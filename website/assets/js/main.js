@@ -442,6 +442,30 @@
       if (e.key === 'Escape' && dialog.open) { e.preventDefault(); closeDialog(); }
     });
 
+    // Fokus im Dialog halten – die A11y-Schaltfläche ist bewusst Teil der Schleife,
+    // damit sie auch per Tastatur erreichbar bleibt (Dialog ist nicht-modal).
+    var a11yFab = document.querySelector('.a11y-fab');
+    var a11yPanel = document.querySelector('.a11y-panel');
+    function focusables() {
+      var sel = 'a[href],button:not([disabled]),input:not([disabled]),textarea:not([disabled])';
+      var list = [].slice.call(dialog.querySelectorAll(sel)).filter(function (el) {
+        if (el.type === 'radio' && !el.checked) return false;   // nur der aktive Radio ist im Tab-Fluss
+        return el.offsetParent !== null || el === document.activeElement;
+      });
+      if (a11yFab) list.push(a11yFab);
+      return list;
+    }
+    document.addEventListener('keydown', function (e) {
+      if (e.key !== 'Tab' || !dialog.open) return;
+      if (a11yPanel && a11yPanel.getAttribute('data-open') === 'true') return; // im A11y-Panel normal tabben
+      var f = focusables();
+      if (!f.length) return;
+      var i = f.indexOf(document.activeElement);
+      var next = i === -1 ? 0 : (e.shiftKey ? (i - 1 + f.length) % f.length : (i + 1) % f.length);
+      e.preventDefault();
+      try { f[next].focus(); } catch (err) {}
+    });
+
     // Sicherheitsnetz, falls der Dialog anderweitig geschlossen wird (idempotent).
     dialog.addEventListener('close', cleanup);
 
