@@ -343,4 +343,120 @@
       if (label) label.textContent = paused ? 'Weiter' : 'Pause';
     });
   })();
+
+  /* ---------- 7. E-Mail-Konfigurator (Dialog) ----------
+     Fortschrittliche Verbesserung: Ohne JS bzw. ohne <dialog>-Unterstützung
+     bleibt die E-Mail-Karte ein normaler mailto:-Link (Fallback). */
+  (function () {
+    var dialog = document.getElementById('mail-configurator');
+    var trigger = document.querySelector('[data-mail-configurator]');
+    if (!dialog || !trigger || typeof dialog.showModal !== 'function') return;
+
+    var MAIL = 'info@hundetraining-ap.de';
+    var TOPICS = {
+      beziehung:      { fuer: 'das Thema „Alles rund um die Beziehung“', subject: 'Anfrage Einzeltraining – Beziehung & Bindung' },
+      beschaeftigung: { fuer: 'das Thema Beschäftigung & Auslastung',    subject: 'Anfrage Einzeltraining – Beschäftigung' },
+      alleine:        { fuer: 'das Thema „Alleine bleiben“',             subject: 'Anfrage Einzeltraining – Alleine bleiben' },
+      alltag:         { fuer: 'das Thema Alltagssituationen',            subject: 'Anfrage Einzeltraining – Alltagssituationen' },
+      beratung:       { fuer: 'eine Beratung vor der Anschaffung eines Hundes', subject: 'Anfrage Beratung vor der Anschaffung' },
+      allgemein:      { fuer: 'dein Hundetraining',                      subject: 'Anfrage Hundetraining' }
+    };
+
+    var panel = dialog.querySelector('.maildlg__panel');
+    var form = panel;
+    var openBtn = dialog.querySelector('[data-mail-open]');
+    var copyBtn = dialog.querySelector('[data-mail-copy]');
+    var copyLabel = copyBtn ? copyBtn.textContent : 'Text kopieren';
+    var subjectOut = dialog.querySelector('[data-mail-preview="subject"]');
+    var bodyOut = dialog.querySelector('[data-mail-preview="body"]');
+
+    function fields() {
+      var out = {};
+      dialog.querySelectorAll('[data-mail-field]').forEach(function (el) {
+        out[el.getAttribute('data-mail-field')] = (el.value || '').trim();
+      });
+      return out;
+    }
+
+    function build() {
+      var f = fields();
+      var t = TOPICS[f.topic] || TOPICS.allgemein;
+      var lines = ['Hallo Anna,', '', 'ich interessiere mich für ' + t.fuer + '.', ''];
+      if (f.dog) lines.push('Mein Hund: ' + f.dog);
+      if (f.message) lines.push('Mein Anliegen: ' + f.message);
+      if (f.dog || f.message) lines.push('');
+      lines.push('Viele Grüße');
+      if (f.name) lines.push(f.name);
+      var body = lines.join('\n').replace(/\n{3,}/g, '\n\n').replace(/\s+$/, '') + '\n';
+      return { subject: t.subject, body: body };
+    }
+
+    function render() {
+      var m = build();
+      if (subjectOut) subjectOut.textContent = m.subject;
+      if (bodyOut) bodyOut.textContent = m.body;
+      if (openBtn) openBtn.setAttribute('href', 'mailto:' + MAIL + '?subject=' + encodeURIComponent(m.subject) + '&body=' + encodeURIComponent(m.body));
+    }
+
+    function resetCopyLabel() { if (copyBtn) { copyBtn.textContent = copyLabel; copyBtn.classList.remove('maildlg__copied'); } }
+
+    // Live-Aktualisierung
+    form.addEventListener('input', render);
+    form.addEventListener('change', render);
+    // Enter in einem Feld soll den Dialog nicht schließen (method="dialog").
+    form.addEventListener('submit', function (e) { e.preventDefault(); });
+
+    // Da JS den Dialog jetzt bereitstellt: Karte als Dialog-Öffner auszeichnen.
+    trigger.setAttribute('aria-haspopup', 'dialog');
+
+    // Öffnen statt direkt ins Mailprogramm zu springen
+    trigger.addEventListener('click', function (e) {
+      e.preventDefault();
+      resetCopyLabel();
+      render();
+      dialog.showModal();
+    });
+
+    // Schließen
+    dialog.querySelectorAll('[data-mail-close]').forEach(function (b) {
+      b.addEventListener('click', function () { dialog.close(); });
+    });
+    // Klick auf den Backdrop (außerhalb des Panels) schließt
+    dialog.addEventListener('mousedown', function (e) {
+      var r = panel.getBoundingClientRect();
+      var inside = e.clientX >= r.left && e.clientX <= r.right && e.clientY >= r.top && e.clientY <= r.bottom;
+      if (!inside) dialog.close();
+    });
+    dialog.addEventListener('close', resetCopyLabel);
+
+    // Kopieren (mit Fallback)
+    if (copyBtn) {
+      copyBtn.addEventListener('click', function () {
+        var m = build();
+        var text = 'An: ' + MAIL + '\nBetreff: ' + m.subject + '\n\n' + m.body;
+        function done() {
+          copyBtn.textContent = 'Kopiert ✓';
+          copyBtn.classList.add('maildlg__copied');
+          setTimeout(resetCopyLabel, 2200);
+        }
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).then(done, function () { legacyCopy(text, done); });
+        } else {
+          legacyCopy(text, done);
+        }
+      });
+    }
+
+    function legacyCopy(text, cb) {
+      try {
+        var ta = document.createElement('textarea');
+        ta.value = text; ta.setAttribute('readonly', '');
+        ta.style.position = 'absolute'; ta.style.left = '-9999px';
+        document.body.appendChild(ta); ta.select();
+        document.execCommand('copy');
+        document.body.removeChild(ta);
+        cb();
+      } catch (err) { /* Fallback: sichtbare Vorschau bleibt zum manuellen Kopieren */ }
+    }
+  })();
 })();
