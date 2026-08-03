@@ -536,6 +536,9 @@ a.card { text-decoration: none; color: inherit; }
 .footer-nav a:hover { color: var(--wine); }
 .site-footer__bottom { border-top: 1px solid var(--border); }
 .site-footer__bottom p { max-width: var(--maxw); margin-inline: auto; padding: 20px clamp(18px, 5vw, 56px); color: var(--muted); font-size: .9rem; }
+.site-footer__bottom p.site-footer__credit { padding-top: 0; padding-bottom: 3px; font-size: .82rem; opacity: .82; line-height: 1.5; }
+.site-footer__bottom p.site-footer__credit:last-child { padding-bottom: 22px; }
+.site-footer__credit a { color: var(--wine); }
 
 /* Herz-mit-Pfote-Icon (ersetzt das Wort „Herz" im Footer) */
 .heart-icon {
