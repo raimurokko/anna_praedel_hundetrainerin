@@ -32,6 +32,25 @@ Priorität: 🔴 hoch · 🟡 mittel · 🟢 niedrig
   „Korrektur melden" als `mailto:` mit Betreff und Feld-Template (Eintrag / was ist falsch /
   richtige Angabe / **Quelle**) – passend zum Pflege-Prinzip „keine Nummern ohne Quelle".
 
+### ✅ Session 04.08.2026 – Teil 2 (Positionierung, Content, Politur)
+- [x] 🔴 **Positionierung „mobil / zu Hause / Hausbesuch" sichtbar gemacht** – Hero-Pill,
+  Hero-Absatz, eigener Block `.mobil-box` mit H3 vor den Angebot-Akkordeons, Meta-Description,
+  og:description, Schema-`description` + `knowsAbout`, llms.txt. Vorher kamen „mobil" und
+  „Hausbesuch" im sichtbaren Text **0×** vor.
+- [x] 🟡 **Umlandorte** Großziethen und Waltersdorf ergänzt (areaServed-Schema, sichtbare FAQ,
+  FAQ-Schema, Positionierungs-Block) → `areaServed` jetzt 12 Orte.
+- [x] 🟡 **Drei neue Ratgeber:** `alltagstraining.html`, `zweithund.html`,
+  `gewaltfreies-hundetraining.html` (je BlogPosting + BreadcrumbList + FAQPage, „Kurz gesagt",
+  4 FAQ sichtbar = Schema, Cross-Linking; in Übersicht, Sitemap und llms.txt eingehängt).
+  → 11 Artikel gesamt.
+- [x] 🟢 **Vier weitere Themen** in `keyword-recherche.md` Abschnitt 2b aufgenommen
+  (Leinenaggression, Angst/Silvester, Baby/Kind, Autofahren + Idee „Hund im Winter").
+- [x] 🟢 **Rotlicht-Emoji 🚨** in der Tiernotfall-Teaser-Kachel durch ein Inline-SVG
+  (Warndreieck, Linienstil wie die Karten-Icons) ersetzt – das Emoji brach den Stil.
+- [x] 🟢 „seit über 3 Jahren" → **„seit 2022"** (index.html sichtbar + Person-Schema, llms.txt).
+  ⚠️ **Zu bestätigen:** „über 3 Jahre" wurde 2026 geschrieben und rechnet auf **2023** zurück.
+  Das Startjahr 2022 kam aus der Vorgabe – bitte mit Anna gegenprüfen.
+
 ### 🟡 Offen aus dieser Session
 - [ ] 🟢 Optional: pro Kontaktkarte ein eigener „Nummer stimmt nicht?"-Link, der den Eintragsnamen
   schon in die Mail einsetzt (Generator kennt Name und `id`). Bewusst zurückgestellt: bläht die Karten auf.
@@ -120,6 +139,21 @@ bereits umgesetzt; folgende Deltas (v. a. aus dem neueren Teil 2) wurden ergänz
 - [x] Opener-Zeile „Beziehungsweise – mit Vertrauen Bindung schaffen." als Beziehungs-Überschrift gesetzt (26.06.2026)
 - [x] Schriftart-Entscheidung: **bei DejaVu Sans bleiben** (Verdana nicht gewünscht, 26.06.2026)
 - [x] Angebot-Karten → **Info-Karten ohne Link** umgesetzt + auf Desktop **4 nebeneinander** (mobil gestapelt, 1/2/4). Aktion läuft über „Termin anfragen" (26.06.2026).
+
+---
+
+## 🔴 PRIO 1 – direkt nach Go-Live (stärkster Lokal-Hebel)
+
+- [ ] 🔴 **Google-Business-Profil anlegen und verifizieren.** Für eine lokale Dienstleisterin der
+  mit Abstand wirksamste Sichtbarkeits-Hebel (Maps, „in meiner Nähe", Bewertungen).
+  Voraussetzung: Domain live. Vorbereiten: Kategorie „Hundeschule/Hundetrainer", Einzugsgebiet
+  statt Ladenadresse (Anna arbeitet mobil → **Service-Area-Business**, Adresse ausblenden),
+  Öffnungszeiten, Fotos, Leistungen, Link auf hundetraining-ap.de.
+- [ ] 🔴 **Einträge in lokalen Verzeichnissen** mit **konsistentem NAP** (Name / Adresse / Telefon
+  überall identisch – das ist der entscheidende Punkt): hundeschule.net, hundetrainer.info,
+  wegweiser-aktuell.de, Gelbe Seiten, 11880. Quelle: `keyword-recherche.md`.
+- Beides hängt an der Domain und ist deshalb erst nach Go-Live möglich – aber danach das Erste,
+  was gemacht werden sollte, noch vor weiterem Content.
 
 ---
 

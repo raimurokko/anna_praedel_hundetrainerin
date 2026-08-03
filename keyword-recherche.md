@@ -1,6 +1,6 @@
 # Keyword- & Themen-Recherche – Hundetraining · Anna Prädel
 
-Stand: 03.08.2026 · Grundlage für lokale SEO + AEO/GEO (Blog/Ratgeber).
+Stand: 04.08.2026 · Grundlage für lokale SEO + AEO/GEO (Blog/Ratgeber).
 Zielgebiet: Rudow (Neukölln) + Einzugsgebiet, gesamt Berlin. Positionierung:
 mobiles Einzeltraining bei euch zu Hause, gewaltfrei, alle Rassen/Größen.
 
@@ -30,6 +30,17 @@ Kombinationsmuster: [Leistung] + [Ort]
 - Alltagstraining Hund · Welpe Grunderziehung · Tierschutzhund Training/Eingewöhnung
 - Beratung vor Hundeanschaffung · welcher Hund passt zu mir · Zweithund Beratung
 
+## 2b) Weitere Themen (ergänzt 04.08.2026, noch ohne Artikel)
+Aus dem Wettbewerbs- und Alltagsmuster abgeleitet, in der Ursprungsliste noch nicht enthalten:
+- **Hundebegegnungen / Leinenaggression** – „Hund pöbelt an der Leine", „Hund bellt andere Hunde an".
+  Hohe Nachfrage, sehr häufiges Alltagsproblem; koppelt an Alltagstraining.
+- **Angsthund & Silvester** – saisonal (Okt.–Dez. vorbereiten, wie „Hund und Hitze" im Sommer),
+  dazu Gewitter/Geräuschangst allgemein.
+- **Hund und Baby / Kind** – „Hund auf Baby vorbereiten", „Hund und Kind Regeln".
+  Starkes Beratungsthema mit klarem Anlass.
+- **Entspanntes Autofahren** – „Hund Auto Angst", „Hund im Auto sichern" (inkl. Sicherungspflicht).
+- Saison-Idee analog: **Hund im Winter** (Streusalz, Dunkelheit, Sichtbarkeit).
+
 ## 3) Frage-basierte Queries (AEO/GEO – Blog/Ratgeber-Themen)
 Diese Fragen sind Content-Gold für Antwort-Boxen und LLM-Zitate:
 - Wie bringe ich meinem Hund bei, alleine zu bleiben?
@@ -58,33 +69,34 @@ passenden Angebot und CTA „Termin anfragen".
 ## Abdeckungs-Stand (04.08.2026)
 
 **Ebene 3 (Frage-basiert) ist abgearbeitet.** Alle 8 Fragen aus Abschnitt 3 haben einen Artikel;
-dazu kamen zwei nicht gelistete Themen (Welpen-Grunderziehung, Hund und Hitze). 8 Artikel gesamt.
+dazu kamen zwei nicht gelistete Themen (Welpen-Grunderziehung, Hund und Hitze).
+Mit den drei am 04.08. ergänzten Artikeln sind es **11 Artikel** gesamt.
 
-### Offen – nach Hebelwirkung sortiert
+### ✅ Am 04.08.2026 umgesetzt
+1. **Positionierung „mobil / zu Hause / Hausbesuch"** ist jetzt im sichtbaren Text:
+   Hero-Pill („Mobiles Hundetraining in Berlin"), Hero-Absatz („Ich komme zu euch nach Hause"),
+   ein eigener Block `.mobil-box` mit H3 vor den Angebot-Akkordeons sowie Meta-Description,
+   og:description, `knowsAbout` und llms.txt. Vorher kamen „mobil" und „Hausbesuch" sichtbar
+   **0×** vor (nur „bei euch zu Hause" war im Akkordeon-Text und in der FAQ vergraben).
+2. **Umlandorte** Großziethen und Waltersdorf ergänzt – im `areaServed`-Schema, in der
+   sichtbaren FAQ, im FAQ-Schema und im neuen Positionierungs-Block.
+3. **Drei Artikel** ergänzt: `alltagstraining.html`, `zweithund.html`,
+   `gewaltfreies-hundetraining.html` (je mit BlogPosting/Breadcrumb/FAQPage-Schema,
+   „Kurz gesagt"-Direktantwort, Cross-Linking, in Übersicht, Sitemap und llms.txt eingehängt).
+4. **Vier weitere Themen** in Abschnitt 2b aufgenommen (noch ohne Artikel).
 
-**1. 🔴 „mobil / zu Hause / Hausbesuch" fehlt im sichtbaren Text (Ebene 1)**
-Annas Kern-Positionierung laut dieser Recherche ist *mobiles Einzeltraining bei euch zu Hause* –
-die Begriffe „mobil", „mobiles Hundetraining", „Hausbesuch", „zu Hause" kommen auf der Startseite
-im sichtbaren Text **kein einziges Mal** vor. Genau darauf zielt der Wettbewerb („mobil",
-„bei Ihnen zu Hause"). Größter Hebel bei kleinstem Aufwand: ein Absatz + Zwischenüberschrift.
+### Weiterhin offen
+**🔴 Nicht-Content, domainabhängig:** Google-Business-Profil und Verzeichniseinträge
+(NAP konsistent) – erst nach Go-Live möglich, aber der stärkste Lokal-Hebel überhaupt.
+Steht als Prio-1-Punkt im `BACKLOG.md`.
 
-**2. 🟡 Zwei Umlandorte fehlen im Text:** Großziethen und Waltersdorf (Rudow, Neukölln,
-Gropiusstadt, Buckow, Britz, Schönefeld, Altglienicke, Bohnsdorf, Adlershof sind drin).
+**🟡 Artikel zu den Themen aus Abschnitt 2b** (Leinenaggression, Silvester/Angst, Baby/Kind, Auto).
 
-**3. 🟡 Service-Themen ohne Artikel (Ebene 2)**
-- Alltagstraining (kommt sichtbar 0× vor)
-- Zweithund-Beratung (1× erwähnt, kein Artikel)
-- gewaltfreies Hundetraining als eigenes Haltungs-/Trust-Thema (2× erwähnt, kein Artikel)
-
-**4. 🟢 Naheliegende Folgethemen, die in dieser Liste noch fehlen**
-Hundebegegnungen/Leinenaggression · Angsthund & Silvester (saisonal, wie „Hitze") ·
-Hund und Baby/Kind · entspanntes Autofahren.
-
-**5. 🔴 Nicht-Content, domainabhängig:** Google-Business-Profil und Verzeichniseinträge
-(NAP konsistent) – beides erst nach Go-Live möglich, aber der stärkste Lokal-Hebel überhaupt.
+**🟢 Redaktionsplan:** regelmäßige Veröffentlichung, Bilder-SEO für Artikelmedien,
+interne Verlinkung Artikel ↔ Angebote weiter ausbauen.
 
 ## Nächste Schritte
 - [ ] Google Business Profil anlegen (sobald Domain live) – stärkster Lokal-Hebel
-- [x] Ratgeber-Bereich + Muster-Artikel anlegen (Demo für Anna) – erledigt, 8 Artikel + Übersicht
+- [x] Ratgeber-Bereich + Muster-Artikel anlegen (Demo für Anna) – erledigt, 11 Artikel + Übersicht
 - [ ] Einträge in lokalen Verzeichnissen (NAP konsistent: Name/Adresse/Telefon)
 - [ ] `areaServed`-Schema bereits erweitert (Berlin + Rudow-Umland)

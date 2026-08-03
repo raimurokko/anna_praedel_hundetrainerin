@@ -34,7 +34,15 @@ Letzter Commit: **b64ffb6** (Rubrik Tiernotfall). Working Tree sauber, alles auf
 7. **E-E-A-T:** „Qualifikation & Erfahrung"-Block in „Über mich" + `Person`-Schema (`hasCredential` § 11 TierSchG, `memberOf` Kitmir; **seit 3 Jahren**, Fortbildung via Praktika/Online/Vor-Ort, gewaltfrei).
 8. Footer-Credit (Inu-Trust AG) + Hinweis auf **Digitale Ersthilfe** (digitale-ersthilfe.novumanalytica.com – kostenloser Novum-Hilfe-Service; `rel=nofollow`) auf allen Seiten.
 9. **Rubrik „Tiernotfall"** – siehe §4.
-- Keyword-Recherche: `keyword-recherche.md`.
+- Keyword-Recherche: `keyword-recherche.md` (enthält seit 04.08. einen Abdeckungs-Stand).
+10. **Positionierung sichtbar gemacht (04.08.):** „mobiles Hundetraining / ich komme zu euch nach
+    Hause / Hausbesuch" kam im sichtbaren Text vorher **0×** vor, obwohl es Annas Kern-Positionierung
+    ist. Jetzt in Hero-Pill, Hero-Absatz, eigenem Block `.mobil-box` (H3, vor den Angebot-Akkordeons),
+    Meta-/OG-Description, Schema-`description`/`knowsAbout` und `llms.txt`. Umlandorte Großziethen
+    und Waltersdorf ergänzt (`areaServed` = 12 Orte).
+11. **3 neue Ratgeber (04.08.):** Alltagstraining, Zweithund, Gewaltfreies Hundetraining → 11 Artikel.
+    ⚠️ **Offen zu bestätigen:** „seit 2022" als Erfahrungsangabe (vorher „seit über 3 Jahren", was
+    ab 2026 auf 2023 zurückrechnet) – mit Anna gegenprüfen, steht auch im `BACKLOG.md`.
 
 ## 4. Rubrik „Tiernotfall" (zuletzt gebaut) — WICHTIG
 - Basiert auf `designentwürfe/annas-website-tiernotruf.zip` (Briefing von Sophia/Novum).

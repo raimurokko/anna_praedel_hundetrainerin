@@ -385,6 +385,17 @@ body { padding-top: var(--header-h); }
 .section__intro h2 { font-size: clamp(1.9rem, 4vw, 3rem); line-height: 1.08; letter-spacing: -.02em; font-weight: 800; margin: 14px 0 0; }
 .section__intro p { color: var(--muted); font-size: clamp(1.02rem, 1.6vw, 1.15rem); margin: 16px 0 0; }
 
+/* Positionierung "mobiles Training / Hausbesuch" – bewusst vor den Angebot-Akkordeons */
+.mobil-box {
+  background: var(--surface); border: 1px solid var(--border); border-left: 4px solid var(--wine);
+  border-radius: var(--radius); box-shadow: var(--shadow);
+  padding: clamp(20px, 3vw, 30px); margin: 0 0 clamp(28px, 4vw, 44px); max-width: 72ch;
+}
+.mobil-box h3 { margin: 0 0 10px; font-size: clamp(1.15rem, 2.2vw, 1.45rem); line-height: 1.2; }
+.mobil-box p { margin: 0 0 10px; color: var(--muted); line-height: 1.6; }
+.mobil-box p:last-child { margin-bottom: 0; }
+.mobil-box strong { color: var(--fg); }
+
 .cards {
   list-style: none; margin: 0; padding: 0; display: grid;
   grid-template-columns: 1fr; /* schmal: gestapelt */
@@ -616,7 +627,8 @@ a.card { text-decoration: none; color: inherit; }
 .notfall-disclaimer { color: var(--muted); font-size: .88rem; margin: 0; }
 .notfall-teaser { display: flex; align-items: center; gap: 14px; margin-top: 22px; padding: 16px 18px; background: var(--surface); border: 1px solid var(--wine); border-radius: 14px; text-decoration: none; color: inherit; box-shadow: var(--shadow); transition: transform .2s; }
 .notfall-teaser:hover { transform: translateY(-2px); }
-.notfall-teaser__icon { font-size: 1.5rem; flex: 0 0 auto; }
+.notfall-teaser__icon { flex: 0 0 auto; display: flex; align-items: center; }
+.notfall-teaser__icon svg { width: 26px; height: 26px; fill: none; stroke: var(--wine); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
 .notfall-teaser strong { color: var(--wine); }
 .notfall-teaser__cta { margin-left: auto; color: var(--wine); font-weight: 800; font-size: 1.2rem; flex: 0 0 auto; }
 /* Mobil: Deko-Pfeil raus, damit der Text nicht in eine schmale Spalte gequetscht wird
