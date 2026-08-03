@@ -499,9 +499,11 @@ a.card { text-decoration: none; color: inherit; }
 .kontakt__head h2 { font-size: clamp(2rem, 4.4vw, 3.2rem); line-height: 1.06; letter-spacing: -.02em; font-weight: 800; margin: 14px 0 0; }
 .kontakt__head p { color: var(--muted); font-size: clamp(1.05rem, 1.8vw, 1.25rem); margin: 16px auto 0; }
 .kontakt__grid {
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr));
+  display: grid; grid-template-columns: 1fr;   /* schmal: 4×1 gestapelt */
   gap: 14px; margin-top: clamp(32px, 5vw, 52px);
 }
+@media (min-width: 560px)  { .kontakt__grid { grid-template-columns: 1fr 1fr; } }        /* mittel: 2×2 */
+@media (min-width: 1000px) { .kontakt__grid { grid-template-columns: repeat(4, 1fr); } } /* breit: 1×4 */
 .contact-card {
   background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
   padding: 26px; text-decoration: none; display: flex; flex-direction: column; gap: 8px;
@@ -700,13 +702,17 @@ a.card { text-decoration: none; color: inherit; }
 .todo { background: var(--wine-tint); border: 1px dashed var(--wine); border-radius: 10px; padding: 4px 10px; color: var(--wine); font-weight: 700; }
 
 /* ---------- 13. Responsive / Mobile-Menü ---------- */
-@media (max-width: 880px) {
+/* Desktop-Navigation braucht ~1184px (6 Punkte + Toggle + Button). Darunter
+   sofort Burger-Menü, damit die Leiste nie abgeschnitten wird. */
+@media (max-width: 1200px) {
   .nav-desktop { display: none; }
   .nav-mobile-controls { display: flex; }
-  .beziehung__sticky { position: static; }
 }
-@media (min-width: 881px) {
+@media (min-width: 1201px) {
   .nav-mobile { display: none !important; }
+}
+@media (max-width: 880px) {
+  .beziehung__sticky { position: static; }
 }
 
 /* Sehr kleine Bildschirme: Hero-Überschrift passend skalieren. */
