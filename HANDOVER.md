@@ -1,125 +1,83 @@
 # Handover – Website „Hundetraining · Anna Prädel" (hundetraining-ap.de)
 
-Stand: **22.07.2026** (Ende dieser Session) · Projektpfad: `~/projects/anna_prädel_hundetrainerin/`
+Stand: **03.08.2026** · Projektpfad: `~/projects/anna_prädel_hundetrainerin/`
+Letzter Commit: **b64ffb6** (Rubrik Tiernotfall). Working Tree sauber, alles auf `main` gepusht.
 
-Kompakter, aber vollständiger Übergabestand für die nächste Session. Diese Session drehte sich v. a. um **Hero-/LCP-Optimierung** und ein **großes Rebranding** (Anmerkungen Teil 3).
-
----
-
-## 1. Kurzüberblick & Adressen
-- Statische One-Pager-Website für die Hundetrainerin **Anna Prädel** (Berlin). Reines **HTML/CSS/JS, kein Build-Tool**.
-- Repo (lokal): `/Users/dramallama/projects/anna_prädel_hundetrainerin`
-- Git-Identität: **Raimu Rokko** · Remote: `github.com:raimurokko/anna_praedel_hundetrainerin` · Branch: `main`
-- **Deploy-Wurzel: `website/`**
-- **Deploy = Push auf `main`** → GitHub Actions „Deploy Preview to GitHub Pages" → live in ~20 s. Prüfen mit `gh run list -L 3`.
-- Vorschau-URL (GitHub Pages, **noindex**): https://raimurokko.github.io/anna_praedel_hundetrainerin/
-- **Produktions-Domain (Ziel, NOCH NICHT live):** `hundetraining-ap.de` — DNS muss noch auf GitHub Pages (oder finales Hosting) zeigen. Alle Canonical/OG/Schema-URLs stehen bereits auf diese Domain.
-- **E-Mail:** `info@hundetraining-ap.de` · **Telefon/WhatsApp:** `0155 67557506` (⚠️ WhatsApp-Nutzung angenommen – siehe §7)
-- Instagram: https://www.instagram.com/hundetraining_anna_p · Kitmir Tierhilfe Demirtas e.V.: https://kitmir.de
-- HEAD-Commit am Session-Ende: `feea69c` (Teil-3-Rebranding).
-
-## 2. Lokale Vorschau
-- `.claude/launch.json` (Name **`anna-praedel-website`**, Port **8137**) startet `python3 -m http.server 8137 --directory website`. **⚠️ Diese Datei ist NICHT committet (untracked)** – bei Bedarf neu anlegen:
-  ```json
-  { "version": "0.0.1", "configurations": [
-    { "name": "anna-praedel-website", "runtimeExecutable": "python3",
-      "runtimeArgs": ["-m","http.server","8137","--directory","website"], "port": 8137 } ] }
-  ```
-- Vorschau über **`mcp__Claude_Browser__*`** (das separate `Claude_Preview`-MCP war zeitweise weg): `preview_start {name}`, dann `computer {action:"screenshot"}` / `navigate` / **`get_page_text`**.
-- **`get_page_text` ist am zuverlässigsten** für Inhaltsprüfung – Screenshots hängen/blanken oft (s. §11).
-
-## 3. Was diese Session passiert ist (grob chronologisch)
-1. **Anmerkungen Teil 1+2** eingearbeitet (Texte, PLZ 12355, kein §19, SEO/Content-Backlog).
-2. Mobiler Artefakt behoben: gestreifter **Platzhalter hinter der Tierschutz-Galerie**.
-3. **Hero:** erst 3-Bild-Fade-Sequenz + Pause-Button gebaut → **später auf Kundinwunsch auf EIN statisches Foto reduziert** (Fade gefiel nicht).
-4. **Angebot-Karten** → Info-Karten (nicht klickbar), Desktop 4-spaltig.
-5. **Großes LCP-Thema** (mehrere Runden) – siehe §6.
-6. Gestreiften Lade-Platzhalter bei **allen** Bildern entfernt.
-7. **Kalender-Beratung** → Kundin wählte **Idee B** (Kalender-Feed `.ics`), Empfehlung mailbox.org.
-8. **Anmerkungen Teil 3 = Rebranding** (Domain, Marke, Angebot-Straffung, Preise) – siehe §5.
-
-## 4. Aktueller Inhaltsstand
-- **Hero:** EIN statisches Foto (`hero01`, Bergfoto) als `<picture>` (AVIF + WebP-Fallback, responsiv, vorgeladen). H1 „**Mit Vertrauen Bindung schaffen**", Pill „Hundetraining in Berlin". Keine Animation/kein Pause-Button. `object-position:50% 38%`.
-- **Logo/Marke:** „**Hundetraining**" (oben) / „Anna Prädel" (drunter). Markenname überall „**Hundetraining · Anna Prädel**".
-- **Beziehung-Abschnitt:** H2 „Vertrauen ist die Grundlage." + neuer kurzer Text (Eyebrow „Meine Haltung").
-- **Angebot:** nur **Einzeltrainings** (4 Info-Karten: Alles rund um die Beziehung / Beschäftigung / Alleine bleiben / Alltagssituationen) + **Beratung vor der Anschaffung**.
-- **Preise (aktuell):** Einzeltraining **Ersttermin 90 Min. 100 €**, **Folgetermin 60 Min. 80 €**; Beratung 60 Min. Videochat 25 € / bei euch zu Hause 50 €. Alle Preise „inkl. gesetzlicher USt".
-- **Gruppenkurse & Social Walks: entfernt** (auf Kundinwunsch „vorerst").
-- Weitere Sektionen unverändert: **Über mich**, **Online-/Video-Kurse** („bald verfügbar" – bleibt, ≠ Gruppenkurse), **Tierschutz** (Kitmir, Bild-Akkordeon), **FAQ**, **Kontakt** (Karten WhatsApp/Instagram/Facebook/E-Mail; Notiz „Einzeltraining bei euch zu Hause – in ganz Berlin").
-
-## 5. Rebranding-Details (Teil 3)
-- Domain `beziehungsweise.com` → `hundetraining-ap.de` (überall: Canonical/OG/Schema/Sitemap/robots/security.txt/llms.txt).
-- E-Mail `hallo@beziehungsweise.com` → `info@hundetraining-ap.de`.
-- **Wortmarke „beziehungsweise" komplett raus** (Hero-H1, Beziehung-H2, Domain).
-- „Berlin Rudow" → „Berlin" in Marketing/SEO (Impressum-Adresse bleibt Berlin/12355).
-- Telefon/WhatsApp ergänzt; Schema `telephone: +4915567557506`.
-
-## 6. LCP / Bilder (WICHTIG)
-- **Das Hero-Bild ist das LCP-Element.** Setup: `<picture>` mit `<source type=image/avif>` + `<source type=image/webp>` + `<img fetchpriority="high">`, plus `<link rel=preload as=image type="image/avif">` im `<head>`.
-- **AVIF MUSS mit `avifenc` (libavif/aom) erzeugt werden, NICHT mit macOS `sips`!** sips-AVIF war nicht standardkonform → **lud in Firefox nicht** (Firefox wählt die avif-Source, kann sie nicht dekodieren, und `<picture>` fällt dann NICHT auf WebP zurück). `avifenc` (diese Session via `brew install libavif` installiert) erzeugt Standard-AVIF (8-bit/YUV420), das überall lädt.
-  - Rezept: JPEG → PNG (`sips --resampleWidth <w> in.jpeg --out r.png`) → `avifenc -q <Q> -y 420 -d 8 -s 4 r.png out.avif`. Verwendet: **960/1280 q42, voll q48**.
-- WebP-Fallback via `cwebp -m 6 -sharp_yuv` (~**960/1280 q50, voll q60**).
-- Dateien in `website/bilder/`: `hero01|02|03` je als `.avif` + `.webp` in **960 / 1280 / voll** (hero01/03=1600, hero02=1384) + `.jpeg`-Original.
-  **Nur `hero01` wird aktuell genutzt** (statischer Hero); hero02/03 liegen für später bereit (z. B. Galerie).
-- Responsive Breiten **960/1280/1600** – die 1280er ist wichtig, damit High-DPR-Mobil nicht das volle 1600 (275 KB) als LCP lädt.
-- Kopf-Zuschnitt-Fix: `object-position`-Y je Foto auf die Kopfhöhe (hero01 **38%**, hero02 **15%**, hero03 **25%**) – sonst schneidet der breite Desktop-Hero die Köpfe oben ab.
-- **LCP-Messwerte** (multiregional, Mobil, Lighthouse 12; vor den letzten 2 Commits): **DE 2,5 s** / US-East 2,4 s (Score 97) / Übersee ~4 s. Die Übersee-Werte = **GitHub-Pages-Netzwerkdistanz** (verschwindet auf eigenem Host). **DE (europe-west3) ist der relevante Wert** (Berliner Zielgruppe). Nach AVIF-Preload + statischem Hero **noch nicht neu gemessen**.
-- **Offen:** **Firefox-Test** (lädt das AVIF?) – sollte mit avifenc klappen, aber vom Kunden noch nicht bestätigt. Nächster LCP-Hebel falls nötig: render-blockierendes CSS (kritisches CSS inline).
-
-## 7. ⚠️ Offene Rückfragen an Kundin/User (aus der letzten Nachricht dieser Session)
-1. **WhatsApp-Nummer:** `0155 67557506` (als Telefon angegeben) wurde **auch für WhatsApp** eingesetzt (angenommen). Bestätigen/korrigieren.
-2. **Beziehung-Überschrift** „Vertrauen ist die Grundlage." – passt das (Ersatz für „Beziehungsweise …")?
-3. **Icons für Einzeltraining-Karten** (Haus/Kaffeetasse …): war „kein Muss", **nicht umgesetzt** (Kreis-Icons blieben). Einbauen?
-4. **Facebook-Karte/-Link:** noch **Platzhalter** (`facebook.com/`). URL liefern oder Karte entfernen.
-5. **Markenname überall gedreht** („Hundetraining · Anna Prädel") – explizit gewünscht war nur das Logo; OK dass alles gedreht ist?
-6. **„Kurse"-Sektion** (Online-/Video-Kurse „bald verfügbar") bleibt – bestätigt?
-
-## 8. Weitere offene/blockierende Punkte
-- **Domain-DNS:** `hundetraining-ap.de` auf GitHub Pages (oder finales Hosting) zeigen lassen; danach Vorschau indexierbar stellen oder abschalten.
-- **Hosting final:** Empfehlung DSGVO + späteres Node-Backend: deutscher Host (~5–8 €/Mon), z. B. Uberspace/Hetzner/Netcup. GitHub Pages ist nur Vorschau.
-- **Rechtstexte:** „Stand: [Datum]" in Impressum/Datenschutz/Barrierefreiheit setzen; juristische Prüfung. Datenschutz: Hosting-Anbieter + Logfile-Aufbewahrungsdauer eintragen.
-- **Social-Sharing-Bild:** `og:image` verweist auf `bilder/social/anna-mit-hund.webp` – **Datei fehlt noch** (1200×630 liefern).
-- **Kalender (Idee B) – geparkt** (Gruppen/Walks raus). Wenn zurück: Anna pflegt Termine in DSGVO-Kalender (**mailbox.org** oder Nextcloud) mit **öffentlichem iCal-Link MIT Details** – **Proton/Tuta ungeeignet** (E2E; Tuta-Feed nur Frei/Belegt). Ein Cron (z. B. GitHub Action) holt den `.ics` → schreibt `data/termine.json`. `termine.js`/`data/termine.json` liegen noch im Repo (Include aus `index.html` bereits entfernt). Anmeldung bleibt first-party (E-Mail/WhatsApp).
-- **Toter Code (Aufräumen optional):** CSS `.hero-word`/`.hero-claim` (Wortmarke) und `.termine-*`/Booking-Modal (Termine) sind ungenutzt.
-
-## 9. Corporate / Features
-- Weinrot **`#7E1F2D`** (RGB 126,31,45).
-- Schriften: **DejaVu Sans** (lokal, Verdana-nah) + Figtree-Fallback; OpenDyslexic (A11y). **Verdana abgelehnt** (proprietär) – nicht erneut vorschlagen.
-- Logo: „Herz mit Pfote" (CSS-Maske, theme-fähig).
-- Features: Dark Mode, A11y-Panel (Schriftgröße/Kontrast/Links/Motion/Dyslexie/Vorlesen), nicht-blockierender Datenschutz-Hinweis, Schema.org JSON-LD, OG/Meta, sitemap/robots/llms.txt/security.txt/manifest, lokale Schriften (kein Google).
-
-## 10. Rechtliches / Geschäftsdaten
-- **Anna Prädel, Neudecker Weg 49a, 12355 Berlin** (PLZ von Kundin bestätigt, war fälschlich 12344).
-- Steuernummer des Betriebes: **16/477/01055**. **Regulär USt-pflichtig (NICHT §19)** → Preise „inkl. gesetzlicher USt".
-- Erlaubnis nach **§ 11 Abs. 1 Nr. 8 f TierSchG** (Bezirksamt Neukölln, Veterinär-/Lebensmittelaufsicht).
-
-## 11. Stolperfallen / Workflow-Quirks
-- **Vorschau:** Screenshots **blanken oft beim ersten Versuch** nach dynamischen Änderungen → erneut screenshotten. Bei `scrollY≠0` unzuverlässig → `get_page_text` nutzen oder hohen Viewport bei scrollY 0. CSS/JS-**Cache**: mit `?cb=` neu laden, ggf. Stylesheet/Script-`href` explizit cache-busten; `main.js` wird gern stale geliefert (frisch nachladen zum Handler-Testen). Programmatisches Scrollen von `scroll-behavior:smooth` blockiert → `document.documentElement.style.scrollBehavior='auto'` + `history.scrollRestoration='manual'`. `@media (hover:none)` (Touch-Layout) wird **nicht emuliert** → per injiziertem CSS erzwingen. `img.naturalWidth` meldet viewport-skalierte Werte (Artefakt) → `new Image()` für echte Maße. Responsive-Doppel-Download nur bei Viewport-Resize-Übergängen (Artefakt), nicht bei stabilem Kalt-Load.
-- **zsh:** unquoted `$VAR` in `for`-Loop **trennt NICHT** → Array `X=(a b c)` + `for f in "${X[@]}"`.
-- **sed (macOS):** `sed -i ''`.
-- **PDF lesen:** poppler fehlt → Read-Tool rendert keine PDFs. Stattdessen Ghostscript: `gs -q -dNOPAUSE -dBATCH -sDEVICE=png16m -r150 -sOutputFile=/tmp/p%d.png "datei.pdf"`, dann PNG mit Read lesen. Anmerkungen-PDFs in `designentwürfe/` und `~/Downloads/` („Anmerkungen Website Teil 1/2/3").
-- **JSON-LD prüfen:** `node -e '…JSON.parse(<script ld+json>)…'` (nach jeder Schema-Änderung).
-- **Deploy prüfen:** `gh run list -L 3`.
-- Installiert diese Session: **`libavif` (avifenc)** via brew; `cwebp` & `gs` waren schon da.
-
-## 12. Nächste sinnvolle Schritte
-1. Die **6 offenen Rückfragen** (§7) mit dem User klären.
-2. **Firefox- + Lighthouse-Check** des aktuellen Standes abwarten (v. a. DE-LCP; lädt AVIF in Firefox?).
-3. **Domain-DNS** + finales Hosting; danach Vorschau indexierbar/abschalten.
-4. **Rechtstexte** finalisieren (Datum, Hosting-Angaben, Prüfung).
-5. Bei Bedarf: Karten-Icons, Social-Sharing-Bild, Kalender (Idee B) reaktivieren, toten Code aufräumen.
-
-## 13. Letzte Commits (main)
-```
-feea69c Anmerkungen Teil 3: Rebranding (Domain/Marke), Angebot gestrafft, neue Preise
-2de9c5a Bilder: gestreiften Lade-Platzhalter entfernt (Ueber mich u. a.)
-97d7502 Hero: statisches Einzelfoto statt Fade-Sequenz (Kundinwunsch)
-8e71c81 Hero: Kopf-Crop wirklich behoben - object-position der 3 Fotos auf die Kopfpartie
-f47767f Hero LCP: AVIF-Preload (type=image/avif)
-b01348f Hero: AVIF richtig nachgeruestet (avifenc/aom, Standard 8-bit/YUV420)
-74ad3d9 Hero: AVIF entfernt (Firefox/Cross-Browser-Fix) + LCP-Optimierung
-```
-(Ältere Historie: WebP-Kompression, AVIF-via-sips [verworfen], Angebot-Karten, Hero-Sequenz, Teil-1/2-Deltas.)
+> Hinweis: Das **primäre Arbeitsverzeichnis der Session war fälschlich `digitale-ersthilfe-website`**.
+> Immer mit **absoluten Pfaden** auf `~/projects/anna_prädel_hundetrainerin/` arbeiten (Bash-`cwd` resettet je Aufruf).
 
 ---
-**Tipp für den Start der nächsten Session:** zuerst §7 (offene Rückfragen) mit dem User klären und den Firefox-/Lighthouse-Rückmeldung abfragen – davon hängen die nächsten Schritte ab.
+
+## 1. Adressen & Fakten
+- **Repo:** `github.com:raimurokko/anna_praedel_hundetrainerin` · Branch `main` · Git-Identität **Raimu Rokko**
+- **Deploy = Push auf `main`** → GitHub Actions „Deploy to GitHub Pages" → live in ~20 s. Deploy-Wurzel: **`website/`**.
+- **Vorschau (noindex-Staging):** https://raimurokko.github.io/anna_praedel_hundetrainerin/
+- **Ziel-Domain (noch nicht live):** `hundetraining-ap.de` — alle Canonical/OG/Schema stehen bereits darauf.
+- **Kontakt:** info@hundetraining-ap.de · Telefon/WhatsApp **0155 67557506** (`wa.me/4915567557506`)
+- **Social:** Instagram `hundetraining_anna_p` · Facebook `facebook.com/share/1FQVGf99yg/`
+- **User/Auftraggeber:** Sophia / Novum (novumanalytica.com). **Inu-Trust AG** (inu-trust.ch) ist im Footer „Umsetzung"-Credit das Gesicht, **Novum** der Technologiepartner im Hintergrund (nicht sichtbar auf Annas Seite).
+- **⚠️ `gh` CLI-Auth ist abgelaufen** (401) → `gh run list` etc. gehen nicht; Deploy-Status via GitHub-Web prüfen.
+
+## 2. Was die Site ist / Technik
+- Statische Site, **reines HTML/CSS/JS, kein Build-Tool/CI** (außer dem Tiernotfall-Generator, s. u.).
+- One-Pager `index.html` + Unterseiten: `impressum/datenschutz/barrierefreiheit.html`, `ratgeber/` (Übersicht + 8 Artikel), `tiernotfall/`.
+- Design: Weinrot **#7E1F2D**, Fonts lokal (DejaVu Sans + Figtree, OpenDyslexic für A11y), Dark Mode, A11y-Panel (Schrift/Kontrast/Links/Motion/Dyslexie/Vorlesen), alles über `assets/js/main.js` (eine Quelle der Wahrheit).
+- **Vorschau:** lokaler Server `python3 -m http.server 8137 --directory website` (aus dem Anna-Repo starten). Browser via `mcp__Claude_Browser__*` → `preview_start {url:"http://localhost:8137/…"}` (direktes `navigate` auf localhost wird per Policy geblockt; immer `preview_start`).
+
+## 3. In dieser Session gebaut (Chronik)
+1. Einzeltraining-Karten-Icons + Kontakt-Icons (echte SVG-Glyphen).
+2. **E-Mail-Konfigurator** (nicht-modaler `<dialog>` + eigener Backdrop, damit der A11y-Button erreichbar bleibt; Themenauswahl als **Radio-Gruppe**; Fokus-Eingrenzung inkl. FAB; Aufräumen imperativ, weil das native `close`-Event nicht-modal unzuverlässig feuert).
+3. SEO/GEO: **Social-Bild 1200×630** (`bilder/social/anna-mit-hund.jpg`, Crop aus Über-mich-Foto), **IPTC „human-made"** (DigitalSourceType=digitalCapture) in allen Fotos, Provenienz-Meta + Schema, PLZ + `areaServed` (Rudow-Umland) im Schema.
+4. **A11y:** Accessible Names der Panel-Schalter (WCAG 4.1.2), Feld-Kontrast (1.4.11), Dyslexie-Schrift auf Formularen; WCAG-2.1-AA-Audit gefahren.
+5. Galerie auf `<img loading=lazy>` umgestellt; Nav-Breakpoint responsiv; Kontakt-Grid 1×4/2×2/4×1.
+6. **Ratgeber-System:** 8 Artikel + `/ratgeber/` Übersichtsseite, je „Kurz gesagt"-Direktantwort, `BlogPosting`+`FAQPage`+`Breadcrumb`-Schema, Cross-Linking.
+7. **E-E-A-T:** „Qualifikation & Erfahrung"-Block in „Über mich" + `Person`-Schema (`hasCredential` § 11 TierSchG, `memberOf` Kitmir; **seit 3 Jahren**, Fortbildung via Praktika/Online/Vor-Ort, gewaltfrei).
+8. Footer-Credit (Inu-Trust AG) + Hinweis auf **Digitale Ersthilfe** (digitale-ersthilfe.novumanalytica.com – kostenloser Novum-Hilfe-Service; `rel=nofollow`) auf allen Seiten.
+9. **Rubrik „Tiernotfall"** – siehe §4.
+- Keyword-Recherche: `keyword-recherche.md`.
+
+## 4. Rubrik „Tiernotfall" (zuletzt gebaut) — WICHTIG
+- Basiert auf `designentwürfe/annas-website-tiernotruf.zip` (Briefing von Sophia/Novum).
+- **Datenmodell:** `website/daten/tiernotfall-kontakte.json` (+ `.schema.json`), 31 Kontakte.
+- **Generator (statisch, kein CI):** `tools/generate-tiernotfall.js` → erzeugt `website/tiernotfall/index.html`.
+  Pflege-Workflow: **nur JSON anfassen**, dann `node tools/generate-tiernotfall.js`, Ausgabe mitcommitten. `id` nie ändern, keine Nummern ohne Quelle.
+- Seite: Sticky-Notrufnummern (112/110/Bürgertelefon), Entscheidungsbaum 9 Situationen als `<details>`, Kontaktkarten mit Badges (amtlich/gemeinnützig/**privat_kostenpflichtig** = Warn-Badge + Neutralitätshinweis), `tel:`-Links, `FAQPage`-Schema, **Print-CSS** (Akkordeons öffnen beim Druck via main.js Modul 8), Nav-Punkt „Notfall", Teaser-Kachel in der Tierschutz-Sektion.
+- **Verifikation 03.08. (per Websuche, offizielle Quellen):** ✅ `fu-dueppel` (0160 3758447), `vet-neukoelln` (030 90239-6749), `tsv-katzenrettung` (Zentrale 030 76888-0; -139 nicht bestätigt), `kadaver-entsorgung` (Prozess). ⏳ bleiben Vorbehalt: `tierfang-berlin`, `tierheim-brandenburg` (LDS-Tierheim für Schönefeld noch offen).
+- Doku: **`docs/tiernotfall.md`**. Wiederkehrende Tasks stehen im Backlog (halbjährlicher Review, nächster **Feb 2027**).
+- **Offen (nur optische Nachkontrolle, nicht kritisch):** Homepage-Teaser-Kachel + Sticky-Nummern-Stapelung auf Mobil visuell final prüfen (Seite ist funktional, JSON-LD/Serving/Nav validiert).
+
+## 5. Wichtige Dateien
+- `website/index.html` (One-Pager + JSON-LD-`@graph` im `<head>`), `website/assets/css/style.css`, `website/assets/js/main.js` (8 Module: injectUI/A11y, Theme, Menü, Reveal, ScrollTop, Datenschutz-Note, E-Mail-Konfigurator, Print-Details).
+- `website/ratgeber/` (index.html + 8 Artikel), `website/tiernotfall/`, `website/daten/`, `tools/generate-tiernotfall.js`.
+- `BACKLOG.md`, `keyword-recherche.md`, `docs/tiernotfall.md`.
+
+## 6. Offene Punkte / Backlog (Auszug — Details in BACKLOG.md)
+- 🔴 **Go-Live:** Domain-DNS + **günstiger statischer Host** (Entscheidung Userin: statisch starten, Azure/Backend zurückgestellt); Datenschutz-Platzhalter (Hosting-Anbieter, Logfile-Dauer) füllen; „Stand"-Datum in Impressum/Datenschutz; Rechtstexte juristisch prüfen; danach noindex→index.
+- 🔴 **Tiernotfall verify_before_launch:** `tierfang-berlin` + LDS-Tierheim recherchieren.
+- 🟡 Instagram-Feed: DSGVO-konform nur mit Server/2-Klick; Userin klärt noch. Bis dahin nur Link. Option 1 (kuratierte statische Bilder) wäre sofort machbar.
+- 🟢 EEAT von Userin „vorerst erledigt". Testimonials/Ratings bewusst **nicht** (Wunsch Userin).
+- Konzept-Frage offen beantwortet: E-E-A-T lohnt v. a. auf **Nierenzentrum** (YMYL) > Inu/Novum > Anna.
+
+## 7. Stolperfallen / Quirks
+- **`main.js`/CSS werden gern STALE geliefert** (Browser-Cache). Zum Testen frisch nachladen: entweder `<script src>`/`<link href>` temporär `?v=` cache-busten (danach zurücksetzen!) oder per JS ein frisches `<link>`/`<script>` mit `?fresh=Date.now()` injizieren. `injectUI()` hat **keinen** Doppel-Injektions-Schutz → bei Re-Inject entstehen doppelte FABs.
+- **Screenshots blanken oft** bei `scrollY≠0` / nach dynamischen Änderungen → erneut screenshotten oder `get_page_text`/DOM-Checks nutzen. Isolat-Prüfseiten (bei scrollY 0) sind zuverlässig.
+- **macOS sed:** `sed -i ''`. **zsh:** Globs auf gelöschte Dateien failen → git-Pfadspecs quoten.
+- **Nav-Breakpoint:** 7 Punkte brauchen ~1293px → aktuell Burger bei ≤1320px. Bei Nav-Änderung neu messen (`nav-desktop.scrollWidth + brand + padding`).
+- **Sektions-Farbband** alterniert plain/`--band` (`--surface-2`). Beim Einfügen einer Sektion die Alternierung der Folgesektionen mitkorrigieren (Markup: band = `<section class="section--band"><div class="container section">`, plain = `<section class="section container">`).
+- **JSON-LD nach jeder Schema-Änderung prüfen:** `node -e '…JSON.parse(<script ld+json>)…'`. **FAQPage sichtbar = Schema** (Google-Anforderung).
+- **`.btn` in `.legal`-Seiten:** `.legal a`-Farbe überschrieb Button-Text → Overrides `.legal a.btn--*` vorhanden.
+- **Tiernotfall:** nach JSON-Edit **Generator laufen lassen**, sonst ändert sich das HTML nicht.
+- **Commit-Trailer:** `Co-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>`. Commit/Push nur auf Wunsch (hier ist Push=Deploy=erwünschter Flow).
+
+## 8. Letzte Commits (main)
+```
+b64ffb6 Neue Rubrik Tiernotfall (/tiernotfall/) – datengetrieben, statisch generiert
+942a1d5 5 neue Ratgeber + Ratgeber-Übersichtsseite (/ratgeber/)
+8d5269f E-E-A-T: Qualifikation & Erfahrung in „Über mich" + Person-Schema
+25f6a23 Neuer Ratgeber: Hund und Hitze (saisonal, Berlin) + integriert
+b4fd972 Ratgeber: fett gesetzte Direkt-Antwort („Kurz gesagt") oben
+f625c29 Responsive-Fixes: Nav-Breakpoint, Kontakt-Grid, Sektions-Farbband
+```
+
+---
+**Tipp Start nächste Session:** absolute Pfade auf `~/projects/anna_prädel_hundetrainerin/`; Server auf 8137 starten; für JS/CSS-Tests Cache-Busting bedenken; offene 🔴-Go-Live-Punkte mit dem User klären.
