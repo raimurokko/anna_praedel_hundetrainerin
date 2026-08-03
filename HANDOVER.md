@@ -71,6 +71,13 @@ Working Tree sauber, alles auf `main` gepusht (Deploy = Push).
      aus dem Viewport → in `.notfall-outro` auf Mobil umbrechend.
   Zusätzlich: Teaser-Kachel auf ≤560 px ohne Deko-Pfeil, damit der Text nicht 6-zeilig quetscht.
 
+12. **Tiernotfall im Footer (04.08.):** auf 22 von 24 Seiten als eigene Zeile
+    (`.site-footer__notfall`, Warndreieck-SVG), platziert **vor** „Umsetzung"/„Digitale Ersthilfe".
+    Nicht auf `tiernotfall/index.html` (Selbstlink) und `kuehlschrank.html`. Die 404-Seite hat den
+    Link separat, da sie keinen Standard-Footer hat.
+    ⚠️ **Footer ist auf jeder Seite dupliziert** (kein Include, kein Build) – neue Seiten immer aus
+    einer bestehenden kopieren, sonst fehlt die Zeile.
+
 ## 5. Wichtige Dateien
 - `website/index.html` (One-Pager + JSON-LD-`@graph` im `<head>`), `website/assets/css/style.css`, `website/assets/js/main.js` (8 Module: injectUI/A11y, Theme, Menü, Reveal, ScrollTop, Datenschutz-Note, E-Mail-Konfigurator, Print-Details).
 - `website/ratgeber/` (index.html + 16 Artikel), `website/tiernotfall/`, `website/daten/`, `tools/generate-tiernotfall.js`.

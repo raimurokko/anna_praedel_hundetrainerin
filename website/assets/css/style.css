@@ -554,6 +554,14 @@ a.card { text-decoration: none; color: inherit; }
 .site-footer__bottom p.site-footer__credit { padding-top: 0; padding-bottom: 3px; font-size: .82rem; opacity: .82; line-height: 1.5; }
 .site-footer__bottom p.site-footer__credit:last-child { padding-bottom: 22px; }
 .site-footer__credit a { color: var(--wine); }
+/* Tiernotfall-Hinweis: eigener Service, steht deshalb VOR den Credits und
+   etwas kräftiger – im Ernstfall soll er von jeder Seite aus auffindbar sein. */
+.site-footer__bottom p.site-footer__notfall {
+  padding-top: 0; padding-bottom: 14px; font-size: .92rem; color: var(--fg);
+  display: flex; align-items: center; gap: 9px;
+}
+.site-footer__notfall svg { flex: 0 0 auto; width: 19px; height: 19px; fill: none; stroke: var(--wine); stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; }
+.site-footer__notfall a { color: var(--wine); font-weight: 700; }
 
 /* ===== Ratgeber (Teaser + Karten) ===== */
 .ratgeber-intro { max-width: 60ch; margin: 14px 0 0; }

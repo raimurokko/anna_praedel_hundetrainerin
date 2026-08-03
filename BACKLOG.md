@@ -56,6 +56,15 @@ Priorität: 🔴 hoch · 🟡 mittel · 🟢 niedrig
   ⚠️ **Zu bestätigen:** „über 3 Jahre" wurde 2026 geschrieben und rechnet auf **2023** zurück.
   Das Startjahr 2022 kam aus der Vorgabe – bitte mit Anna gegenprüfen.
 
+- [x] 🟡 **Tiernotfall im Footer auf allen Seiten** (analog „Digitale Ersthilfe"): eigene Zeile
+  mit Warndreieck-Icon, bewusst **vor** den Credit-Zeilen und etwas kräftiger – im Ernstfall soll
+  der Hinweis von jeder Seite aus auffindbar sein. Auf 22 von 24 Seiten; ausgenommen sind
+  `tiernotfall/index.html` (Selbstlink) und `tiernotfall/kuehlschrank.html` (eigener Minimal-Footer).
+  Die 404-Seite hat keinen Standard-Footer und bekam den Link separat unter dem Button – gerade
+  dort ist er nützlich, weil sonst nichts zu finden ist.
+  ⚠️ **Wartungshinweis:** Der Footer ist auf jeder Seite dupliziert (kein Include). Wer künftig eine
+  Seite hinzufügt, muss die Zeile mitnehmen – am einfachsten durch Kopieren einer bestehenden Seite.
+
 ### 🟡 Offen aus dieser Session
 - [ ] 🟢 Optional: pro Kontaktkarte ein eigener „Nummer stimmt nicht?"-Link, der den Eintragsnamen
   schon in die Mail einsetzt (Generator kennt Name und `id`). Bewusst zurückgestellt: bläht die Karten auf.
