@@ -39,7 +39,10 @@ Letzter Commit: **b64ffb6** (Rubrik Tiernotfall). Working Tree sauber, alles auf
 ## 4. Rubrik „Tiernotfall" (zuletzt gebaut) — WICHTIG
 - Basiert auf `designentwürfe/annas-website-tiernotruf.zip` (Briefing von Sophia/Novum).
 - **Datenmodell:** `website/daten/tiernotfall-kontakte.json` (+ `.schema.json`), 31 Kontakte.
-- **Generator (statisch, kein CI):** `tools/generate-tiernotfall.js` → erzeugt `website/tiernotfall/index.html`.
+- **Generator (statisch, kein CI):** `tools/generate-tiernotfall.js` → erzeugt **zwei** Dateien:
+  `website/tiernotfall/index.html` und `website/tiernotfall/kuehlschrank.html` (kompakte
+  Druckfassung, 1 Blatt A4, eigenes CSS ohne `style.css`, `noindex`, nicht in der Sitemap).
+  Nach JSON-Änderungen prüfen, ob es noch **ein** Blatt ist – Befehl in `docs/tiernotfall.md`.
   Pflege-Workflow: **nur JSON anfassen**, dann `node tools/generate-tiernotfall.js`, Ausgabe mitcommitten. `id` nie ändern, keine Nummern ohne Quelle.
 - Seite: Sticky-Notrufnummern (112/110/Bürgertelefon), Entscheidungsbaum 9 Situationen als `<details>`, Kontaktkarten mit Badges (amtlich/gemeinnützig/**privat_kostenpflichtig** = Warn-Badge + Neutralitätshinweis), `tel:`-Links, `FAQPage`-Schema, **Print-CSS** (Akkordeons öffnen beim Druck via main.js Modul 8), Nav-Punkt „Notfall", Teaser-Kachel in der Tierschutz-Sektion.
 - **Verifikation 03.08. (per Websuche, offizielle Quellen):** ✅ `fu-dueppel` (0160 3758447), `vet-neukoelln` (030 90239-6749), `tsv-katzenrettung` (Zentrale 030 76888-0; -139 nicht bestätigt), `kadaver-entsorgung` (Prozess). ⏳ bleiben Vorbehalt: `tierfang-berlin`, `tierheim-brandenburg` (LDS-Tierheim für Schönefeld noch offen).

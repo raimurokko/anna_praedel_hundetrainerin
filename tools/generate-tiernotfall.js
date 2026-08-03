@@ -119,6 +119,213 @@ const SITS = [
 // "Stand" = ältestes verified_date unter den aktiven Einträgen
 const stand = data.contacts.filter(c => c.status === 'active' && c.verified_date).map(c => c.verified_date).sort()[0] || data.meta.last_full_review;
 
+/* Korrektur-Meldung: vorausgefuellte Mail statt Sprung in die Kontakt-Sektion.
+   Die abgefragten Felder sind genau die, die fuer die JSON-Pflege gebraucht werden
+   (Eintrag, Fehler, richtige Angabe, Quelle) – "keine Nummern ohne Quelle". */
+const KORREKTUR_MAIL = 'info@hundetraining-ap.de';
+const korrekturBody = [
+  'Hallo Anna,', '',
+  'auf der Seite hundetraining-ap.de/tiernotfall/ stimmt eine Angabe nicht mehr:', '',
+  'Welcher Eintrag: ',
+  'Was ist veraltet oder falsch: ',
+  'Richtige Angabe (falls bekannt): ',
+  'Quelle / Link (falls vorhanden): ', '',
+  'Viele Grüße'
+].join('\n');
+const korrekturMailto = 'mailto:' + KORREKTUR_MAIL +
+  '?subject=' + encodeURIComponent('Tiernotfall-Seite: Korrektur zu einem Eintrag') +
+  '&body=' + encodeURIComponent(korrekturBody);
+
+/* ---------- Kuehlschrank-Version (kompakte Druckseite, Ziel: 1 Blatt A4) ----------
+   Kurztitel + eine Handlungszeile je Situation. Inhaltlich destilliert aus
+   SITS[].faq/steps oben – hier stehen bewusst KEINE zusaetzlichen Fakten. */
+const PRINT_META = {
+  gift:        { short: 'Giftköder / Vergiftung',        tip: 'Sofort Klinik/Notdienst anrufen und hinfahren – nicht abwarten. Reste des Köders mitnehmen.' },
+  medizin:     { short: 'Medizinischer Notfall',         tip: 'Erst die eigene Praxis, sonst Notdienst/Klinik. Taxis in Berlin müssen Hunde und Katzen befördern.' },
+  gefunden:    { short: 'Haustier gefunden',             tip: 'Chip kostenlos auslesen lassen (jede Praxis, jedes Tierheim), Register abfragen, Tiersammelstelle melden (Pflicht).' },
+  vermisst:    { short: 'Tier vermisst',                 tip: 'Tiersammelstelle fragen, Suchmeldung bei TASSO, Polizeirevier des Verlustorts. In Anzeigen keine private Nummer, keine Belohnung.' },
+  wildtier:    { short: 'Wildtier verletzt / hilflos',   tip: 'Nicht jedes Jungtier braucht Hilfe – erst anrufen, dann handeln.' },
+  wildunfall:  { short: 'Wildunfall mit dem Auto',       tip: 'Unfallstelle absichern, 110 anrufen, am Ort bleiben. Tier nicht anfassen, totes Wild nicht mitnehmen.' },
+  quaelerei:   { short: 'Tierquälerei / schlechte Haltung', tip: 'Akut (z. B. Hund im heißen Auto): sofort 110, auch nachts. Sonst Veterinäramt des Bezirks.' },
+  'katze-baum':{ short: 'Katze auf dem Baum',            tip: 'Die Feuerwehr ist nicht zuständig – Tierschutzverein anrufen. 112 nur bei Gefahr für Menschen.' },
+  'totes-tier':{ short: 'Totes Tier gefunden',           tip: 'Haustier mit Chip der Tiersammelstelle melden – nur so erfährt der Halter vom Schicksal seines Tieres.' }
+};
+
+// Kurznamen fuer den Druck (die vollen Namen sprengen die Spaltenbreite).
+const PRINT_SHORT = {
+  'notruf-112': 'Feuerwehr / Rettungsdienst',
+  'notruf-110': 'Polizei-Notruf',
+  'polizei-buergertelefon': 'Polizei Berlin, Bürgertelefon',
+  'tiersammelstelle': 'Amtl. Tiersammelstelle',
+  'tierfang-berlin': 'Amtlicher Tierfang Berlin',
+  'tasso-hotline': 'TASSO Notrufzentrale',
+  'tasso-tkn': 'TASSO Chip-Abfrage',
+  'findefix-hotline': 'FINDEFIX Service-Telefon',
+  'findefix-check': 'FINDEFIX Chip-Abfrage',
+  'findefix-fundmeldung': 'FINDEFIX Fundmeldung',
+  'petmaxx': 'Petmaxx (Metasuche Register)',
+  'tak-notdienst': 'Tierärztekammer-Notdienst',
+  'fu-dueppel': 'FU-Kleintierklinik Düppel',
+  'giftnotruf-charite': 'Giftnotruf Charité – nur für Menschen!',
+  'nabu-wildtiertelefon': 'NABU Wildtiertelefon',
+  'nabu-wildvogelstation': 'NABU Wildvogelstation',
+  'eichhoernchen-notruf': 'Eichhörnchen Notruf e.V.',
+  'eichhoernchenhilfe-bb': 'Eichhörnchenhilfe Berlin/BB',
+  'igelschutz-berlin': 'AK Igelschutz Berlin',
+  'wildtierschutz-de': 'Wildtierschutz Dtl.',
+  'wildtierhilfe-potsdam': 'Wildtierhilfe Potsdam',
+  'tierrettung-potsdam': 'Tierrettung Potsdam',
+  'tierheim-berlin': 'Tierheim Berlin',
+  'tierheim-brandenburg': 'Tierheim Brandenburg/Havel',
+  'tsv-berater': 'Tierschutzberater, TSV Berlin',
+  'tsv-katzenrettung': 'Tierschutz Berlin, Tierrettung',
+  'vet-neukoelln': 'Veterinäramt Neukölln (Rudow)',
+  'landestierschutz': 'Landestierschutzbeauftragte',
+  'mobil-tierrettung-bb': 'Mobile Tiernotfallrettung BB',
+  'mobil-tieraerzte-notdienst': 'Tierärzte im Notdienst BB',
+  'kadaver-entsorgung': 'Ordnungsamt des Bezirks / BSR'
+};
+
+const NOTRUF_IDS = ['notruf-112', 'notruf-110', 'polizei-buergertelefon'];
+
+function domainOf(url) {
+  const m = String(url || '').match(/^https?:\/\/(?:www\.)?([^/]+)/i);
+  return m ? m[1] : '';
+}
+
+/* Kontakte je Situation: aus den steps eingesammelt, dedupliziert.
+   Die drei Notrufnummern stehen bereits im Kopfblock -> hier weglassen. */
+function printContacts(sit) {
+  const seen = new Set();
+  const out = [];
+  (sit.steps || []).forEach(st => (st.contacts || []).forEach(id => {
+    if (seen.has(id) || NOTRUF_IDS.includes(id)) return;
+    seen.add(id);
+    const c = byId[id];
+    if (!c || c.status === 'deprecated') return;
+    const value = c.phone ? c.phone.display : domainOf(c.url);
+    if (!value) return;
+    const flags = [];
+    if (c.org_type === 'privat_kostenpflichtig') flags.push('privat, kostenpflichtig');
+    if (c.status === 'verify_before_launch') flags.push('wird noch geprüft');
+    out.push({ name: PRINT_SHORT[id] || c.name, value, isPhone: !!c.phone, e164: c.phone && c.phone.e164, flags });
+  }));
+  return out;
+}
+
+const printBlocks = SITS.map(s => {
+  const meta = PRINT_META[s.id] || { short: s.title, tip: '' };
+  const rows = printContacts(s).map(r => {
+    const val = r.isPhone
+      ? `<a class="kb-num" href="tel:${esc(r.e164)}">${esc(r.value)}</a>`
+      : `<span class="kb-web">${esc(r.value)}</span>`;
+    const flag = r.flags.length ? ` <span class="kb-flag">(${esc(r.flags.join('; '))})</span>` : '';
+    return `      <li><span class="kb-name">${esc(r.name)}${flag}</span>${val}</li>`;
+  }).join('\n');
+  return `    <section class="kb-sit">
+      <h2>${esc(meta.short)}</h2>
+      ${meta.tip ? `<p class="kb-tip">${esc(meta.tip)}</p>` : ''}
+      <ul class="kb-list">
+${rows}
+      </ul>
+    </section>`;
+}).join('\n');
+
+const notrufBlock = NOTRUF_IDS.map(id => {
+  const c = byId[id];
+  return `      <a class="kb-emerg" href="tel:${esc(c.phone.e164)}"><strong>${esc(c.phone.display)}</strong><span>${esc(PRINT_SHORT[id] || c.name)}</span></a>`;
+}).join('\n');
+
+const kuehlschrank = `<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tiernotfall Berlin – Notrufnummern zum Ausdrucken | Anna Prädel</title>
+<meta name="description" content="Kompakte Übersicht aller wichtigen Tiernotfall-Nummern für Berlin und Brandenburg – auf ein Blatt A4 zum Ausdrucken und an den Kühlschrank hängen.">
+<meta name="robots" content="noindex,follow">
+<link rel="canonical" href="https://hundetraining-ap.de/tiernotfall/">
+<link rel="icon" href="../assets/icons/favicon.svg" type="image/svg+xml">
+<style>
+  /* Eigenstaendiges CSS: bewusst OHNE style.css, damit der Druck exakt
+     kontrollierbar bleibt (Ziel: genau 1 Blatt A4). */
+  *, *::before, *::after { box-sizing: border-box; }
+  :root { --ink: #1a1a1a; --line: #c9c9c9; --wine: #7E1F2D; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0; padding: 14mm 12mm; background: #fff; color: var(--ink);
+    font-family: 'DejaVu Sans', Verdana, Geneva, sans-serif;
+    font-size: 9.7pt; line-height: 1.3;
+  }
+  a { color: inherit; text-decoration: none; }
+  .kb-head { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap;
+    border-bottom: 2px solid var(--wine); padding-bottom: 5px; margin-bottom: 8px; }
+  .kb-head h1 { font-size: 16pt; margin: 0; color: var(--wine); letter-spacing: -.01em; }
+  .kb-head p { margin: 0; font-size: 8.6pt; color: #555; }
+  .kb-head .kb-src { margin-left: auto; }
+  .kb-emergrow { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin-bottom: 9px; }
+  .kb-emerg { display: flex; flex-direction: column; align-items: center; justify-content: center;
+    border: 1.6pt solid var(--wine); border-radius: 3mm; padding: 4px 3px; text-align: center; }
+  .kb-emerg strong { font-size: 17pt; line-height: 1.05; color: var(--wine); }
+  .kb-emerg span { font-size: 8.2pt; color: #444; }
+  .kb-grid { column-count: 2; column-gap: 8mm; column-rule: 1px solid var(--line); }
+  .kb-sit { break-inside: avoid; page-break-inside: avoid; margin: 0 0 6px; }
+  .kb-sit h2 { font-size: 10.6pt; margin: 0 0 1px; color: var(--wine);
+    border-bottom: .8pt solid var(--line); padding-bottom: 1px; }
+  .kb-tip { margin: 1px 0 2px; font-size: 8.8pt; color: #333; }
+  .kb-list { list-style: none; margin: 0; padding: 0; }
+  .kb-list li { display: flex; gap: 5px; align-items: baseline;
+    border-bottom: .4pt dotted var(--line); padding: .6px 0; }
+  .kb-name { flex: 1 1 auto; min-width: 0; }
+  .kb-flag { color: #666; font-size: 7.9pt; }
+  .kb-num { flex: 0 0 auto; font-weight: 700; white-space: nowrap; font-variant-numeric: tabular-nums; }
+  .kb-web { flex: 0 0 auto; color: #444; white-space: nowrap; font-size: 8.5pt; }
+  .kb-foot { margin-top: 8px; padding-top: 5px; border-top: 1px solid var(--line);
+    font-size: 8pt; color: #555; display: flex; gap: 10px; justify-content: space-between; flex-wrap: wrap; }
+  .kb-actions { margin: 0 0 12px; display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+  .kb-actions button, .kb-actions a.kb-back {
+    font: inherit; font-size: 10pt; padding: 9px 18px; border-radius: 999px; cursor: pointer;
+    border: 1px solid var(--wine); background: var(--wine); color: #fff; }
+  .kb-actions a.kb-back { background: transparent; color: var(--wine); }
+  .kb-actions .kb-hint { font-size: 9pt; color: #555; }
+  @media screen { body { max-width: 210mm; margin: 0 auto; box-shadow: 0 0 0 1px #eee; } }
+  @media print {
+    @page { size: A4 portrait; margin: 10mm; }
+    body { padding: 0; font-size: 9.5pt; }
+    .kb-actions { display: none !important; }
+    a { color: #000; }
+  }
+</style>
+</head>
+<body>
+  <div class="kb-actions">
+    <button type="button" onclick="window.print()">Drucken / als PDF sichern</button>
+    <a class="kb-back" href="./">Zurück zur Notfall-Seite</a>
+    <span class="kb-hint">Passt auf ein Blatt A4. Im Druckdialog „Als PDF sichern“ wählen, um die Datei zu behalten.</span>
+  </div>
+
+  <header class="kb-head">
+    <h1>Tiernotfall Berlin &amp; Brandenburg</h1>
+    <p>Stand: ${esc(stand)}</p>
+    <p class="kb-src">hundetraining-ap.de/tiernotfall/</p>
+  </header>
+
+  <div class="kb-emergrow">
+${notrufBlock}
+  </div>
+
+  <div class="kb-grid">
+${printBlocks}
+  </div>
+
+  <footer class="kb-foot">
+    <span>Diese Übersicht ersetzt keine tierärztliche Beratung. Alle Angaben ohne Gewähr – im Zweifel immer den Notruf wählen.</span>
+    <span>Hundetraining · Anna Prädel, Berlin</span>
+  </footer>
+</body>
+</html>
+`;
+
 // Kurzlabels nur fuer die Sticky-Leiste auf schmalen Viewports (Darstellung, kein Inhalt aus der JSON)
 const STICKY_SHORT = {
   'notruf-112': 'Feuerwehr',
@@ -242,9 +449,9 @@ ${situationsHtml}
       </div>
 
       <div class="notfall-outro">
-        <p class="notfall-stand">Stand der Angaben: ${esc(stand)} · Nummer veraltet? <a href="../index.html#kontakt">Schreib uns.</a></p>
+        <p class="notfall-stand">Stand der Angaben: ${esc(stand)} · Nummer veraltet? <a href="${esc(korrekturMailto)}">Korrektur melden.</a></p>
         <p class="notfall-disclaimer">Diese Übersicht ersetzt keine tierärztliche Beratung. Alle Angaben ohne Gewähr; im Zweifel immer den Notruf wählen.</p>
-        <button type="button" class="btn btn--ghost" onclick="window.print()">🖨 Für den Kühlschrank ausdrucken</button>
+        <a class="btn btn--ghost" href="kuehlschrank.html">🖨 Für den Kühlschrank ausdrucken</a>
       </div>
     </div>
   </main>
@@ -266,4 +473,8 @@ ${situationsHtml}
 
 fs.mkdirSync(path.join(ROOT, 'website/tiernotfall'), { recursive: true });
 fs.writeFileSync(path.join(ROOT, 'website/tiernotfall/index.html'), page, 'utf8');
+fs.writeFileSync(path.join(ROOT, 'website/tiernotfall/kuehlschrank.html'), kuehlschrank, 'utf8');
+
+const printRows = SITS.reduce((n, s) => n + printContacts(s).length, 0);
 console.log('tiernotfall/index.html generiert · Situationen: ' + SITS.length + ' · Stand: ' + stand);
+console.log('tiernotfall/kuehlschrank.html generiert · Nummern-Zeilen: ' + printRows + ' (Ziel: 1 Blatt A4)');

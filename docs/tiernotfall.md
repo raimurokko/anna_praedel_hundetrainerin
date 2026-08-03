@@ -21,6 +21,26 @@ nach Situation sortiert (Entscheidungsbaum, 9 Situationen). Basiert auf dem Brie
 3. Ergebnis (`website/tiernotfall/index.html`) mitcommitten. Die Situationen (Schritte + welche
    Kontakt-`id`s sie referenzieren) stehen im Generator (`SITS`-Array).
 
+### Kühlschrank-Version (`tiernotfall/kuehlschrank.html`)
+Der Generator erzeugt **zwei** Dateien: die normale Seite und eine kompakte Druckfassung.
+Die Vollseite zu drucken ergäbe 19 Seiten A4 – die Kühlschrank-Fassung passt auf **ein Blatt**.
+
+- Eigenes, komplett eigenständiges CSS **ohne `style.css`** (nur so ist der Umbruch exakt
+  kontrollierbar). Zweispaltig, `@page A4 portrait`.
+- Inhalt: Notrufblock + je Situation ein Kurztitel, eine Handlungszeile und die Nummern.
+  Kurztitel/Handlungszeile stehen in `PRINT_META`, Kontakt-Kurznamen in `PRINT_SHORT` –
+  beides **Darstellung, keine neuen Fakten**; Quelle bleibt die JSON.
+- Kontakte ohne Telefonnummer erscheinen mit ihrer Domain (Online-Register).
+  `privat_kostenpflichtig` und `verify_before_launch` werden auch im Druck gekennzeichnet.
+- `noindex` (Duplicate Content) und **nicht** in der `sitemap.xml`.
+- **Nach jeder JSON-Änderung prüfen, ob es noch ein Blatt ist:**
+  ```bash
+  "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless --disable-gpu \
+    --no-pdf-header-footer --print-to-pdf=/tmp/k.pdf http://localhost:8137/tiernotfall/kuehlschrank.html
+  python3 -c "import re;print(len(re.findall(rb'/Type\s*/Page[^s]',open('/tmp/k.pdf','rb').read())))"
+  ```
+  Wird es zu voll: Schriftgrößen im `<style>` der Kühlschrank-Seite im Generator nachziehen.
+
 ### Sticky-Notrufleiste
 Die drei Nummern oben kommen aus der JSON (`notruf-112`, `notruf-110`, `polizei-buergertelefon`).
 Auf schmalen Viewports (≤ 640 px) wird statt des vollen Kontaktnamens ein **Kurzlabel** angezeigt,

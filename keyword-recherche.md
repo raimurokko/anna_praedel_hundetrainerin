@@ -53,8 +53,38 @@ Diese Fragen sind Content-Gold für Antwort-Boxen und LLM-Zitate:
 Jeweils mit `BlogPosting`/`Article`-Schema, klarer FAQ-Sektion, interner Verlinkung zum
 passenden Angebot und CTA „Termin anfragen".
 
+---
+
+## Abdeckungs-Stand (04.08.2026)
+
+**Ebene 3 (Frage-basiert) ist abgearbeitet.** Alle 8 Fragen aus Abschnitt 3 haben einen Artikel;
+dazu kamen zwei nicht gelistete Themen (Welpen-Grunderziehung, Hund und Hitze). 8 Artikel gesamt.
+
+### Offen – nach Hebelwirkung sortiert
+
+**1. 🔴 „mobil / zu Hause / Hausbesuch" fehlt im sichtbaren Text (Ebene 1)**
+Annas Kern-Positionierung laut dieser Recherche ist *mobiles Einzeltraining bei euch zu Hause* –
+die Begriffe „mobil", „mobiles Hundetraining", „Hausbesuch", „zu Hause" kommen auf der Startseite
+im sichtbaren Text **kein einziges Mal** vor. Genau darauf zielt der Wettbewerb („mobil",
+„bei Ihnen zu Hause"). Größter Hebel bei kleinstem Aufwand: ein Absatz + Zwischenüberschrift.
+
+**2. 🟡 Zwei Umlandorte fehlen im Text:** Großziethen und Waltersdorf (Rudow, Neukölln,
+Gropiusstadt, Buckow, Britz, Schönefeld, Altglienicke, Bohnsdorf, Adlershof sind drin).
+
+**3. 🟡 Service-Themen ohne Artikel (Ebene 2)**
+- Alltagstraining (kommt sichtbar 0× vor)
+- Zweithund-Beratung (1× erwähnt, kein Artikel)
+- gewaltfreies Hundetraining als eigenes Haltungs-/Trust-Thema (2× erwähnt, kein Artikel)
+
+**4. 🟢 Naheliegende Folgethemen, die in dieser Liste noch fehlen**
+Hundebegegnungen/Leinenaggression · Angsthund & Silvester (saisonal, wie „Hitze") ·
+Hund und Baby/Kind · entspanntes Autofahren.
+
+**5. 🔴 Nicht-Content, domainabhängig:** Google-Business-Profil und Verzeichniseinträge
+(NAP konsistent) – beides erst nach Go-Live möglich, aber der stärkste Lokal-Hebel überhaupt.
+
 ## Nächste Schritte
 - [ ] Google Business Profil anlegen (sobald Domain live) – stärkster Lokal-Hebel
-- [ ] Ratgeber-Bereich + 2 Muster-Artikel anlegen (Demo für Anna)
+- [x] Ratgeber-Bereich + Muster-Artikel anlegen (Demo für Anna) – erledigt, 8 Artikel + Übersicht
 - [ ] Einträge in lokalen Verzeichnissen (NAP konsistent: Name/Adresse/Telefon)
 - [ ] `areaServed`-Schema bereits erweitert (Berlin + Rudow-Umland)

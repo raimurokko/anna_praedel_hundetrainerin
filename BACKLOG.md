@@ -24,6 +24,21 @@ Priorität: 🔴 hoch · 🟡 mittel · 🟢 niedrig
 - [x] Notrufleiste auf Mobil sticky statt static, kompakt (72 px statt 98 px), Kurzlabels + `aria-label`.
 - [x] Druck-Button lief auf 375 px aus dem Viewport (`.btn` = `white-space: nowrap`) → bricht jetzt um.
 - [x] Teaser-Kachel auf ≤560 px ohne Deko-Pfeil (Text 6 → 4 Zeilen).
+- [x] 🔴 **Kühlschrank-Druck:** Die Vollseite ergab **19 Seiten A4**. Neue kompakte Druckfassung
+  `tiernotfall/kuehlschrank.html` (aus demselben Generator, eigenes CSS, zweispaltig) passt auf
+  **1 Blatt A4** – per Chrome-Headless-PDF verifiziert. Button auf der Notfallseite verlinkt
+  jetzt dorthin statt `window.print()`. Doku: `docs/tiernotfall.md`.
+- [x] 🟡 **„Schreib uns" vorkonfiguriert:** statt Sprung in die Kontakt-Sektion jetzt
+  „Korrektur melden" als `mailto:` mit Betreff und Feld-Template (Eintrag / was ist falsch /
+  richtige Angabe / **Quelle**) – passend zum Pflege-Prinzip „keine Nummern ohne Quelle".
+
+### 🟡 Offen aus dieser Session
+- [ ] 🟢 Optional: pro Kontaktkarte ein eigener „Nummer stimmt nicht?"-Link, der den Eintragsnamen
+  schon in die Mail einsetzt (Generator kennt Name und `id`). Bewusst zurückgestellt: bläht die Karten auf.
+- [ ] 🟢 Optional: Druckt jemand die **Vollseite** per Strg+P, sind es weiterhin 19 Seiten. Per
+  Print-CSS liesse sich dort ein Hinweis auf die Kühlschrank-Fassung einblenden.
+- [ ] 🟢 Optional: fertige `.pdf`-Datei zum Download mitliefern (statt „im Druckdialog als PDF sichern").
+  Bewusst nicht gemacht – müsste bei jeder JSON-Änderung neu erzeugt werden und veraltet sonst still.
 
 ---
 
