@@ -139,7 +139,7 @@ Kontakt-Sektion (Übergangslösung).
 Vereinbart: SEO als eigenes, fortlaufendes Paket (Artikel/Blog schreiben, Content posten).
 Die **On-Page-Technik** (Schema.org, Meta/OG, Canonical, sitemap.xml, robots.txt, llms.txt) steht
 bereits — hier geht es um **Inhalte & Reichweite**.
-- [ ] 🟡 Themen-/Keyword-Liste (z. B. Berlin-Rudow, Tierschutzhund, Welpenerziehung, Leinenführigkeit, Social Walk, Alleinbleiben)
+- [x] 🟡 Themen-/Keyword-Liste erstellt → siehe `keyword-recherche.md` (lokal Rudow/Neukölln + Umland, Service-Terms, frage-basierte AEO/GEO-Themen, Wettbewerb)
 - [ ] 🟡 Blog-/Ratgeber-Bereich anlegen (Seitenstruktur, URL-Schema, `Article`/`BlogPosting`-Schema, Übersichts- & Detailseiten)
 - [ ] 🟡 Redaktionsplan: regelmäßig Artikel verfassen & veröffentlichen
 - [ ] 🟢 Lokale Sichtbarkeit: Google-Business-Profil & lokale Verzeichnisse (sobald Adresse/Telefon final)
