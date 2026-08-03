@@ -205,6 +205,8 @@ Kontakt-Sektion (Übergangslösung).
   (`assets/js/termine.js`); Übergangslösung per vorausgefüllter E-Mail. Andocken ans Backend
   später via `window.APHT_BOOKING_API`.
 - [ ] 🟠 Hosting/Runtime festlegen (Node-fähig; PHP von Kundin nicht gewünscht) + E-Mail/SMTP klären
+  → **Achtung:** Die IONOS-Optionen am Ende dieser Datei decken das Node-Backend **nicht** ab.
+    Sie lösen nur das statische Hosting; der Kalender bleibt ein separater Schritt.
 - [ ] 🟠 Backend (Node + SQLite): API (Termine, Anmeldung), Admin-Bereich für Termin-Pflege
   – Anna soll Termine künftig **selbst** anlegen/ändern (Antwort auf Rückfrage: ja, über den Admin-Bereich).
   – Gruppenkurse: keine freie-Plätze-Zahl, aber Status **„voll belegt"** umschaltbar (Frontend zeigt das bereits so).
@@ -262,3 +264,62 @@ bereits — hier geht es um **Inhalte & Reichweite**.
   → **Entscheidung Userin (03.08.2026): vorerst STATISCHE Website + regulärer günstiger Hosting-Service**
     (deutscher/DSGVO-freundlicher Anbieter, ~5–10 €/Mon inkl. Mail). Azure/Backend-Option (Kalender)
     vorerst zurückgestellt.
+  → **Entscheidungsvorlage IONOS (04.08.2026), siehe unten.**
+
+---
+
+## 🟠 Entscheidungsvorlage: Hosting bei IONOS (Stand 04.08.2026)
+
+Frage der Userin: **IONOS Deploy Now oder ein IONOS Webhosting-/Static-Paket?**
+Beides ist technisch möglich. Der Unterschied liegt beim Workflow und beim E-Mail-Postfach.
+
+### Was dieses Projekt braucht (aus dem Repo gemessen)
+- **Rein statisch:** 6,6 MB, 24 HTML-Seiten, **0** serverseitige Dateien (kein PHP/Python/CGI).
+  Der Node-Generator (`tools/generate-tiernotfall.js`) läuft **lokal**, seine Ausgabe wird committet.
+  → Es wird **kein Build-Step auf dem Server** gebraucht.
+- **Deploy-Wurzel ist der Unterordner `website/`**, nicht das Repo-Root (siehe `.github/workflows/`).
+- **E-Mail-Postfach für `info@hundetraining-ap.de`** ist Pflicht – die Adresse steht im Impressum,
+  in den Kontaktkarten, im E-Mail-Konfigurator und im Tiernotfall-Korrektur-Mailto.
+- Offen im Backlog: **Security-Header (CSP, HSTS), Caching, Kompression** – auf GitHub Pages
+  grundsätzlich **nicht** umsetzbar.
+
+### Vergleich
+
+| Kriterium | Deploy Now | Webhosting-Paket |
+|---|---|---|
+| Statisch ohne Build | ja | ja |
+| Unterordner `website/` als Wurzel | ja, per `dist-folder` (Workflow v1) bzw. `DEPLOYMENT_FOLDER` (v2) | ja (Inhalt hochladen) |
+| Push auf `main` = Deploy | **ja – exakt der heutige Flow** | nein, selbst zu bauen (FTP-Action o. ä.) |
+| `.htaccess` (Security-Header, Redirects, 404) | ja, via `.htaccess.template` in `.deploy-now/` | ja |
+| **E-Mail-Postfach** | **nein – separat nötig** | **ja, inklusive** |
+| Kosten grob (Aktion → Folgepreis) | Membership frei / Static-Add-on ~2 $ → ~6 $ | ~3 € (6 Mon.) → ~6 € |
+
+### Empfehlung
+- **Deploy Now**, wenn der Git-Flow erhalten bleiben soll. Er ist das Wertvollste am jetzigen Setup:
+  Push = Deploy, kein FTP-Passwort als Repo-Secret, nachvollziehbare und rückrollbare Deploys.
+  → **Mail muss separat** über das IONOS-Domain-/Mail-Paket für `hundetraining-ap.de` dazu.
+- **Webhosting-Paket**, wenn Anna später **einen Vertrag und eine Rechnung** haben soll. Sie ist
+  Kundin, nicht Entwicklerin – ein Paket mit Domain, Mail und Speicher ist für sie leichter zu
+  überblicken. Preis-Nachteil gibt es praktisch keinen.
+
+### Zu beachten
+- 🔴 **Der eigentliche Gewinn sind die Header:** Beide Optionen laufen auf Apache, damit lösen sich
+  per `.htaccess` endlich CSP/HSTS/Caching/Kompression. Das ist das stärkere Wechselargument
+  gegenüber GitHub Pages als der Serverstandort.
+- 🟠 **Der Terminkalender läuft auf keinem von beiden.** Deploy Now kann PHP – was die Kundin aus
+  Sicherheitsgründen ausdrücklich **nicht** will; Node unterstützt keines der Produkte. Das Thema
+  bleibt ein separater Schritt und taugt **nicht** als Entscheidungskriterium (vgl. Zeile „Hosting/
+  Runtime festlegen" im Kalender-Abschnitt).
+- 🟡 **Verlängerungspreise prüfen, nicht die Aktionspreise.** Bei IONOS liegt der Folgepreis
+  regelmäßig deutlich über dem Einstiegspreis.
+- ⚠️ **Preisangaben sind eine Momentaufnahme** aus Web-Recherche (teils Vergleichsportale, teils in
+  US-Dollar). Vor Abschluss direkt bei IONOS gegenprüfen.
+
+### Wenn Deploy Now gewählt wird – konkrete Schritte
+1. Repo `raimurokko/anna_praedel_hundetrainerin` in Deploy Now verbinden.
+2. Deployment-Ordner auf **`website`** setzen (nicht Repo-Root) und Build-Command leer lassen.
+3. `.deploy-now/.../.htaccess.template` anlegen für Security-Header, Kompression, Caching und
+   die 404-Seite (`website/404.html` existiert bereits).
+4. Domain `hundetraining-ap.de` aufschalten, Mail-Paket separat bestellen.
+5. Den bestehenden GitHub-Pages-Workflow abschalten **oder** die Pages-Vorschau bewusst als
+   noindex-Staging behalten (siehe Punkt „Vor Produktiv-Launch" oben).

@@ -78,6 +78,13 @@ Working Tree sauber, alles auf `main` gepusht (Deploy = Push).
     ⚠️ **Footer ist auf jeder Seite dupliziert** (kein Include, kein Build) – neue Seiten immer aus
     einer bestehenden kopieren, sonst fehlt die Zeile.
 
+13. **Hosting-Entscheidung (04.08.):** Entscheidungsvorlage **IONOS Deploy Now vs. Webhosting-Paket**
+    steht am Ende von `BACKLOG.md`. Kurzfassung: beides technisch möglich; Deploy Now erhält den
+    heutigen Git-Flow (Push = Deploy, Unterordner `website/` per `dist-folder` konfigurierbar),
+    liefert aber **kein Mail-Postfach** – das ist wegen `info@hundetraining-ap.de` Pflicht.
+    Beide laufen auf Apache, damit lösen sich per `.htaccess` endlich CSP/HSTS/Caching –
+    auf GitHub Pages nicht möglich. Noch **offen: Entscheidung der Userin**.
+
 ## 5. Wichtige Dateien
 - `website/index.html` (One-Pager + JSON-LD-`@graph` im `<head>`), `website/assets/css/style.css`, `website/assets/js/main.js` (8 Module: injectUI/A11y, Theme, Menü, Reveal, ScrollTop, Datenschutz-Note, E-Mail-Konfigurator, Print-Details).
 - `website/ratgeber/` (index.html + 16 Artikel), `website/tiernotfall/`, `website/daten/`, `tools/generate-tiernotfall.js`.
