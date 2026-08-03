@@ -30,16 +30,19 @@ Kombinationsmuster: [Leistung] + [Ort]
 - Alltagstraining Hund · Welpe Grunderziehung · Tierschutzhund Training/Eingewöhnung
 - Beratung vor Hundeanschaffung · welcher Hund passt zu mir · Zweithund Beratung
 
-## 2b) Weitere Themen (ergänzt 04.08.2026, noch ohne Artikel)
-Aus dem Wettbewerbs- und Alltagsmuster abgeleitet, in der Ursprungsliste noch nicht enthalten:
-- **Hundebegegnungen / Leinenaggression** – „Hund pöbelt an der Leine", „Hund bellt andere Hunde an".
-  Hohe Nachfrage, sehr häufiges Alltagsproblem; koppelt an Alltagstraining.
-- **Angsthund & Silvester** – saisonal (Okt.–Dez. vorbereiten, wie „Hund und Hitze" im Sommer),
-  dazu Gewitter/Geräuschangst allgemein.
-- **Hund und Baby / Kind** – „Hund auf Baby vorbereiten", „Hund und Kind Regeln".
+## 2b) Weitere Themen (ergänzt 04.08.2026) – ✅ alle umgesetzt
+Aus dem Wettbewerbs- und Alltagsmuster abgeleitet. Alle fünf haben inzwischen einen Artikel:
+- ✅ **Hundebegegnungen / Leinenaggression** → `hundebegegnungen.html`
+  Sehr häufiges Alltagsproblem, hohe Nachfrage; koppelt an Alltagstraining.
+- ✅ **Angsthund & Silvester** → `hund-silvester.html`
+  Saisonal (Vorbereitung ab Okt., wie „Hund und Hitze“ im Sommer), dazu Geräuschangst allgemein.
+  Berlin-Kontext: es wird tagelang geböllert, nicht nur am 31.
+- ✅ **Hund und Baby / Kind** → `hund-und-kind.html`
   Starkes Beratungsthema mit klarem Anlass.
-- **Entspanntes Autofahren** – „Hund Auto Angst", „Hund im Auto sichern" (inkl. Sicherungspflicht).
-- Saison-Idee analog: **Hund im Winter** (Streusalz, Dunkelheit, Sichtbarkeit).
+- ✅ **Entspanntes Autofahren** → `hund-autofahren.html`
+  Inklusive Sicherungspflicht im Straßenverkehrsrecht.
+- ✅ **Hund im Winter** → `hund-im-winter.html`
+  Streusalz, Dunkelheit/Sichtbarkeit, Frostschutzmittel.
 
 ## 3) Frage-basierte Queries (AEO/GEO – Blog/Ratgeber-Themen)
 Diese Fragen sind Content-Gold für Antwort-Boxen und LLM-Zitate:
@@ -70,7 +73,7 @@ passenden Angebot und CTA „Termin anfragen".
 
 **Ebene 3 (Frage-basiert) ist abgearbeitet.** Alle 8 Fragen aus Abschnitt 3 haben einen Artikel;
 dazu kamen zwei nicht gelistete Themen (Welpen-Grunderziehung, Hund und Hitze).
-Mit den drei am 04.08. ergänzten Artikeln sind es **11 Artikel** gesamt.
+Mit den acht am 04.08. ergänzten Artikeln sind es **16 Artikel** gesamt.
 
 ### ✅ Am 04.08.2026 umgesetzt
 1. **Positionierung „mobil / zu Hause / Hausbesuch"** ist jetzt im sichtbaren Text:
@@ -80,23 +83,27 @@ Mit den drei am 04.08. ergänzten Artikeln sind es **11 Artikel** gesamt.
    **0×** vor (nur „bei euch zu Hause" war im Akkordeon-Text und in der FAQ vergraben).
 2. **Umlandorte** Großziethen und Waltersdorf ergänzt – im `areaServed`-Schema, in der
    sichtbaren FAQ, im FAQ-Schema und im neuen Positionierungs-Block.
-3. **Drei Artikel** ergänzt: `alltagstraining.html`, `zweithund.html`,
-   `gewaltfreies-hundetraining.html` (je mit BlogPosting/Breadcrumb/FAQPage-Schema,
+3. **Acht Artikel** ergänzt: `alltagstraining.html`, `zweithund.html`,
+   `gewaltfreies-hundetraining.html`, `hund-silvester.html`, `hundebegegnungen.html`,
+   `hund-und-kind.html`, `hund-autofahren.html`, `hund-im-winter.html`
+   (je mit BlogPosting/Breadcrumb/FAQPage-Schema,
    „Kurz gesagt"-Direktantwort, Cross-Linking, in Übersicht, Sitemap und llms.txt eingehängt).
-4. **Vier weitere Themen** in Abschnitt 2b aufgenommen (noch ohne Artikel).
+4. **Abschnitt 2b** aufgenommen und direkt abgearbeitet – alle fünf Themen haben einen Artikel.
 
 ### Weiterhin offen
 **🔴 Nicht-Content, domainabhängig:** Google-Business-Profil und Verzeichniseinträge
 (NAP konsistent) – erst nach Go-Live möglich, aber der stärkste Lokal-Hebel überhaupt.
 Steht als Prio-1-Punkt im `BACKLOG.md`.
 
-**🟡 Artikel zu den Themen aus Abschnitt 2b** (Leinenaggression, Silvester/Angst, Baby/Kind, Auto).
+**🟡 Saison-Steuerung:** „Hund und Hitze“ trägt Mai–Sept., „Hund im Winter“ und
+„Silvester“ tragen Okt.–Jan. Der Startseiten-Teaser zeigt nur drei Artikel – dort saisonal
+rotieren; den Silvester-Artikel ab **Oktober** nach vorn holen.
 
 **🟢 Redaktionsplan:** regelmäßige Veröffentlichung, Bilder-SEO für Artikelmedien,
 interne Verlinkung Artikel ↔ Angebote weiter ausbauen.
 
 ## Nächste Schritte
 - [ ] Google Business Profil anlegen (sobald Domain live) – stärkster Lokal-Hebel
-- [x] Ratgeber-Bereich + Muster-Artikel anlegen (Demo für Anna) – erledigt, 11 Artikel + Übersicht
+- [x] Ratgeber-Bereich + Muster-Artikel anlegen (Demo für Anna) – erledigt, 16 Artikel + Übersicht
 - [ ] Einträge in lokalen Verzeichnissen (NAP konsistent: Name/Adresse/Telefon)
 - [ ] `areaServed`-Schema bereits erweitert (Berlin + Rudow-Umland)

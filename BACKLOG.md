@@ -42,9 +42,14 @@ Priorität: 🔴 hoch · 🟡 mittel · 🟢 niedrig
 - [x] 🟡 **Drei neue Ratgeber:** `alltagstraining.html`, `zweithund.html`,
   `gewaltfreies-hundetraining.html` (je BlogPosting + BreadcrumbList + FAQPage, „Kurz gesagt",
   4 FAQ sichtbar = Schema, Cross-Linking; in Übersicht, Sitemap und llms.txt eingehängt).
-  → 11 Artikel gesamt.
-- [x] 🟢 **Vier weitere Themen** in `keyword-recherche.md` Abschnitt 2b aufgenommen
-  (Leinenaggression, Angst/Silvester, Baby/Kind, Autofahren + Idee „Hund im Winter").
+  → zusammen mit den fünf weiteren unten: 16 Artikel gesamt.
+- [x] 🟡 **Fünf weitere Ratgeber** (Abschnitt 2b der `keyword-recherche.md` komplett abgearbeitet):
+  `hund-silvester.html` (Berlin-Kontext: es wird tagelang geböllert – inkl. Notfallplan mit Verweis
+  auf /tiernotfall/), `hundebegegnungen.html`, `hund-und-kind.html`, `hund-autofahren.html`,
+  `hund-im-winter.html`. → **16 Artikel** gesamt.
+- [x] 🟢 Startseiten-Teaser: „Alleinebleiben" gegen „Gewaltfreies Hundetraining" getauscht –
+  Alleinebleiben ist bereits eine **Angebot-Karte** auf derselben Seite und war damit doppelt.
+- [x] 🟢 `llms.txt`: Umlandorte und „mobil/Hausbesuch" an drei weiteren Stellen nachgezogen.
 - [x] 🟢 **Rotlicht-Emoji 🚨** in der Tiernotfall-Teaser-Kachel durch ein Inline-SVG
   (Warndreieck, Linienstil wie die Karten-Icons) ersetzt – das Emoji brach den Stil.
 - [x] 🟢 „seit über 3 Jahren" → **„seit 2022"** (index.html sichtbar + Person-Schema, llms.txt).

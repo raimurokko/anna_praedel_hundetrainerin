@@ -1,7 +1,7 @@
 # Handover – Website „Hundetraining · Anna Prädel" (hundetraining-ap.de)
 
-Stand: **03.08.2026** · Projektpfad: `~/projects/anna_prädel_hundetrainerin/`
-Letzter Commit: **b64ffb6** (Rubrik Tiernotfall). Working Tree sauber, alles auf `main` gepusht.
+Stand: **04.08.2026** · Projektpfad: `~/projects/anna_prädel_hundetrainerin/`
+Working Tree sauber, alles auf `main` gepusht (Deploy = Push).
 
 > Hinweis: Das **primäre Arbeitsverzeichnis der Session war fälschlich `digitale-ersthilfe-website`**.
 > Immer mit **absoluten Pfaden** auf `~/projects/anna_prädel_hundetrainerin/` arbeiten (Bash-`cwd` resettet je Aufruf).
@@ -20,7 +20,7 @@ Letzter Commit: **b64ffb6** (Rubrik Tiernotfall). Working Tree sauber, alles auf
 
 ## 2. Was die Site ist / Technik
 - Statische Site, **reines HTML/CSS/JS, kein Build-Tool/CI** (außer dem Tiernotfall-Generator, s. u.).
-- One-Pager `index.html` + Unterseiten: `impressum/datenschutz/barrierefreiheit.html`, `ratgeber/` (Übersicht + 8 Artikel), `tiernotfall/`.
+- One-Pager `index.html` + Unterseiten: `impressum/datenschutz/barrierefreiheit.html`, `ratgeber/` (Übersicht + 16 Artikel), `tiernotfall/`.
 - Design: Weinrot **#7E1F2D**, Fonts lokal (DejaVu Sans + Figtree, OpenDyslexic für A11y), Dark Mode, A11y-Panel (Schrift/Kontrast/Links/Motion/Dyslexie/Vorlesen), alles über `assets/js/main.js` (eine Quelle der Wahrheit).
 - **Vorschau:** lokaler Server `python3 -m http.server 8137 --directory website` (aus dem Anna-Repo starten). Browser via `mcp__Claude_Browser__*` → `preview_start {url:"http://localhost:8137/…"}` (direktes `navigate` auf localhost wird per Policy geblockt; immer `preview_start`).
 
@@ -30,8 +30,8 @@ Letzter Commit: **b64ffb6** (Rubrik Tiernotfall). Working Tree sauber, alles auf
 3. SEO/GEO: **Social-Bild 1200×630** (`bilder/social/anna-mit-hund.jpg`, Crop aus Über-mich-Foto), **IPTC „human-made"** (DigitalSourceType=digitalCapture) in allen Fotos, Provenienz-Meta + Schema, PLZ + `areaServed` (Rudow-Umland) im Schema.
 4. **A11y:** Accessible Names der Panel-Schalter (WCAG 4.1.2), Feld-Kontrast (1.4.11), Dyslexie-Schrift auf Formularen; WCAG-2.1-AA-Audit gefahren.
 5. Galerie auf `<img loading=lazy>` umgestellt; Nav-Breakpoint responsiv; Kontakt-Grid 1×4/2×2/4×1.
-6. **Ratgeber-System:** 8 Artikel + `/ratgeber/` Übersichtsseite, je „Kurz gesagt"-Direktantwort, `BlogPosting`+`FAQPage`+`Breadcrumb`-Schema, Cross-Linking.
-7. **E-E-A-T:** „Qualifikation & Erfahrung"-Block in „Über mich" + `Person`-Schema (`hasCredential` § 11 TierSchG, `memberOf` Kitmir; **seit 3 Jahren**, Fortbildung via Praktika/Online/Vor-Ort, gewaltfrei).
+6. **Ratgeber-System:** Übersichtsseite `/ratgeber/` + Artikel (Stand 04.08.: **16**), je „Kurz gesagt"-Direktantwort, `BlogPosting`+`FAQPage`+`Breadcrumb`-Schema, Cross-Linking.
+7. **E-E-A-T:** „Qualifikation & Erfahrung"-Block in „Über mich" + `Person`-Schema (`hasCredential` § 11 TierSchG, `memberOf` Kitmir; **seit 2022** (04.08. von „über 3 Jahren“ umgestellt, s. u.), Fortbildung via Praktika/Online/Vor-Ort, gewaltfrei).
 8. Footer-Credit (Inu-Trust AG) + Hinweis auf **Digitale Ersthilfe** (digitale-ersthilfe.novumanalytica.com – kostenloser Novum-Hilfe-Service; `rel=nofollow`) auf allen Seiten.
 9. **Rubrik „Tiernotfall"** – siehe §4.
 - Keyword-Recherche: `keyword-recherche.md` (enthält seit 04.08. einen Abdeckungs-Stand).
@@ -40,7 +40,12 @@ Letzter Commit: **b64ffb6** (Rubrik Tiernotfall). Working Tree sauber, alles auf
     ist. Jetzt in Hero-Pill, Hero-Absatz, eigenem Block `.mobil-box` (H3, vor den Angebot-Akkordeons),
     Meta-/OG-Description, Schema-`description`/`knowsAbout` und `llms.txt`. Umlandorte Großziethen
     und Waltersdorf ergänzt (`areaServed` = 12 Orte).
-11. **3 neue Ratgeber (04.08.):** Alltagstraining, Zweithund, Gewaltfreies Hundetraining → 11 Artikel.
+11. **8 neue Ratgeber (04.08.) → 16 Artikel gesamt:** Alltagstraining, Zweithund, Gewaltfreies
+    Hundetraining, Silvester (Berlin/Böller, verlinkt auf /tiernotfall/), Hundebegegnungen,
+    Hund und Baby/Kind, Autofahren, Hund im Winter. Erzeugt jeweils aus dem Rahmen eines
+    bestehenden Artikels, damit Header/Nav/Footer identisch bleiben.
+    **Saison-Hinweis:** Der Startseiten-Teaser zeigt nur 3 Artikel – ab Oktober Silvester/Winter
+    nach vorn holen, im Sommer Hitze (steht auch in `keyword-recherche.md`).
     ⚠️ **Offen zu bestätigen:** „seit 2022" als Erfahrungsangabe (vorher „seit über 3 Jahren", was
     ab 2026 auf 2023 zurückrechnet) – mit Anna gegenprüfen, steht auch im `BACKLOG.md`.
 
@@ -68,7 +73,7 @@ Letzter Commit: **b64ffb6** (Rubrik Tiernotfall). Working Tree sauber, alles auf
 
 ## 5. Wichtige Dateien
 - `website/index.html` (One-Pager + JSON-LD-`@graph` im `<head>`), `website/assets/css/style.css`, `website/assets/js/main.js` (8 Module: injectUI/A11y, Theme, Menü, Reveal, ScrollTop, Datenschutz-Note, E-Mail-Konfigurator, Print-Details).
-- `website/ratgeber/` (index.html + 8 Artikel), `website/tiernotfall/`, `website/daten/`, `tools/generate-tiernotfall.js`.
+- `website/ratgeber/` (index.html + 16 Artikel), `website/tiernotfall/`, `website/daten/`, `tools/generate-tiernotfall.js`.
 - `BACKLOG.md`, `keyword-recherche.md`, `docs/tiernotfall.md`.
 
 ## 6. Offene Punkte / Backlog (Auszug — Details in BACKLOG.md)
