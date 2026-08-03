@@ -140,8 +140,8 @@ Vereinbart: SEO als eigenes, fortlaufendes Paket (Artikel/Blog schreiben, Conten
 Die **On-Page-Technik** (Schema.org, Meta/OG, Canonical, sitemap.xml, robots.txt, llms.txt) steht
 bereits — hier geht es um **Inhalte & Reichweite**.
 - [x] 🟡 Themen-/Keyword-Liste erstellt → siehe `keyword-recherche.md` (lokal Rudow/Neukölln + Umland, Service-Terms, frage-basierte AEO/GEO-Themen, Wettbewerb)
-- [ ] 🟡 Blog-/Ratgeber-Bereich anlegen (Seitenstruktur, URL-Schema, `Article`/`BlogPosting`-Schema, Übersichts- & Detailseiten)
-- [ ] 🟡 Redaktionsplan: regelmäßig Artikel verfassen & veröffentlichen
+- [~] 🟡 Blog-/Ratgeber-Bereich: **angelegt als Demo** (03.08.2026) – `ratgeber/`-Ordner, 2 Muster-Artikel (Alleinebleiben, Leinenführigkeit) mit `BlogPosting`+`FAQPage`+`BreadcrumbList`-Schema, Teaser-Sektion + Nav auf der Startseite, Sitemap. Offen: Freigabe/Ausbau durch Anna, Übersichtsseite.
+- [ ] 🟡 Redaktionsplan: regelmäßig Artikel verfassen & veröffentlichen (Themen siehe `keyword-recherche.md`)
 - [ ] 🟢 Lokale Sichtbarkeit: Google-Business-Profil & lokale Verzeichnisse (sobald Adresse/Telefon final)
 - [ ] 🟢 Interne Verlinkung Artikel ↔ Angebote; FAQ aus echten Kundenfragen wachsen lassen
 - [ ] 🟢 Bilder-SEO (sprechende Dateinamen, `alt`-Texte, WebP) für Artikelmedien

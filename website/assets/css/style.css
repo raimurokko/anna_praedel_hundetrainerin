@@ -540,6 +540,21 @@ a.card { text-decoration: none; color: inherit; }
 .site-footer__bottom p.site-footer__credit:last-child { padding-bottom: 22px; }
 .site-footer__credit a { color: var(--wine); }
 
+/* ===== Ratgeber (Teaser + Karten) ===== */
+.ratgeber-intro { max-width: 60ch; margin: 14px 0 0; }
+.ratgeber-grid { display: grid; grid-template-columns: 1fr; gap: clamp(14px, 2vw, 20px); margin-top: 24px; }
+@media (min-width: 720px) { .ratgeber-grid { grid-template-columns: 1fr 1fr; } }
+.ratgeber-card { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: clamp(22px, 2.4vw, 30px); box-shadow: var(--shadow); text-decoration: none; color: inherit; transition: border-color .2s, transform .2s; }
+.ratgeber-card:hover { border-color: var(--wine); transform: translateY(-3px); }
+.ratgeber-card__tag { font-size: .74rem; text-transform: uppercase; letter-spacing: .07em; font-weight: 700; color: var(--wine); background: var(--wine-tint); padding: 4px 11px; border-radius: 999px; }
+.ratgeber-card h3 { font-size: 1.2rem; font-weight: 700; letter-spacing: -.01em; margin: 6px 0 0; }
+.ratgeber-card p { color: var(--muted); font-size: .98rem; line-height: 1.55; margin: 0; }
+.ratgeber-card__more { color: var(--wine); font-weight: 700; margin-top: 4px; }
+/* Artikel-Feinschliff (Ratgeber-Detailseiten nutzen .legal) */
+.legal .article-meta { color: var(--muted); font-size: .9rem; margin: 0 0 1.5em; }
+.legal .article-cta { margin: 2em 0 0; padding: clamp(20px, 3vw, 28px); background: var(--surface-2); border: 1px solid var(--border); border-radius: var(--radius); }
+.legal .article-cta p { margin: 0 0 14px; }
+
 /* Herz-mit-Pfote-Icon (ersetzt das Wort „Herz" im Footer) */
 .heart-icon {
   width: 1.35em; height: 1.35em; vertical-align: -0.28em;
