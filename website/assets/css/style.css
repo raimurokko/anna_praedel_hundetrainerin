@@ -557,6 +557,8 @@ a.card { text-decoration: none; color: inherit; }
 .legal .article-meta { color: var(--muted); font-size: .9rem; margin: 0 0 1.5em; }
 .legal .article-cta { margin: 2em 0 0; padding: clamp(20px, 3vw, 28px); background: var(--surface-2); border: 1px solid var(--border); border-radius: var(--radius); }
 .legal .article-cta p { margin: 0 0 14px; }
+.legal .article-answer { margin: 0 0 1.6em; padding: 14px 18px; background: var(--surface-2); border-left: 4px solid var(--wine); border-radius: 0 12px 12px 0; font-size: 1.05rem; line-height: 1.6; }
+.legal .article-answer strong { color: var(--wine); }
 .legal .article-more { margin-top: 2.5em; padding-top: 1.5em; border-top: 1px solid var(--border); }
 .legal .article-more h2 { margin-top: 0; }
 .legal .article-more ul { margin: 0; }
