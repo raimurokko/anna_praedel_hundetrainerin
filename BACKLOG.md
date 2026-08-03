@@ -23,8 +23,8 @@ Dialog, strukturiertes **WCAG-2.1-AA-Audit**, Barrierefreiheitserklärung aktual
 (Stand 22.07.2026), **Facebook-URL eingetragen** (Kontakt-Karte, Footer, Schema `sameAs`, `llms.txt`).
 
 **Neu offen (warten auf Input der Kundin):**
-- [ ] 🟡 **E-E-A-T (SEO/GEO):** Annas Qualifikation/Erfahrung + § 11 TierSchG sichtbar in „Über mich"
-  ergänzen (bisher nur im Impressum). Braucht Text-/Angaben-Input.
+- [x] 🟡 **E-E-A-T:** von Userin vorerst als abgeschlossen betrachtet (03.08.2026). Bei Bedarf später:
+  Qualifikation/Erfahrung + § 11 TierSchG sichtbar in „Über mich" + `Person`-Schema ergänzen.
 - [ ] 🟢 Optional: echter Screenreader-/Tastatur-Durchlauf (VoiceOver/NVDA) durch einen Menschen für ein formales A11y-Testat.
 
 ---
@@ -160,4 +160,7 @@ bereits — hier geht es um **Inhalte & Reichweite**.
 - [ ] 🟢 Einfaches Kontaktformular (nur falls gewünscht – sonst bleibt es bei Direktkanälen, datensparsamer)
 - [ ] 🟢 Bewertungen/Testimonials (mit `Review`-Schema)
 - [ ] 🟢 2-Klick-Instagram-Feed-Einbettung (falls die Kundin einen Feed möchte)
-- [ ] 🟢 Deploy-Pipeline / Hosting final festlegen
+- [~] 🟢 Deploy-Pipeline / Hosting final festlegen
+  → **Entscheidung Userin (03.08.2026): vorerst STATISCHE Website + regulärer günstiger Hosting-Service**
+    (deutscher/DSGVO-freundlicher Anbieter, ~5–10 €/Mon inkl. Mail). Azure/Backend-Option (Kalender)
+    vorerst zurückgestellt.
