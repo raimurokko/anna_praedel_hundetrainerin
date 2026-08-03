@@ -546,6 +546,7 @@ a.card { text-decoration: none; color: inherit; }
 .ratgeber-intro { max-width: 60ch; margin: 14px 0 0; }
 .ratgeber-grid { display: grid; grid-template-columns: 1fr; gap: clamp(14px, 2vw, 20px); margin-top: 24px; }
 @media (min-width: 720px) { .ratgeber-grid { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 960px) { .ratgeber-grid { grid-template-columns: repeat(3, 1fr); } }
 .ratgeber-card { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: clamp(22px, 2.4vw, 30px); box-shadow: var(--shadow); text-decoration: none; color: inherit; transition: border-color .2s, transform .2s; }
 .ratgeber-card:hover { border-color: var(--wine); transform: translateY(-3px); }
 .ratgeber-card__tag { font-size: .74rem; text-transform: uppercase; letter-spacing: .07em; font-weight: 700; color: var(--wine); background: var(--wine-tint); padding: 4px 11px; border-radius: 999px; }
