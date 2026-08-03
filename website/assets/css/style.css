@@ -553,6 +553,14 @@ a.card { text-decoration: none; color: inherit; }
 .ratgeber-card h3 { font-size: 1.2rem; font-weight: 700; letter-spacing: -.01em; margin: 6px 0 0; }
 .ratgeber-card p { color: var(--muted); font-size: .98rem; line-height: 1.55; margin: 0; }
 .ratgeber-card__more { color: var(--wine); font-weight: 700; margin-top: 4px; }
+/* Qualifikation & Erfahrung (Über mich – E-E-A-T) */
+.credentials { margin-top: 24px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: clamp(18px, 2.4vw, 26px); box-shadow: var(--shadow); }
+.credentials h3 { font-size: 1.05rem; font-weight: 800; margin: 0 0 12px; }
+.credentials ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+.credentials li { position: relative; padding-left: 26px; color: var(--muted); font-size: .98rem; line-height: 1.5; }
+.credentials li::before { content: "✓"; position: absolute; left: 0; top: 0; color: var(--wine); font-weight: 800; }
+.credentials strong { color: var(--fg); }
+.credentials a { color: var(--wine); }
 /* Artikel-Feinschliff (Ratgeber-Detailseiten nutzen .legal) */
 .legal .article-meta { color: var(--muted); font-size: .9rem; margin: 0 0 1.5em; }
 .legal .article-cta { margin: 2em 0 0; padding: clamp(20px, 3vw, 28px); background: var(--surface-2); border: 1px solid var(--border); border-radius: var(--radius); }
