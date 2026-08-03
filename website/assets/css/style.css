@@ -553,6 +553,7 @@ a.card { text-decoration: none; color: inherit; }
 .ratgeber-card h3 { font-size: 1.2rem; font-weight: 700; letter-spacing: -.01em; margin: 6px 0 0; }
 .ratgeber-card p { color: var(--muted); font-size: .98rem; line-height: 1.55; margin: 0; }
 .ratgeber-card__more { color: var(--wine); font-weight: 700; margin-top: 4px; }
+.ratgeber-all { margin-top: 26px; }
 /* Qualifikation & Erfahrung (Über mich – E-E-A-T) */
 .credentials { margin-top: 24px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: clamp(18px, 2.4vw, 26px); box-shadow: var(--shadow); }
 .credentials h3 { font-size: 1.05rem; font-weight: 800; margin: 0 0 12px; }
