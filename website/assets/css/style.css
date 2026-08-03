@@ -554,6 +554,9 @@ a.card { text-decoration: none; color: inherit; }
 .legal .article-meta { color: var(--muted); font-size: .9rem; margin: 0 0 1.5em; }
 .legal .article-cta { margin: 2em 0 0; padding: clamp(20px, 3vw, 28px); background: var(--surface-2); border: 1px solid var(--border); border-radius: var(--radius); }
 .legal .article-cta p { margin: 0 0 14px; }
+.legal .article-more { margin-top: 2.5em; padding-top: 1.5em; border-top: 1px solid var(--border); }
+.legal .article-more h2 { margin-top: 0; }
+.legal .article-more ul { margin: 0; }
 
 /* Herz-mit-Pfote-Icon (ersetzt das Wort „Herz" im Footer) */
 .heart-icon {
@@ -689,6 +692,9 @@ a.card { text-decoration: none; color: inherit; }
 .legal .muted { color: var(--muted); }
 .legal ul, .legal ol { padding-left: 1.3em; }
 .legal a { color: var(--wine); }
+.legal a.btn { text-decoration: none; }
+.legal a.btn--primary { color: var(--on-wine); }
+.legal a.btn--ghost { color: var(--fg); }
 .legal .back { display: inline-block; margin-bottom: 1.5em; font-weight: 600; text-decoration: none; color: var(--wine); }
 .legal .updated { color: var(--muted); font-size: .92rem; }
 .todo { background: var(--wine-tint); border: 1px dashed var(--wine); border-radius: 10px; padding: 4px 10px; color: var(--wine); font-weight: 700; }
