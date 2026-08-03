@@ -1,0 +1,537 @@
+{
+  "$schema": "./tiernotfall-kontakte.schema.json",
+  "meta": {
+    "title": "Tiernotfall-Kontakte Berlin & Brandenburg",
+    "maintainer": "Inu-Trust AG / Novum",
+    "region_focus": [
+      "Berlin",
+      "Berlin-Rudow",
+      "Berlin-Neukölln",
+      "Brandenburg (Süd-Umland)"
+    ],
+    "last_full_review": "2026-08-03",
+    "review_interval_months": 6,
+    "notes": "verified_date = Datum der letzten Prüfung der Angaben gegen die genannte Quelle. Einträge mit status=verify_before_launch vor Go-Live prüfen. Keine Nummern ohne Quelle ergänzen."
+  },
+  "contacts": [
+    {
+      "id": "notruf-112",
+      "name": "Feuerwehr / Rettungsdienst",
+      "category": "notruf",
+      "org_type": "amtlich",
+      "phone": {
+        "display": "112",
+        "e164": "112"
+      },
+      "availability": "24/7",
+      "scope": "bundesweit",
+      "note": "Nur bei Gefahr für Menschen oder die öffentliche Sicherheit. Nicht für Katze auf dem Baum.",
+      "url": null,
+      "verified_date": "2026-08-03",
+      "source": "allgemeinkundig",
+      "status": "active"
+    },
+    {
+      "id": "notruf-110",
+      "name": "Polizei-Notruf",
+      "category": "notruf",
+      "org_type": "amtlich",
+      "phone": {
+        "display": "110",
+        "e164": "110"
+      },
+      "availability": "24/7",
+      "scope": "bundesweit",
+      "note": "Akute Tierquälerei (z. B. Hund im heißen Auto), Wildunfall, Tier auf der Fahrbahn.",
+      "url": null,
+      "verified_date": "2026-08-03",
+      "source": "allgemeinkundig",
+      "status": "active"
+    },
+    {
+      "id": "polizei-buergertelefon",
+      "name": "Polizei Berlin – Bürgertelefon",
+      "category": "notruf",
+      "org_type": "amtlich",
+      "phone": {
+        "display": "030 4664 4664",
+        "e164": "+493046644664"
+      },
+      "availability": "24/7",
+      "scope": "Berlin",
+      "note": "Dringende Anliegen unterhalb des Notrufs, u. a. Fundtiere außerhalb der Öffnungszeiten der Tiersammelstelle; Bergung/Sicherung von Tieren in Gefahrensituationen.",
+      "url": "https://www.berlin.de/polizei/",
+      "verified_date": "2026-08-03",
+      "source": "https://berlin.nabu.de/stadt-und-natur/projekte-nabu-berlin/wildvogelstation/erste-hilfe/index.html",
+      "status": "active"
+    },
+    {
+      "id": "tiersammelstelle",
+      "name": "Amtliche Tiersammelstelle Berlin (auf dem Gelände des Tierheims Berlin)",
+      "category": "fundtier",
+      "org_type": "amtlich",
+      "phone": {
+        "display": "030 76888-200 / -201",
+        "e164": "+493076888200"
+      },
+      "availability": "täglich 8–16 Uhr, gesetzl. Feiertage 8–12 Uhr",
+      "scope": "Berlin",
+      "address": "Hausvaterweg 39, 13057 Berlin-Falkenberg",
+      "email": "tiersammelstelle@tierschutz-berlin.de",
+      "note": "Zentrale Anlaufstelle für alle in Berlin gefundenen Haustiere (Meldepflicht!). Nimmt ausschließlich in Berlin gefundene Tiere auf. Auch erste Anlaufstelle bei vermissten Tieren.",
+      "url": "https://tierschutz-berlin.de/tierheim/fundtiere/",
+      "verified_date": "2026-08-03",
+      "source": "https://tierschutz-berlin.de/tierheim/fundtiere/",
+      "status": "active"
+    },
+    {
+      "id": "tierfang-berlin",
+      "name": "Amtlicher Tierfang Berlin",
+      "category": "fundtier",
+      "org_type": "amtlich",
+      "phone": {
+        "display": "030 9029 64718",
+        "e164": "+4930902964718"
+      },
+      "availability": "Geschäftszeiten",
+      "scope": "Berlin",
+      "note": "Registriert sämtliche Fundanzeigen in Berlin – bei vermissten Tieren zusätzlich hier nachfragen. Hinweis: Offizielle Fundtier-Anlaufstelle ist die Amtliche Tiersammelstelle (030 76888-200/-201); diese Nummer noch prüfen.",
+      "url": null,
+      "verified_date": "2026-08-03",
+      "source": "https://www.berlin-vegan.de/service/tierliche-notfaelle/ (Sekundärquelle)",
+      "status": "verify_before_launch"
+    },
+    {
+      "id": "tasso-hotline",
+      "name": "TASSO e.V. – Notrufzentrale (Such-/Fundmeldung)",
+      "category": "register",
+      "org_type": "gemeinnuetzig",
+      "phone": {
+        "display": "06190 937300",
+        "e164": "+496190937300"
+      },
+      "availability": "24/7",
+      "scope": "bundesweit",
+      "note": "Größtes Haustierregister. Tipp von TASSO: In öffentlichen Suchanzeigen keine private Telefonnummer und keine Belohnung nennen (Schutz vor Betrügern).",
+      "url": "https://www.tasso.net/",
+      "verified_date": "2026-08-03",
+      "source": "https://www.berlin-vegan.de/service/tierliche-notfaelle/",
+      "status": "active"
+    },
+    {
+      "id": "tasso-tkn",
+      "name": "TASSO – Online-Abfrage Transponder-/Kennzeichnungsnummer",
+      "category": "register",
+      "org_type": "gemeinnuetzig",
+      "phone": null,
+      "availability": "online 24/7",
+      "scope": "bundesweit",
+      "note": "Chipnummer eingeben und prüfen, ob das Tier bei TASSO registriert ist.",
+      "url": "https://www.tasso.net/Tierregister/Tier-gefunden/TKN-Abfrage",
+      "verified_date": "2026-08-03",
+      "source": "Nutzerangabe, URL-Struktur plausibel",
+      "status": "active"
+    },
+    {
+      "id": "findefix-hotline",
+      "name": "FINDEFIX (Deutscher Tierschutzbund) – Service-Telefon",
+      "category": "register",
+      "org_type": "gemeinnuetzig",
+      "phone": {
+        "display": "0228 6049635",
+        "e164": "+492286049635"
+      },
+      "availability": "24/7, 7 Tage",
+      "scope": "bundesweit",
+      "note": "Haustierregister des Deutschen Tierschutzbundes. Fund- und Vermisstmeldungen rund um die Uhr.",
+      "url": "https://www.findefix.com/haustier-vermisst-gefunden/haustier-gefunden/",
+      "verified_date": "2026-08-03",
+      "source": "Nutzerangabe (findefix.com)",
+      "status": "active"
+    },
+    {
+      "id": "findefix-check",
+      "name": "FINDEFIX – Mikrochip-Nummer online prüfen",
+      "category": "register",
+      "org_type": "gemeinnuetzig",
+      "phone": null,
+      "availability": "online 24/7",
+      "scope": "bundesweit",
+      "note": null,
+      "url": "https://www.findefix.com/haustier-vermisst-gefunden/mikrochip-nummer-pruefen/",
+      "verified_date": "2026-08-03",
+      "source": "Nutzerangabe",
+      "status": "active"
+    },
+    {
+      "id": "findefix-fundmeldung",
+      "name": "FINDEFIX – Online-Fundmeldung",
+      "category": "register",
+      "org_type": "gemeinnuetzig",
+      "phone": null,
+      "availability": "online 24/7",
+      "scope": "bundesweit",
+      "note": null,
+      "url": "https://www.findefix.com/haustier-vermisst-gefunden/haustier-gefunden-melden/",
+      "verified_date": "2026-08-03",
+      "source": "Nutzerangabe",
+      "status": "active"
+    },
+    {
+      "id": "petmaxx",
+      "name": "Petmaxx – internationale Metasuche über Haustierregister",
+      "category": "register",
+      "org_type": "gemeinnuetzig",
+      "phone": null,
+      "availability": "online 24/7",
+      "scope": "international",
+      "note": "Durchsucht mehrere Register weltweit mit einer Chipnummer-Abfrage.",
+      "url": "https://www.petmaxx.com/index.aspx?lang=de",
+      "verified_date": "2026-08-03",
+      "source": "Nutzerangabe",
+      "status": "active"
+    },
+    {
+      "id": "tak-notdienst",
+      "name": "Tierärztekammer Berlin – Notdienst-Übersicht",
+      "category": "tiermedizin",
+      "org_type": "amtlich",
+      "phone": null,
+      "availability": "online, tagesaktuell",
+      "scope": "Berlin",
+      "note": "Offizielle Übersicht dienstbereiter Praxen und Kliniken. Hinweis der Kammer: Tierkliniken nur bei lebensbedrohlichen Zuständen aufsuchen, Kapazitätsengpässe und Wartezeiten einkalkulieren.",
+      "url": "https://tieraerztekammer-berlin.de/notdienst/",
+      "verified_date": "2026-08-03",
+      "source": "https://tieraerztekammer-berlin.de/notdienst/",
+      "status": "active"
+    },
+    {
+      "id": "fu-dueppel",
+      "name": "Klein- und Heimtierklinik der FU Berlin (Düppel)",
+      "category": "tiermedizin",
+      "org_type": "amtlich",
+      "phone": {
+        "display": "0160 3758447",
+        "e164": "+491603758447"
+      },
+      "availability": "Notfallannahme ohne Anmeldung Mo–Fr 8–18, Sa/So/Feiertag 10–18 Uhr; außerhalb nur nach telefonischer Anmeldung unter dieser Nummer. Wildtiere: 24-Std.-Notdienst.",
+      "scope": "Berlin",
+      "address": "Oertzenweg 19b, 14163 Berlin (Zentrale: 030 838-62422)",
+      "note": "Universitätsklinik. Verletzte Wildvögel werden hier in Kooperation mit der NABU-Wildvogelstation kostenfrei behandelt – direkt hinbringen, keine telefonische Anmeldung nötig.",
+      "url": "https://www.vetmed.fu-berlin.de/einrichtungen/kliniken/we20/tierhalter/notdienst/index.html",
+      "verified_date": "2026-08-03",
+      "source": "https://www.vetmed.fu-berlin.de/einrichtungen/kliniken/we20/tierhalter/notdienst/ (offiziell)",
+      "status": "active"
+    },
+    {
+      "id": "giftnotruf-charite",
+      "name": "Giftnotruf der Charité (Giftinformationszentrum Berlin-Brandenburg)",
+      "category": "vergiftung",
+      "org_type": "amtlich",
+      "phone": {
+        "display": "030 19240",
+        "e164": "+493019240"
+      },
+      "availability": "24/7, 365 Tage",
+      "scope": "Berlin, Brandenburg",
+      "note": "ACHTUNG: Berät ausschließlich zu Vergiftungen bei MENSCHEN und ist nach eigener Angabe nicht für Tiervergiftungen ausgebildet. Auf der Website nur mit diesem Hinweis listen (relevant z. B. wenn ein Kind einen Giftköder angefasst hat). Bei Tiervergiftung: sofort Tierklinik/tierärztlicher Notdienst.",
+      "url": "https://giftnotruf.charite.de/",
+      "verified_date": "2026-08-03",
+      "source": "https://giftnotruf.charite.de/fuer_patienten",
+      "status": "active"
+    },
+    {
+      "id": "nabu-wildtiertelefon",
+      "name": "NABU Berlin – Wildtiertelefon",
+      "category": "wildtier",
+      "org_type": "gemeinnuetzig",
+      "phone": {
+        "display": "030 54712891",
+        "e164": "+493054712891"
+      },
+      "availability": "Apr–Sep: Mo–Mi u. Fr 10–15 Uhr, Do 12–17 Uhr; Okt–Mär: Mo–Mi u. Fr 10–13 Uhr, Do 12–15 Uhr",
+      "scope": "Berlin",
+      "email": "wildtiere@nabu-berlin.de",
+      "note": "Beratung zu Fuchs, Marder, Wildschwein, Waschbär, Wildkaninchen u. a. – in Zusammenarbeit mit der Jagdbehörde der Senatsverwaltung.",
+      "url": "https://berlin.nabu.de/stadt-und-natur/projekte-nabu-berlin/wildtierberatung/index.html",
+      "verified_date": "2026-08-03",
+      "source": "https://berlin.nabu.de/wir-ueber-uns/geschaeftsstelle/kontakt/so-erreichen-sie-uns/index.html",
+      "status": "active"
+    },
+    {
+      "id": "nabu-wildvogelstation",
+      "name": "NABU Berlin – Wildvogelstation",
+      "category": "wildtier",
+      "org_type": "gemeinnuetzig",
+      "phone": {
+        "display": "030 54712892",
+        "e164": "+493054712892"
+      },
+      "availability": "Mo–Fr 8–16 Uhr, Sa/So eingeschränkt für Notfälle (AB besprechen, Rückruf abwarten)",
+      "scope": "Berlin",
+      "address": "Zum Forsthaus 7, 12683 Berlin",
+      "email": "wildvogelstation@nabu-berlin.de",
+      "note": "Erst anrufen, Vögel NICHT unangekündigt vorbeibringen – vor Ort ist keine tierärztliche Versorgung möglich. Verletzte Wildvögel direkt zur Kleintierklinik FU Düppel (kostenfrei). Jeder am Boden gefundene Mauersegler ist grundsätzlich hilfsbedürftig.",
+      "url": "https://berlin.nabu.de/stadt-und-natur/projekte-nabu-berlin/wildvogelstation/erste-hilfe/index.html",
+      "verified_date": "2026-08-03",
+      "source": "https://berlin.nabu.de/stadt-und-natur/projekte-nabu-berlin/wildvogelstation/erste-hilfe/index.html",
+      "status": "active"
+    },
+    {
+      "id": "eichhoernchen-notruf",
+      "name": "Eichhörnchen Notruf e.V.",
+      "category": "wildtier",
+      "org_type": "gemeinnuetzig",
+      "phone": {
+        "display": "0700 20020012",
+        "e164": "+4970020020012"
+      },
+      "availability": "Notfälle; 0700-Nummer ist kostenpflichtig",
+      "scope": "bundesweit",
+      "email": "service@eichhoernchen-notruf.com",
+      "note": null,
+      "url": "https://www.eichhoernchen-notruf.com/",
+      "verified_date": "2026-08-03",
+      "source": "https://www.berlin.de/lb/tierschutz/wildtiere/artikel.710515.php",
+      "status": "active"
+    },
+    {
+      "id": "eichhoernchenhilfe-bb",
+      "name": "Eichhörnchenhilfe Berlin/Brandenburg e.V.",
+      "category": "wildtier",
+      "org_type": "gemeinnuetzig",
+      "phone": {
+        "display": "0172 3553314",
+        "e164": "+491723553314"
+      },
+      "availability": "je nach Auslastung rund um die Uhr",
+      "scope": "Berlin, Brandenburg",
+      "note": "Ehrenamtlich – Geduld bei der Erreichbarkeit.",
+      "url": null,
+      "verified_date": "2026-08-03",
+      "source": "https://www.berlin-vegan.de/service/tierliche-notfaelle/",
+      "status": "active"
+    },
+    {
+      "id": "igelschutz-berlin",
+      "name": "Arbeitskreis Igelschutz Berlin e.V.",
+      "category": "wildtier",
+      "org_type": "gemeinnuetzig",
+      "phone": {
+        "display": "030 4049409",
+        "e164": "+49304049409"
+      },
+      "availability": "ehrenamtlich, bevorzugt abends; auch per E-Mail",
+      "scope": "Berlin",
+      "email": "arbeits-kreis.igelschutzberlin@web.de",
+      "note": "Ehrenamtlich getragen – Geduld bei der Erreichbarkeit.",
+      "url": null,
+      "verified_date": "2026-08-03",
+      "source": "https://www.berlin.de/lb/tierschutz/wildtiere/artikel.710515.php",
+      "status": "active"
+    },
+    {
+      "id": "wildtierschutz-de",
+      "name": "Wildtierschutz Deutschland e.V. – Kontaktliste „Verletztes Wildtier“",
+      "category": "wildtier",
+      "org_type": "gemeinnuetzig",
+      "phone": null,
+      "availability": "online 24/7",
+      "scope": "bundesweit",
+      "note": "Überregionale Fallback-Ebene: bundesweite Liste von Auffangstationen und Ansprechpartnern nach Tierart.",
+      "url": "https://www.wildtierschutz-deutschland.de/verletztes-wildtier",
+      "verified_date": "2026-08-03",
+      "source": "Nutzerangabe",
+      "status": "active"
+    },
+    {
+      "id": "wildtierhilfe-potsdam",
+      "name": "Wildtierhilfe Potsdam",
+      "category": "wildtier",
+      "org_type": "gemeinnuetzig",
+      "phone": {
+        "display": "0176 2279833",
+        "e164": "+491762279833"
+      },
+      "availability": "ehrenamtlich",
+      "scope": "Brandenburg (Raum Potsdam)",
+      "email": "kontakt@wildtierhilfe-potsdam.de",
+      "note": null,
+      "url": "https://wildtierhilfe-potsdam.de/",
+      "verified_date": "2026-08-03",
+      "source": "https://www.berlin.de/lb/tierschutz/wildtiere/artikel.710515.php",
+      "status": "active"
+    },
+    {
+      "id": "tierrettung-potsdam",
+      "name": "Tierrettung Potsdam",
+      "category": "wildtier",
+      "org_type": "gemeinnuetzig",
+      "phone": {
+        "display": "0151 70121202",
+        "e164": "+4915170121202"
+      },
+      "availability": "ehrenamtlich",
+      "scope": "Brandenburg (Raum Potsdam)",
+      "email": "kontakt@tierrettung-potsdam.de",
+      "note": null,
+      "url": "https://tierrettung-potsdam.de/",
+      "verified_date": "2026-08-03",
+      "source": "https://www.berlin.de/lb/tierschutz/wildtiere/artikel.710515.php",
+      "status": "active"
+    },
+    {
+      "id": "tierheim-berlin",
+      "name": "Tierheim Berlin (Tierschutzverein für Berlin) – Zentrale",
+      "category": "tierheim",
+      "org_type": "gemeinnuetzig",
+      "phone": {
+        "display": "030 76888-0",
+        "e164": "+4930768880"
+      },
+      "availability": "Geschäftszeiten; Tierhäuser tägl. 13–16 Uhr",
+      "scope": "Berlin",
+      "address": "Hausvaterweg 39, 13057 Berlin-Falkenberg",
+      "email": "tierheim@tierschutz-berlin.de",
+      "note": "Eines der größten Tierheime Europas. Für Fundtiere gilt die separate Tiersammelstelle (siehe eigener Eintrag).",
+      "url": "https://tierschutz-berlin.de/",
+      "verified_date": "2026-08-03",
+      "source": "https://tierschutz-berlin.de/kontakt/",
+      "status": "active"
+    },
+    {
+      "id": "tierheim-brandenburg",
+      "name": "Tierheim Brandenburg an der Havel (Beispiel Brandenburg)",
+      "category": "tierheim",
+      "org_type": "gemeinnuetzig",
+      "phone": {
+        "display": "03381 304140",
+        "e164": "+493381304140"
+      },
+      "availability": "AB nutzen, Rückruf",
+      "scope": "Brandenburg an der Havel",
+      "email": "info@tierheim-brandenburg.de",
+      "note": "Für das Süd-Berliner Umland (Schönefeld etc.) ist das Tierheim des Landkreises Dahme-Spreewald zuständig – Eintrag ergänzen (TODO).",
+      "url": "https://www.tierheim-brandenburg.de/",
+      "verified_date": "2026-08-03",
+      "source": "https://www.tierheim-brandenburg.de/tierabgabed061a824",
+      "status": "verify_before_launch",
+      "todo": "Zuständiges Tierheim für LDS (Schönefeld/Großziethen) recherchieren und als eigenen Eintrag anlegen; dieser Eintrag ist ggf. zu weit westlich für die Zielgruppe."
+    },
+    {
+      "id": "tsv-berater",
+      "name": "Tierschutzberater – Tierschutzverein für Berlin",
+      "category": "tierschutzverstoss",
+      "org_type": "gemeinnuetzig",
+      "phone": {
+        "display": "030 76888-135",
+        "e164": "+493076888135"
+      },
+      "availability": "tägl. 8–10 Uhr, sonst AB mit Rückrufnummer",
+      "scope": "Berlin",
+      "note": "Beratung bei Tierschutzfragen und Verdachtsfällen. Bei Kontaktaufnahme Name, Anschrift und konkrete Beobachtung angeben. In akuten Notfällen immer zuerst Polizei/Feuerwehr.",
+      "url": "https://tierschutz-berlin.de/service/tierschutzberater/",
+      "verified_date": "2026-08-03",
+      "source": "https://tierschutz-berlin.de/kontakt/",
+      "status": "active"
+    },
+    {
+      "id": "tsv-katzenrettung",
+      "name": "Tierschutz Berlin – Tierrettung (z. B. Katze auf Baum)",
+      "category": "tierrettung",
+      "org_type": "gemeinnuetzig",
+      "phone": {
+        "display": "030 76888-0",
+        "e164": "+4930768880"
+      },
+      "availability": "Geschäftszeiten (Zentrale)",
+      "scope": "Berlin",
+      "note": "Die Berliner Feuerwehr ist für Katzenrettung aus Bäumen NICHT zuständig – Ansprechpartner ist der Tierschutzverein/das Tierheim Berlin. Über die Zentrale wird an die zuständige Stelle verbunden.",
+      "url": "https://tierschutz-berlin.de/",
+      "verified_date": "2026-08-03",
+      "source": "https://tierschutz-berlin.de/ (Zentrale offiziell; Durchwahl -139 nicht bestätigt)",
+      "status": "active"
+    },
+    {
+      "id": "vet-neukoelln",
+      "name": "Veterinär- und Lebensmittelaufsicht Bezirksamt Neukölln (zuständig für Rudow)",
+      "category": "tierschutzverstoss",
+      "org_type": "amtlich",
+      "phone": {
+        "display": "030 90239-6749",
+        "e164": "+4930902396749"
+      },
+      "availability": "Geschäftszeiten; telefonische Erreichbarkeit eingeschränkt – Anliegen bevorzugt per E-Mail.",
+      "scope": "Berlin-Neukölln (inkl. Rudow, Gropiusstadt, Buckow, Britz)",
+      "note": "Zuständig für Tierschutzbeschwerden/-anzeigen, Fundtiere, Giftköder-Meldungen und Qualzucht im Bezirk. In Notfällen (Hund im heißen Auto) direkt Polizei – auch nachts/am Wochenende. Für andere Bezirke: jeweiliges Bezirksamt.",
+      "url": "https://www.berlin.de/ba-neukoelln/politik-und-verwaltung/aemter/ordnungsamt/veterinaer-und-lebensmittelaufsicht/",
+      "verified_date": "2026-08-03",
+      "source": "https://www.berlin.de/ba-neukoelln/... Veterinaer- und Lebensmittelaufsicht (offiziell)",
+      "status": "active",
+      "email": "vetleb@bezirksamt-neukoelln.de",
+      "address": "Boddinstraße 34, 12053 Berlin"
+    },
+    {
+      "id": "landestierschutz",
+      "name": "Landestierschutzbeauftragte Berlin",
+      "category": "information",
+      "org_type": "amtlich",
+      "phone": null,
+      "availability": "online",
+      "scope": "Berlin",
+      "note": "Umfangreiche offizielle Informationsseiten zu Wildtieren, Fundtieren und Tierschutz in Berlin – gute Quelle für weiterführende Links.",
+      "url": "https://www.berlin.de/lb/tierschutz/",
+      "verified_date": "2026-08-03",
+      "source": "https://www.berlin.de/lb/tierschutz/wildtiere/artikel.710515.php",
+      "status": "active"
+    },
+    {
+      "id": "mobil-tierrettung-bb",
+      "name": "Mobile Tiernotfallrettung Berlin-Brandenburg (privater Anbieter)",
+      "category": "tiermedizin",
+      "org_type": "privat_kostenpflichtig",
+      "phone": {
+        "display": "0151 53510207",
+        "e164": "+4915153510207"
+      },
+      "availability": "24/7",
+      "scope": "Berlin, Brandenburg",
+      "note": "Privater, kostenpflichtiger Dienst (GOT + Anfahrt). Keine Vögel und Wildtiere. Auf der Website klar als privat kennzeichnen; keine Geschäftsbeziehung, keine Empfehlung im rechtlichen Sinn.",
+      "url": "https://www.tierrettungberlinbrandenburg.de/",
+      "verified_date": "2026-08-03",
+      "source": "https://www.tierrettungberlinbrandenburg.de/",
+      "status": "active"
+    },
+    {
+      "id": "mobil-tieraerzte-notdienst",
+      "name": "Tierärzte im Notdienst Berlin & Brandenburg (privater Anbieter, Hausbesuche)",
+      "category": "tiermedizin",
+      "org_type": "privat_kostenpflichtig",
+      "phone": {
+        "display": "0157 85949631",
+        "e164": "+4915785949631"
+      },
+      "availability": "24/7, auch Feiertage",
+      "scope": "Berlin, Brandenburg",
+      "note": "Privater, kostenpflichtiger Hausbesuchs-Notdienst. Klar als privat kennzeichnen.",
+      "url": "https://tierarzt-notdienst-berlin.de/",
+      "verified_date": "2026-08-03",
+      "source": "https://tierarzt-notdienst-berlin.de/",
+      "status": "active"
+    },
+    {
+      "id": "kadaver-entsorgung",
+      "name": "Totes Tier auf öffentlichem Land: Ordnungsamt des Bezirks / BSR",
+      "category": "totfund",
+      "org_type": "amtlich",
+      "phone": null,
+      "availability": "Geschäftszeiten",
+      "scope": "Berlin",
+      "note": "Fund dem Veterinär-/Ordnungsamt des Bezirks melden (Fundort + eigene Rückrufnummer). Totes Haustier mit möglichem Chip zusätzlich der Tiersammelstelle melden, damit Halter informiert werden können. Auf Autobahn/Bundesstraße: Polizei.",
+      "url": "https://service.berlin.de/dienstleistung/326766/",
+      "verified_date": "2026-08-03",
+      "source": "https://service.berlin.de/dienstleistung/326766/ (offiziell)",
+      "status": "active"
+    }
+  ]
+}

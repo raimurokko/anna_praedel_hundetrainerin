@@ -499,4 +499,19 @@
       } catch (err) { /* Fallback: sichtbare Vorschau bleibt zum manuellen Kopieren */ }
     }
   })();
+
+  /* ---------- 8. Beim Drucken alle <details> öffnen (Tiernotfall-Akkordeons, FAQ) ---------- */
+  (function () {
+    var opened = [];
+    function openAll() {
+      opened = [];
+      document.querySelectorAll('details:not([open])').forEach(function (d) { d.open = true; opened.push(d); });
+    }
+    function restore() { opened.forEach(function (d) { d.open = false; }); opened = []; }
+    window.addEventListener('beforeprint', openAll);
+    window.addEventListener('afterprint', restore);
+    if (window.matchMedia) {
+      try { window.matchMedia('print').addEventListener('change', function (e) { e.matches ? openAll() : restore(); }); } catch (e) {}
+    }
+  })();
 })();

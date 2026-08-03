@@ -5,6 +5,27 @@ Priorität: 🔴 hoch · 🟡 mittel · 🟢 niedrig
 
 ---
 
+## ✅ Session 03.08.2026
+
+- E-E-A-T in „Über mich" + Person-Schema (§ 11 TierSchG, 3 Jahre, Fortbildung, Kitmir).
+- 5 neue Ratgeber + Ratgeber-Übersichtsseite `/ratgeber/`; „Kurz gesagt"-Direktantworten in allen Artikeln.
+- **Rubrik „Tiernotfall" `/tiernotfall/`** neu (Entscheidungsbaum 9 Situationen, Sticky-Notrufnummern,
+  datengetrieben aus JSON → statisch generiert, Print-CSS, FAQPage-Schema, Nav-Punkt „Notfall",
+  Teaser in Tierschutz). Doku: `docs/tiernotfall.md`.
+
+### 🔁 Tiernotfall – wiederkehrende Pflege-Tasks
+- [ ] 🔴 **Vor Go-Live prüfen (verify_before_launch):** `tierfang-berlin` (030 9029 64718 nicht bestätigt)
+  und `tierheim-brandenburg` → zuständiges LDS-Tierheim (Dahme-Spreewald, Schönefeld/Großziethen) recherchieren
+  und als eigenen Eintrag anlegen.
+- [ ] 🟡 **Halbjährlicher Review** (`meta.review_interval_months = 6`): alle Notrufnummern gegen die
+  offizielle Quelle prüfen, `verified_date` aktualisieren, dann `node tools/generate-tiernotfall.js`.
+  Nächster Review: **Februar 2027**.
+- [ ] 🟢 Optional: eigene Einträge für Treptow-Köpenick (Altglienicke/Bohnsdorf/Adlershof) Veterinäramt
+  ergänzen (analog `vet-neukoelln`).
+- Pflege-Prinzip: **nur die JSON anfassen**, `id` nie ändern, keine Nummern ohne Quelle. Details: `docs/tiernotfall.md`.
+
+---
+
 ## ✅ Session 22.07.2026
 
 Erledigt: Einzeltraining-Karten-Icons (Herz/Pfote/Haus/Tasse), Kontakt-Icons

@@ -562,6 +562,64 @@ a.card { text-decoration: none; color: inherit; }
 .credentials li::before { content: "✓"; position: absolute; left: 0; top: 0; color: var(--wine); font-weight: 800; }
 .credentials strong { color: var(--fg); }
 .credentials a { color: var(--wine); }
+
+/* ===== Tiernotfall-Seite ===== */
+.tiernotfall__intro { max-width: 65ch; margin: 14px 0 0; }
+.notfall-sticky { position: sticky; top: 74px; z-index: 60; display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 24px 0 34px; padding: 12px; background: var(--wine); border-radius: var(--radius); box-shadow: var(--shadow); }
+@media (max-width: 640px) { .notfall-sticky { grid-template-columns: 1fr; position: static; } }
+.notfall-num { display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 12px 8px; background: var(--on-wine); color: var(--wine); border-radius: 12px; text-decoration: none; text-align: center; transition: filter .15s; }
+.notfall-num:hover { filter: brightness(.96); }
+.notfall-num__n { font-size: 1.45rem; font-weight: 800; letter-spacing: -.01em; }
+.notfall-num__l { font-size: .82rem; opacity: .85; }
+.notfall-situations { display: flex; flex-direction: column; gap: 12px; }
+.notfall-sit { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; box-shadow: var(--shadow); }
+.notfall-sit > summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 14px; padding: 18px 22px; font-weight: 700; font-size: 1.1rem; }
+.notfall-sit > summary::-webkit-details-marker { display: none; }
+.notfall-sit > summary:focus-visible { outline: 3px solid var(--wine); outline-offset: -3px; border-radius: 16px; }
+.notfall-sit[open] > summary { border-bottom: 1px solid var(--border); }
+.notfall-sit .sign { flex: 0 0 auto; color: var(--wine); font-weight: 800; font-size: 1.4rem; line-height: 1; }
+.notfall-sit[open] .sign { transform: rotate(45deg); }
+.notfall-steps { margin: 0; padding: 16px 22px 22px 42px; display: flex; flex-direction: column; gap: 16px; }
+.notfall-steps > li { line-height: 1.55; }
+.notfall-steps > li > p { margin: 0 0 8px; }
+.notfall-card { background: var(--surface-2); border: 1px solid var(--border); border-radius: 12px; padding: 12px 14px; margin: 8px 0 0; display: flex; flex-direction: column; gap: 4px; }
+.notfall-card__head { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.notfall-card__name { font-weight: 700; }
+.notfall-badge { font-size: .7rem; text-transform: uppercase; letter-spacing: .05em; font-weight: 700; padding: 2px 8px; border-radius: 999px; }
+.notfall-badge--amtlich { background: var(--wine-tint); color: var(--wine); }
+.notfall-badge--gemeinnuetzig { background: var(--surface-3); color: var(--muted); }
+.notfall-badge--privat_kostenpflichtig { background: #F4D9A6; color: #6B4E12; }
+.notfall-card__phone { font-size: 1.15rem; font-weight: 800; color: var(--wine); text-decoration: none; }
+.notfall-card__avail { color: var(--muted); font-size: .92rem; }
+.notfall-card__note { color: var(--fg); font-size: .92rem; margin: 4px 0 0; }
+.notfall-card__link { color: var(--wine); font-size: .9rem; }
+.notfall-card__verify { color: #8A5A00; font-size: .88rem; font-weight: 700; margin: 4px 0 0; }
+[data-theme="dark"] .notfall-card__verify { color: #E7B24d; }
+.notfall-warn, .notfall-neutral { display: block; background: var(--surface-3); border-left: 4px solid var(--wine); padding: 8px 12px; border-radius: 0 8px 8px 0; font-size: .95rem; }
+.notfall-neutral { font-size: .88rem; color: var(--muted); border-left-color: var(--border); }
+.notfall-outro { margin-top: 34px; padding-top: 20px; border-top: 1px solid var(--border); display: flex; flex-direction: column; gap: 10px; align-items: flex-start; }
+.notfall-stand { color: var(--muted); font-size: .95rem; margin: 0; }
+.notfall-stand a, .notfall-disclaimer a { color: var(--wine); }
+.notfall-disclaimer { color: var(--muted); font-size: .88rem; margin: 0; }
+.notfall-teaser { display: flex; align-items: center; gap: 14px; margin-top: 22px; padding: 16px 18px; background: var(--surface); border: 1px solid var(--wine); border-radius: 14px; text-decoration: none; color: inherit; box-shadow: var(--shadow); transition: transform .2s; }
+.notfall-teaser:hover { transform: translateY(-2px); }
+.notfall-teaser__icon { font-size: 1.5rem; flex: 0 0 auto; }
+.notfall-teaser strong { color: var(--wine); }
+.notfall-teaser__cta { margin-left: auto; color: var(--wine); font-weight: 800; font-size: 1.2rem; flex: 0 0 auto; }
+
+/* Druck: Nur der Notfall-Inhalt, Akkordeons offen, URLs ausgeschrieben */
+@media print {
+  .site-header, .site-footer, .a11y-fab, .a11y-panel, .scroll-top, .privacy-note, .notfall-outro .btn { display: none !important; }
+  body { color: #000; background: #fff; }
+  .tiernotfall { padding: 0 !important; }
+  .notfall-sticky { position: static; background: none; box-shadow: none; padding: 0; margin: 6px 0 16px; }
+  .notfall-num { border: 1.5px solid #000; color: #000; }
+  .notfall-sit { break-inside: avoid; box-shadow: none; border: 1px solid #888; }
+  .notfall-sit > summary .sign { display: none; }
+  .notfall-sit:not([open]) > .notfall-steps { display: flex; }
+  .notfall-card { background: #f7f7f7; border-color: #bbb; break-inside: avoid; }
+  .notfall-card__link[href^="http"]::after { content: " (" attr(href) ")"; font-size: .8em; word-break: break-all; color: #333; }
+}
 /* Artikel-Feinschliff (Ratgeber-Detailseiten nutzen .legal) */
 .legal .article-meta { color: var(--muted); font-size: .9rem; margin: 0 0 1.5em; }
 .legal .article-cta { margin: 2em 0 0; padding: clamp(20px, 3vw, 28px); background: var(--surface-2); border: 1px solid var(--border); border-radius: var(--radius); }
@@ -714,13 +772,13 @@ a.card { text-decoration: none; color: inherit; }
 .todo { background: var(--wine-tint); border: 1px dashed var(--wine); border-radius: 10px; padding: 4px 10px; color: var(--wine); font-weight: 700; }
 
 /* ---------- 13. Responsive / Mobile-Menü ---------- */
-/* Desktop-Navigation braucht ~1184px (6 Punkte + Toggle + Button). Darunter
+/* Desktop-Navigation braucht ~1293px (7 Punkte + Toggle + Button). Darunter
    sofort Burger-Menü, damit die Leiste nie abgeschnitten wird. */
-@media (max-width: 1200px) {
+@media (max-width: 1320px) {
   .nav-desktop { display: none; }
   .nav-mobile-controls { display: flex; }
 }
-@media (min-width: 1201px) {
+@media (min-width: 1321px) {
   .nav-mobile { display: none !important; }
 }
 @media (max-width: 880px) {
