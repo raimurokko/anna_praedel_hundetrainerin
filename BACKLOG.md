@@ -16,13 +16,16 @@ Provenienz per Meta + JSON-LD, `llms.txt` erweitert, PLZ im Schema, FAQ-Schema a
 toter Code entfernt (`.hero-word/.hero-claim`, `.termine-*`, `.booking-modal*`, hero-seq-JS,
 `termine.js`, `data/termine.json`), **hero02/03 entfernt** (LCP).
 
+**Ebenfalls erledigt (spätere Runden 22.07.):** E-Mail-Themenauswahl als barrierefreie
+**Radio-Gruppe** (Dyslexie-Schrift greift überall → Dropdown-Caveat hinfällig), Accessible
+Names der A11y-Schalter (WCAG 4.1.2), Feld-Kontrast (1.4.11), Tastatur-Fokus-Eingrenzung im
+Dialog, strukturiertes **WCAG-2.1-AA-Audit**, Barrierefreiheitserklärung aktualisiert
+(Stand 22.07.2026), **Facebook-URL eingetragen** (Kontakt-Karte, Footer, Schema `sameAs`, `llms.txt`).
+
 **Neu offen (warten auf Input der Kundin):**
 - [ ] 🟡 **E-E-A-T (SEO/GEO):** Annas Qualifikation/Erfahrung + § 11 TierSchG sichtbar in „Über mich"
   ergänzen (bisher nur im Impressum). Braucht Text-/Angaben-Input.
-- [ ] 🟢 Dyslexie-Modus: Auswahl-Optionen werden im **offenen** Dropdown je nach Browser
-  systemseitig gerendert (native Popup-Schrift) — nur bedingt per CSS beeinflussbar. Falls
-  konsequent nötig: Custom-Listbox (Aufwand). Aktuell Labels gekürzt + `optgroup`, Font auf
-  `select/option` gesetzt.
+- [ ] 🟢 Optional: echter Screenreader-/Tastatur-Durchlauf (VoiceOver/NVDA) durch einen Menschen für ein formales A11y-Testat.
 
 ---
 
@@ -78,7 +81,7 @@ bereits umgesetzt; folgende Deltas (v. a. aus dem neueren Teil 2) wurden ergänz
 - [ ] 🔴 Datenschutz: Hosting-Anbieter + Logfile-Aufbewahrungsdauer eintragen
 - [ ] 🔴 Echte WhatsApp-Nummer eintragen (`wa.me/49…`)
 - [~] 🔴 E-Mail-Adresse bestätigen — vorläufig auf **hallo@beziehungsweise.com** gezogen (mit Domain); bitte bestätigen
-- [ ] 🔴 Facebook-Seiten-URL eintragen **oder** Facebook-Karte entfernen
+- [x] 🔴 Facebook-Seiten-URL eingetragen (22.07.2026): https://www.facebook.com/share/1FQVGf99yg/ (Kontakt-Karte, Footer, Schema `sameAs`, `llms.txt`)
 - [ ] 🔴 „Stand:"-Datum in den drei Rechtsseiten setzen
 - [ ] 🔴 Rechtstexte vor Veröffentlichung juristisch prüfen (lassen)
 - [x] Preisauszeichnung (PAngV): **regulär USt-pflichtig** (nicht §19) → Preise als „inkl. gesetzlicher USt" ausgewiesen; Steuernummer im Impressum.
