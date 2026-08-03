@@ -13,6 +13,20 @@ Priorität: 🔴 hoch · 🟡 mittel · 🟢 niedrig
   datengetrieben aus JSON → statisch generiert, Print-CSS, FAQPage-Schema, Nav-Punkt „Notfall",
   Teaser in Tierschutz). Doku: `docs/tiernotfall.md`.
 
+## ✅ Session 04.08.2026 – Mobil-Nachkontrolle Tiernotfall
+
+- [x] Optische Nachkontrolle (Teaser-Kachel + Sticky-Nummern auf Mobil) abgeschlossen.
+- [x] 🔴 **Site-weiter Sticky-Bug behoben:** `body { overflow-x: hidden }` machte `<body>` zum
+  Scroll-Container → `position: sticky` war überall wirkungslos (Notrufleiste + `.beziehung__sticky`).
+  Regel entfernt, horizontaler Overflow bleibt durch `html { overflow-x: clip }` gekappt.
+  Regressionsgeprüft (kein H-Scroll) bei 375/407/768/1320/1440 px, Startseite mit offenem Burger-Menü,
+  `/ratgeber/`, `/datenschutz.html`, `/tiernotfall/`.
+- [x] Notrufleiste auf Mobil sticky statt static, kompakt (72 px statt 98 px), Kurzlabels + `aria-label`.
+- [x] Druck-Button lief auf 375 px aus dem Viewport (`.btn` = `white-space: nowrap`) → bricht jetzt um.
+- [x] Teaser-Kachel auf ≤560 px ohne Deko-Pfeil (Text 6 → 4 Zeilen).
+
+---
+
 ### 🔁 Tiernotfall – wiederkehrende Pflege-Tasks
 - [ ] 🔴 **Vor Go-Live prüfen (verify_before_launch):** `tierfang-berlin` (030 9029 64718 nicht bestätigt)
   und `tierheim-brandenburg` → zuständiges LDS-Tierheim (Dahme-Spreewald, Schönefeld/Großziethen) recherchieren

@@ -119,9 +119,17 @@ const SITS = [
 // "Stand" = ältestes verified_date unter den aktiven Einträgen
 const stand = data.contacts.filter(c => c.status === 'active' && c.verified_date).map(c => c.verified_date).sort()[0] || data.meta.last_full_review;
 
+// Kurzlabels nur fuer die Sticky-Leiste auf schmalen Viewports (Darstellung, kein Inhalt aus der JSON)
+const STICKY_SHORT = {
+  'notruf-112': 'Feuerwehr',
+  'notruf-110': 'Polizei',
+  'polizei-buergertelefon': 'Bürgertelefon'
+};
+
 const sticky = ['notruf-112', 'notruf-110', 'polizei-buergertelefon'].map(id => {
   const c = byId[id];
-  return `<a class="notfall-num" href="tel:${esc(c.phone.e164)}"><span class="notfall-num__n">${esc(c.phone.display)}</span><span class="notfall-num__l">${esc(c.name)}</span></a>`;
+  const short = STICKY_SHORT[id] || c.name;
+  return `<a class="notfall-num" href="tel:${esc(c.phone.e164)}" aria-label="${esc(c.name)}: ${esc(c.phone.display)}"><span class="notfall-num__n">${esc(c.phone.display)}</span><span class="notfall-num__l" aria-hidden="true"><span class="notfall-num__l-full">${esc(c.name)}</span><span class="notfall-num__l-short">${esc(short)}</span></span></a>`;
 }).join('\n        ');
 
 const situationsHtml = SITS.map(s => `      <details class="notfall-sit" id="sit-${s.id}">

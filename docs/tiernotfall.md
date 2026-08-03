@@ -21,6 +21,13 @@ nach Situation sortiert (Entscheidungsbaum, 9 Situationen). Basiert auf dem Brie
 3. Ergebnis (`website/tiernotfall/index.html`) mitcommitten. Die Situationen (Schritte + welche
    Kontakt-`id`s sie referenzieren) stehen im Generator (`SITS`-Array).
 
+### Sticky-Notrufleiste
+Die drei Nummern oben kommen aus der JSON (`notruf-112`, `notruf-110`, `polizei-buergertelefon`).
+Auf schmalen Viewports (≤ 640 px) wird statt des vollen Kontaktnamens ein **Kurzlabel** angezeigt,
+damit die Leiste kompakt bleibt und sticky sinnvoll ist. Die Kurzlabels stehen als reine
+Darstellungs-Info im Generator (`STICKY_SHORT`), **nicht** in der JSON. Der volle Name bleibt für
+Screenreader über `aria-label` am Link erhalten.
+
 ## Status-Feld
 - `active` – wird gerendert.
 - `verify_before_launch` – wird mit sichtbarem Vorbehalt-Hinweis gerendert; **vor Go-Live prüfen**.

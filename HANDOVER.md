@@ -44,7 +44,16 @@ Letzter Commit: **b64ffb6** (Rubrik Tiernotfall). Working Tree sauber, alles auf
 - Seite: Sticky-Notrufnummern (112/110/Bürgertelefon), Entscheidungsbaum 9 Situationen als `<details>`, Kontaktkarten mit Badges (amtlich/gemeinnützig/**privat_kostenpflichtig** = Warn-Badge + Neutralitätshinweis), `tel:`-Links, `FAQPage`-Schema, **Print-CSS** (Akkordeons öffnen beim Druck via main.js Modul 8), Nav-Punkt „Notfall", Teaser-Kachel in der Tierschutz-Sektion.
 - **Verifikation 03.08. (per Websuche, offizielle Quellen):** ✅ `fu-dueppel` (0160 3758447), `vet-neukoelln` (030 90239-6749), `tsv-katzenrettung` (Zentrale 030 76888-0; -139 nicht bestätigt), `kadaver-entsorgung` (Prozess). ⏳ bleiben Vorbehalt: `tierfang-berlin`, `tierheim-brandenburg` (LDS-Tierheim für Schönefeld noch offen).
 - Doku: **`docs/tiernotfall.md`**. Wiederkehrende Tasks stehen im Backlog (halbjährlicher Review, nächster **Feb 2027**).
-- **Offen (nur optische Nachkontrolle, nicht kritisch):** Homepage-Teaser-Kachel + Sticky-Nummern-Stapelung auf Mobil visuell final prüfen (Seite ist funktional, JSON-LD/Serving/Nav validiert).
+- **Optische Nachkontrolle erledigt (04.08.2026)** – dabei drei echte Mobil-Bugs gefunden und behoben:
+  1. `body { overflow-x: hidden }` machte `<body>` zum Scroll-Container und setzte **jedes
+     `position: sticky` site-weit ausser Kraft** (Notrufleiste *und* `.beziehung__sticky`). Regel
+     entfernt; `html { overflow-x: clip }` kappt den horizontalen Overflow weiterhin allein.
+  2. Sticky-Leiste war auf ≤640 px zusätzlich auf `position: static` gesetzt → widersprach dem
+     Intro („oben immer griffbereit"). Jetzt sticky + kompakt (3 Spalten `1fr 1fr 1.6fr`,
+     Kurzlabels via `STICKY_SHORT` im Generator, voller Name im `aria-label`); Höhe 98 → 72 px.
+  3. „Für den Kühlschrank ausdrucken" (`.btn` hat `white-space: nowrap`) ragte auf 375 px um 35 px
+     aus dem Viewport → in `.notfall-outro` auf Mobil umbrechend.
+  Zusätzlich: Teaser-Kachel auf ≤560 px ohne Deko-Pfeil, damit der Text nicht 6-zeilig quetscht.
 
 ## 5. Wichtige Dateien
 - `website/index.html` (One-Pager + JSON-LD-`@graph` im `<head>`), `website/assets/css/style.css`, `website/assets/js/main.js` (8 Module: injectUI/A11y, Theme, Menü, Reveal, ScrollTop, Datenschutz-Note, E-Mail-Konfigurator, Print-Details).
@@ -60,6 +69,15 @@ Letzter Commit: **b64ffb6** (Rubrik Tiernotfall). Working Tree sauber, alles auf
 
 ## 7. Stolperfallen / Quirks
 - **`main.js`/CSS werden gern STALE geliefert** (Browser-Cache). Zum Testen frisch nachladen: entweder `<script src>`/`<link href>` temporär `?v=` cache-busten (danach zurücksetzen!) oder per JS ein frisches `<link>`/`<script>` mit `?fresh=Date.now()` injizieren. `injectUI()` hat **keinen** Doppel-Injektions-Schutz → bei Re-Inject entstehen doppelte FABs.
+- **`position: sticky` ist empfindlich:** ein Vorfahre mit `overflow` ≠ `visible` (auch `auto`!) wird
+  zum Sticky-Scroll-Container. `html { overflow-x: clip }` ist ok, **`body { overflow-x: hidden }` nicht** –
+  das hatte site-weit alles Sticky lautlos totgelegt. Nach Layout-Änderungen an `html`/`body` prüfen:
+  `getBoundingClientRect().top` des Sticky-Elements über zwei Scrollpositionen vergleichen.
+- **`scroll-behavior: smooth` auf `html`** macht auch `window.scrollTo()`/`.scrollTop =` **asynchron** →
+  ein direkt danach gelesenes `scrollY` ist noch 0 und täuscht „Seite scrollt nicht" vor.
+  Für Messungen `window.scrollTo({top: N, behavior: 'instant'})` verwenden.
+- **CSS-Reload per `?fresh=` ist async:** nach dem Cache-Busting im **nächsten** Tool-Aufruf messen,
+  sonst misst man noch das alte Stylesheet (führt zu falschen „greift nicht"-Schlüssen).
 - **Screenshots blanken oft** bei `scrollY≠0` / nach dynamischen Änderungen → erneut screenshotten oder `get_page_text`/DOM-Checks nutzen. Isolat-Prüfseiten (bei scrollY 0) sind zuverlässig.
 - **macOS sed:** `sed -i ''`. **zsh:** Globs auf gelöschte Dateien failen → git-Pfadspecs quoten.
 - **Nav-Breakpoint:** 7 Punkte brauchen ~1293px → aktuell Burger bei ≤1320px. Bei Nav-Änderung neu messen (`nav-desktop.scrollWidth + brand + padding`).

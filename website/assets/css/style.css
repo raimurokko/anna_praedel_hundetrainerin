@@ -78,7 +78,9 @@ body {
   color: var(--fg);
   font-family: 'DejaVu Sans', 'Figtree', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   line-height: 1.6;
-  overflow-x: hidden;
+  /* KEIN overflow-x hier: "hidden" macht <body> zum Scroll-Container und
+     setzt jedes position:sticky ausser Kraft. Der horizontale Overflow wird
+     bereits von html{overflow-x:clip} gekappt (s. o.). */
   -webkit-font-smoothing: antialiased;
   transition: background .35s ease, color .35s ease;
 }
@@ -566,11 +568,22 @@ a.card { text-decoration: none; color: inherit; }
 /* ===== Tiernotfall-Seite ===== */
 .tiernotfall__intro { max-width: 65ch; margin: 14px 0 0; }
 .notfall-sticky { position: sticky; top: 74px; z-index: 60; display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 24px 0 34px; padding: 12px; background: var(--wine); border-radius: var(--radius); box-shadow: var(--shadow); }
-@media (max-width: 640px) { .notfall-sticky { grid-template-columns: 1fr; position: static; } }
 .notfall-num { display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 12px 8px; background: var(--on-wine); color: var(--wine); border-radius: 12px; text-decoration: none; text-align: center; transition: filter .15s; }
 .notfall-num:hover { filter: brightness(.96); }
 .notfall-num__n { font-size: 1.45rem; font-weight: 800; letter-spacing: -.01em; }
 .notfall-num__l { font-size: .82rem; opacity: .85; }
+.notfall-num__l-short { display: none; }
+/* Mobil: Leiste bleibt sticky (Notfall-Nutzen), dafuer kompakt mit Kurzlabels */
+@media (max-width: 640px) {
+  /* dritte Spalte breiter: "030 4664 4664" soll einzeilig bleiben */
+  .notfall-sticky { grid-template-columns: 1fr 1fr 1.6fr; gap: 6px; padding: 8px; margin: 20px 0 28px; }
+  .notfall-num { padding: 9px 3px; gap: 0; }
+  .notfall-num__n { font-size: 1rem; letter-spacing: -.02em; white-space: nowrap; }
+  .notfall-num__l { font-size: .66rem; line-height: 1.2; }
+  .notfall-num__l-full { display: none; }
+  .notfall-num__l-short { display: inline; }
+  .notfall-outro .btn { white-space: normal; text-align: center; max-width: 100%; }
+}
 .notfall-situations { display: flex; flex-direction: column; gap: 12px; }
 .notfall-sit { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; box-shadow: var(--shadow); }
 .notfall-sit > summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 14px; padding: 18px 22px; font-weight: 700; font-size: 1.1rem; }
@@ -606,6 +619,12 @@ a.card { text-decoration: none; color: inherit; }
 .notfall-teaser__icon { font-size: 1.5rem; flex: 0 0 auto; }
 .notfall-teaser strong { color: var(--wine); }
 .notfall-teaser__cta { margin-left: auto; color: var(--wine); font-weight: 800; font-size: 1.2rem; flex: 0 0 auto; }
+/* Mobil: Deko-Pfeil raus, damit der Text nicht in eine schmale Spalte gequetscht wird
+   (ganze Kachel ist ohnehin der Link; der Pfeil ist aria-hidden) */
+@media (max-width: 560px) {
+  .notfall-teaser { gap: 10px; padding: 14px 16px; align-items: flex-start; }
+  .notfall-teaser__cta { display: none; }
+}
 
 /* Druck: Nur der Notfall-Inhalt, Akkordeons offen, URLs ausgeschrieben */
 @media print {
