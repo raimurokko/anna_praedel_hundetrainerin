@@ -275,11 +275,11 @@ body { padding-top: var(--header-h); }
 .ts-panel {
   position: relative; flex: 1 1 0; min-width: 0; height: 100%;
   margin: 0; padding: 0; border: 0; cursor: pointer; outline: none; overflow: hidden;
-  background-color: var(--surface-3); background-position: center; background-size: cover; background-repeat: no-repeat;
-  /* background-image wird je Panel inline gesetzt (relativ zum Dokument, subpfad-sicher) */
+  background-color: var(--surface-3); /* Platzhalter, bis das <img> geladen ist */
   transition: flex-grow .55s cubic-bezier(.22, .61, .36, 1), filter .45s ease;
   filter: saturate(.92) brightness(.97);
 }
+.ts-panel img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
 .ts-panel::after { /* Scrim für die Lesbarkeit der Bildunterschrift */
   content: ""; position: absolute; inset: 0; pointer-events: none;
   background: linear-gradient(to top, rgba(20, 12, 11, .66) 0%, rgba(20, 12, 11, 0) 46%);
