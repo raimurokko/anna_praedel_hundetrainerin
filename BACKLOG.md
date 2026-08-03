@@ -75,14 +75,14 @@ bereits umgesetzt; folgende Deltas (v. a. aus dem neueren Teil 2) wurden ergänz
 
 ## 🔴 Blockierend für Go-Live (Daten/Inhalte der Kundin)
 
-- [x] Domain gesetzt: **beziehungsweise.com** (Canonical/Sitemap/OG/Schema/security.txt/llms.txt aktualisiert)
-- [~] 🔴 Impressum: Anschrift (Neudecker Weg 49a, 12355 Berlin), Steuernummer 16/477/01055 und § 11-Erlaubnis eingetragen; noch offen: Telefon
+- [x] Domain **hundetraining-ap.de** gesetzt (Rebranding Teil 3; früher beziehungsweise.com)
+- [x] 🔴 Impressum: Anschrift (Neudecker Weg 49a, 12355 Berlin), Steuernummer 16/477/01055, § 11-Erlaubnis **und Telefon (0155 67557506)** eingetragen
 - [x] 🔴 PLZ im Impressum korrigiert: **12355** (von Kundin bestätigt, 25.06.2026)
-- [ ] 🔴 Datenschutz: Hosting-Anbieter + Logfile-Aufbewahrungsdauer eintragen
-- [ ] 🔴 Echte WhatsApp-Nummer eintragen (`wa.me/49…`)
-- [~] 🔴 E-Mail-Adresse bestätigen — vorläufig auf **hallo@beziehungsweise.com** gezogen (mit Domain); bitte bestätigen
+- [ ] 🔴 Datenschutz: Hosting-Anbieter + Logfile-Aufbewahrungsdauer eintragen (Platzhalter `[…]` in datenschutz.html)
+- [x] 🔴 WhatsApp-Nummer eingetragen & von Kundin bestätigt (`wa.me/4915567557506`, 22.07.2026)
+- [x] 🔴 E-Mail-Adresse **info@hundetraining-ap.de** (Rebranding; früher hallo@beziehungsweise.com)
 - [x] 🔴 Facebook-Seiten-URL eingetragen (22.07.2026): https://www.facebook.com/share/1FQVGf99yg/ (Kontakt-Karte, Footer, Schema `sameAs`, `llms.txt`)
-- [ ] 🔴 „Stand:"-Datum in den drei Rechtsseiten setzen
+- [~] 🔴 „Stand:"-Datum in den Rechtsseiten: **Barrierefreiheit = 22.07.2026 gesetzt**; Impressum + Datenschutz noch `[Datum]`
 - [ ] 🔴 Rechtstexte vor Veröffentlichung juristisch prüfen (lassen)
 - [x] Preisauszeichnung (PAngV): **regulär USt-pflichtig** (nicht §19) → Preise als „inkl. gesetzlicher USt" ausgewiesen; Steuernummer im Impressum.
 - [x] Standardschrift: **DejaVu Sans** (frei, Verdana-nah) lokal eingebunden, Figtree als Fallback. (Verdana selbst ist proprietär/nicht einbettbar.)
@@ -119,7 +119,7 @@ Kontakt-Sektion (Übergangslösung).
 - [x] 🟡 Fotos der Kundin einpflegen – Porträt „Über mich" (Anna02), Tierschutz-Bildakkordeon (tierschutz01–04) **und Hero-Bildsequenz (hero01–03, je WebP + 960px-Variante) erledigt**
 - [x] 🟡 Hero-Sektion: **statisches Einzelfoto** (hero01, Bergfoto) als `<picture>` (AVIF + WebP-Fallback, responsiv, vorgeladen). Die anfängliche 3-Bild-Fade-Sequenz war auf Kundinwunsch (26.06.2026) wieder entfernt (mochte das Fade nicht). **hero02/03 am 22.07.2026 entfernt** (wegen LCP nicht genutzt).
 - [x] 🟡 Social-Sharing-Bild (1200×630) ergänzt (22.07.2026: `bilder/social/anna-mit-hund.jpg`, Crop aus Über-mich-Foto; Logo 512×512 als icon-512.png vorhanden)
-- [ ] 🟡 Alternativtexte (`alt`) zu allen Bildern
+- [x] 🟡 Alternativtexte (`alt`) zu allen Bildern (im A11y-Audit 22.07.2026 bestätigt: keine fehlenden alt)
 - [ ] 🟡 Responsive Bilder (`srcset`/`sizes`) + `loading="lazy"`
 - [x] Markenzeichen „Herz mit Pfote": Favicon (SVG + favicon.ico 16/32), Touch-/PWA-Icons (180/192/512), Logo im Header/Footer (CSS-Maske, theme-fähig) und Schema.org-Logo
 - [ ] 🟢 Kurze Videosequenzen einbinden (ohne Autoplay-Ton, mit Controls, ggf. Untertitel)
