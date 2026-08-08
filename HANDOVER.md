@@ -20,7 +20,7 @@ Working Tree sauber, alles auf `main` gepusht (Deploy = Push).
 
 ## 2. Was die Site ist / Technik
 - Statische Site, **reines HTML/CSS/JS, kein Build-Tool/CI** (außer dem Tiernotfall-Generator, s. u.).
-- One-Pager `index.html` + Unterseiten: `impressum/datenschutz/barrierefreiheit.html`, `ratgeber/` (Übersicht + 12 Artikel), `tiernotfall/`.
+- One-Pager `index.html` + Unterseiten: `impressum/datenschutz/barrierefreiheit.html`, `ratgeber/` (Übersicht + 11 Artikel), `tiernotfall/`.
 - Design: Weinrot **#7E1F2D**, Fonts lokal (DejaVu Sans + Figtree, OpenDyslexic für A11y), Dark Mode, A11y-Panel (Schrift/Kontrast/Links/Motion/Dyslexie/Vorlesen), alles über `assets/js/main.js` (eine Quelle der Wahrheit).
 - **Vorschau:** lokaler Server `python3 -m http.server 8137 --directory website` (aus dem Anna-Repo starten). Browser via `mcp__Claude_Browser__*` → `preview_start {url:"http://localhost:8137/…"}` (direktes `navigate` auf localhost wird per Policy geblockt; immer `preview_start`).
 
@@ -30,7 +30,7 @@ Working Tree sauber, alles auf `main` gepusht (Deploy = Push).
 3. SEO/GEO: **Social-Bild 1200×630** (`bilder/social/anna-mit-hund.jpg`, Crop aus Über-mich-Foto), **IPTC „human-made"** (DigitalSourceType=digitalCapture) in allen Fotos, Provenienz-Meta + Schema, PLZ + `areaServed` (Rudow-Umland) im Schema.
 4. **A11y:** Accessible Names der Panel-Schalter (WCAG 4.1.2), Feld-Kontrast (1.4.11), Dyslexie-Schrift auf Formularen; WCAG-2.1-AA-Audit gefahren.
 5. Galerie auf `<img loading=lazy>` umgestellt; Nav-Breakpoint responsiv; Kontakt-Grid 1×4/2×2/4×1.
-6. **Ratgeber-System:** Übersichtsseite `/ratgeber/` + Artikel (Stand 04.08.: **12**, nach den Streichungen aus Teil 4), je „Kurz gesagt"-Direktantwort, `BlogPosting`+`FAQPage`+`Breadcrumb`-Schema, Cross-Linking.
+6. **Ratgeber-System:** Übersichtsseite `/ratgeber/` + Artikel (Stand 04.08.: **11**, nach den Streichungen aus Teil 4), je „Kurz gesagt"-Direktantwort, `BlogPosting`+`FAQPage`+`Breadcrumb`-Schema, Cross-Linking.
 7. **E-E-A-T:** „Qualifikation & Erfahrung"-Block in „Über mich" + `Person`-Schema (`hasCredential` § 11 TierSchG, `memberOf` Kitmir; **seit 2022** (04.08. von „über 3 Jahren“ umgestellt, s. u.), Fortbildung via Praktika/Online/Vor-Ort, gewaltfrei).
 8. Footer-Credit (Inu-Trust AG) + Hinweis auf **Digitale Ersthilfe** (digitale-ersthilfe.novumanalytica.com – kostenloser Novum-Hilfe-Service; `rel=nofollow`) auf allen Seiten.
 9. **Rubrik „Tiernotfall"** – siehe §4.
@@ -89,7 +89,7 @@ Working Tree sauber, alles auf `main` gepusht (Deploy = Push).
 14. **Anmerkungen Teil 4 umgesetzt (04.08.):** Alle neun Punkte der Kundin. Kern: Die Ratgeber
     sollen **erklären, nicht anleiten** – sämtliche Schritt-für-Schritt-Teile sind raus.
     Gelöscht: `leinenfuehrigkeit.html` (Ansatz nicht ihrer, Thema zu individuell) und
-    `hund-und-kind.html`; danach auch `alltagstraining` und `rueckruf-trainieren` (zu dünn) → **12 Artikel**. Hitze-Artikel: falscher Erste-Hilfe-Rat („langsam
+    `hund-und-kind.html`; danach auch `alltagstraining` und `rueckruf-trainieren` (zu dünn) und `hund-beschaeftigen` → **11 Artikel**. Hitze-Artikel: falscher Erste-Hilfe-Rat („langsam
     kühlen") durch Eskalation an die Tiermedizin + Notfallnummern ersetzt.
     Die dabei zu dünn gewordenen Artikel `alltagstraining` und `rueckruf-trainieren` wurden
     anschließend gelöscht.
@@ -99,7 +99,7 @@ Working Tree sauber, alles auf `main` gepusht (Deploy = Push).
 
 ## 5. Wichtige Dateien
 - `website/index.html` (One-Pager + JSON-LD-`@graph` im `<head>`), `website/assets/css/style.css`, `website/assets/js/main.js` (8 Module: injectUI/A11y, Theme, Menü, Reveal, ScrollTop, Datenschutz-Note, E-Mail-Konfigurator, Print-Details).
-- `website/ratgeber/` (index.html + 12 Artikel), `website/tiernotfall/`, `website/daten/`, `tools/generate-tiernotfall.js`.
+- `website/ratgeber/` (index.html + 11 Artikel), `website/tiernotfall/`, `website/daten/`, `tools/generate-tiernotfall.js`.
 - `BACKLOG.md`, `keyword-recherche.md`, `docs/tiernotfall.md`.
 
 ## 6. Offene Punkte / Backlog (Auszug — Details in BACKLOG.md)

@@ -136,9 +136,18 @@ auch die nicht genannten (`welpen-grunderziehung`, `tierschutzhund-eingewoehnen`
   Verweis unter „Weitere Beiträge" und – anders als alle übrigen Artikel – **keinen**
   „Alle Ratgeber ansehen"-Link. Beides ergänzt (thematisch passend: Welpen-Grunderziehung
   bzw. Hund im Winter als saisonales Gegenstück).
-- ⚠️ **Nächster Kandidat, falls das Kriterium konsequent angelegt wird:** `hund-beschaeftigen`
-  hat **236 Wörter** – war schon vor den Streichungen so kurz und wurde nie angefasst.
-  Bewusst stehen gelassen, weil nicht beauftragt.
+- [x] **`hund-beschaeftigen.html` gelöscht** (236 Wörter) – war schon vor den Streichungen so kurz.
+  Dabei musste ein **Inline-Verweis im Fließtext** von `hund-im-winter` behandelt werden
+  („Ideen dafür stehen im Ratgeber Hund beschäftigen"): Der Satz wurde **umformuliert** statt nur
+  entlinkt, sonst wäre ein sinnloser Halbsatz stehen geblieben. Die Beschäftigungsideen stehen
+  jetzt direkt im Winter-Artikel.
+- → **11 Artikel.** Der kürzeste liegt jetzt bei 260 Wörtern (`tierschutzhund-eingewoehnen`).
+
+**Merke für künftige Löschungen – vollständige Checkliste:** Datei · Übersichtskarte ·
+`ItemList`-Schema der Übersicht · `sitemap.xml` · `llms.txt` · Startseiten-Teaser ·
+„Weitere Beiträge" in allen anderen Artikeln · **Inline-Links im Fließtext** (die brauchen eine
+Umformulierung, nicht nur Entfernung) · und prüfen, ob Titel/„Kurz gesagt"/Meta noch etwas
+versprechen, das nicht mehr da ist.
 Verkraftbar, wenn der „Warum"-Teil und die FAQ dafür ausgebaut werden – sonst bleiben Hüllen übrig.
 
 ### 🟡 Offen aus dieser Session

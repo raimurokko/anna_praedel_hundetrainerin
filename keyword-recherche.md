@@ -74,8 +74,8 @@ passenden Angebot und CTA „Termin anfragen".
 **Ebene 3 (Frage-basiert) ist abgearbeitet.** Alle 8 Fragen aus Abschnitt 3 haben einen Artikel;
 dazu kamen zwei nicht gelistete Themen (Welpen-Grunderziehung, Hund und Hitze).
 Mit den acht am 04.08. ergänzten Artikeln waren es 16; nach den Streichungen aus den
-„Anmerkungen Teil 4" (Leinenführigkeit und Hund-und-Baby gelöscht) sind es **12 Artikel** (danach wurden `alltagstraining` und `rueckruf-trainieren` als
-zu dünn ebenfalls gelöscht).
+„Anmerkungen Teil 4" (Leinenführigkeit und Hund-und-Baby gelöscht) sind es **11 Artikel** (danach wurden `alltagstraining`, `rueckruf-trainieren` und
+`hund-beschaeftigen` als zu dünn ebenfalls gelöscht).
 
 ### ✅ Am 04.08.2026 umgesetzt
 1. **Positionierung „mobil / zu Hause / Hausbesuch"** ist jetzt im sichtbaren Text:
@@ -110,6 +110,6 @@ interne Verlinkung Artikel ↔ Angebote weiter ausbauen.
 
 ## Nächste Schritte
 - [ ] Google Business Profil anlegen (sobald Domain live) – stärkster Lokal-Hebel
-- [x] Ratgeber-Bereich + Muster-Artikel anlegen (Demo für Anna) – erledigt, 12 Artikel + Übersicht
+- [x] Ratgeber-Bereich + Muster-Artikel anlegen (Demo für Anna) – erledigt, 11 Artikel + Übersicht
 - [ ] Einträge in lokalen Verzeichnissen (NAP konsistent: Name/Adresse/Telefon)
 - [ ] `areaServed`-Schema bereits erweitert (Berlin + Rudow-Umland)
