@@ -179,17 +179,25 @@ Streichungen **drei der acht Kernfragen** ihren Artikel verloren haben. Korrigie
 Abdeckungs-Stand zeigt jetzt, welche Frage warum unbesetzt ist. Ebenso: Abschnitt 2b stand auf
 „alle fünf umgesetzt", obwohl `hund-und-kind` gelöscht wurde.
 
-### 🟢 Restbefunde – bewusst nicht angefasst (nicht beauftragt)
-- [ ] 🟢 **Zwei ungenutzte Bilddateien im Deploy-Ordner:** `bilder/hero01.jpeg` (**579 KB**) und
-  `bilder/social/anna-mit-hund.webp` (71 KB) werden nirgends referenziert – zusammen ~650 KB von
-  6,6 MB. `hero01.jpeg` ist vermutlich das **Master-Original** der AVIF/WebP-Varianten; deshalb
-  nicht gelöscht. Empfehlung: Master aus `website/` heraus in einen nicht deployten Ordner
-  verschieben, `anna-mit-hund.webp` löschen (OG braucht ohnehin JPEG/PNG).
-- [ ] 🟢 **Zwei verwaiste CSS-Klassen:** `.btn--inverse` und `.ts-panel__caption` haben keine
-  Entsprechung mehr im HTML. Toter Code, minimal.
-- Kein Handlungsbedarf: `.a11y-fab` / `.a11y-panel` erscheinen als „fehlend", werden aber zur
-  Laufzeit von `main.js` injiziert. Ebenso sind die FAQ-Schemas von Startseite und Tiernotfall
-  vollständig sichtbar – nur unter anderer Überschrift bzw. als Akkordeon.
+### ✅ Aufräumen erledigt (04.08.2026)
+- [x] **`bilder/hero01.jpeg` gelöscht (579 KB)** – Master-Original der AVIF/WebP-Varianten, wurde
+  nirgends referenziert. Auf ausdrücklichen Wunsch gelöscht statt verschoben; **bei Bedarf aus der
+  Git-Historie wiederherstellbar** (`git show <commit>:website/bilder/hero01.jpeg > datei.jpeg`).
+- [x] **`bilder/social/anna-mit-hund.webp` gelöscht (71 KB)** – für Open Graph bleibt nur das JPEG
+  (`anna-mit-hund.jpg`, 119 KB). OG/Twitter-Vorschauen brauchen JPEG oder PNG, WebP wird von
+  einigen Plattformen nicht zuverlässig gerendert.
+- [x] **Zwei `.DS_Store` entfernt** (`bilder/`, `assets/icons/`). Waren dank `.gitignore` nie im Git
+  und wurden nicht deployt – reiner lokaler macOS-Müll.
+- [x] **Toter CSS-Code entfernt** (−900 Bytes): `.btn--inverse` und sämtliche
+  `.ts-panel__caption`-Regeln (Basisregel, Hover-, Focus-, Reduced-Motion- und Touch-Variante).
+  Achtung beim Nachvollziehen: In der Reduced-Motion-Regel wurde **nur der Selektor** aus der Liste
+  genommen – `.ts-panel` und `.ts-panel::after` werden weiterhin gebraucht.
+- **Ergebnis: 0 ungenutzte Assets**, Deploy-Ordner **6,6 → 5,9 MB**.
+- Verifiziert: CSS-Klammern balanciert (409/409), Hero lädt (`hero01.avif`), alle vier
+  Tierschutz-Galerie-Bilder laden, 0 gebrochene Bilder, Struktur- und Linkprüfung weiterhin fehlerfrei.
+- Alle 9 Font-Dateien sind referenziert und bleiben (inkl. OpenDyslexic für das A11y-Panel).
+- `main.js`: 28 benannte Funktionen, **keine ungenutzte** – kein toter JS-Code.
+
 - [ ] 🟢 `og:title` fehlt auf Impressum, Datenschutz und Barrierefreiheit. Für Rechtsseiten
   verschmerzbar.
 

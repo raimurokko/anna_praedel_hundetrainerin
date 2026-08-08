@@ -239,8 +239,6 @@ body { padding-top: var(--header-h); }
 .btn--on-photo { background: rgba(255,255,255,.12); border-color: rgba(255,255,255,.4); color: #fff; }
 .btn--on-photo:hover { background: rgba(255,255,255,.2); }
 .btn--sm { padding: 10px 18px; font-size: 15px; }
-.btn--inverse { background: var(--on-wine); color: var(--wine); }
-.btn--inverse:hover { filter: brightness(.96); }
 
 .pill {
   display: inline-flex; align-items: center; gap: 8px;
@@ -287,27 +285,19 @@ body { padding-top: var(--header-h); }
   background: linear-gradient(to top, rgba(20, 12, 11, .66) 0%, rgba(20, 12, 11, 0) 46%);
   opacity: .55; transition: opacity .45s ease;
 }
-.ts-panel__caption {
-  position: absolute; left: 16px; right: 16px; bottom: 14px; z-index: 1; pointer-events: none;
-  color: #fff; font-weight: 600; font-size: .98rem; line-height: 1.3;
-  opacity: 0; transform: translateY(8px); transition: opacity .45s ease, transform .45s ease;
-  text-shadow: 0 1px 10px rgba(0, 0, 0, .45);
-}
 /* Zeigegeräte: Drüberfahren öffnet, Weggehen schließt */
 @media (hover: hover) {
   .ts-gallery:hover .ts-panel { flex-grow: .6; }
   .ts-gallery .ts-panel:hover { flex-grow: 4.6; filter: none; }
   .ts-gallery .ts-panel:hover::after { opacity: .85; }
-  .ts-gallery .ts-panel:hover .ts-panel__caption { opacity: 1; transform: none; }
 }
 /* Tastatur: fokussiertes Panel öffnet */
 .ts-gallery:focus-within .ts-panel { flex-grow: .6; }
 .ts-gallery .ts-panel:focus-visible { flex-grow: 4.6; filter: none; box-shadow: inset 0 0 0 3px var(--wine); }
 .ts-gallery .ts-panel:focus-visible::after { opacity: .85; }
-.ts-gallery .ts-panel:focus-visible .ts-panel__caption { opacity: 1; transform: none; }
 /* Reduced Motion: kein Schieben, nur Ein-/Ausblenden */
 @media (prefers-reduced-motion: reduce) {
-  .ts-panel, .ts-panel::after, .ts-panel__caption { transition: opacity .2s ease; }
+  .ts-panel, .ts-panel::after { transition: opacity .2s ease; }
 }
 /* Touch / kein Hover: ehrliche 2-Spalten-Galerie statt Akkordeon */
 @media (hover: none) {
@@ -317,13 +307,7 @@ body { padding-top: var(--header-h); }
   .split2 .media--wide.ts-media { aspect-ratio: auto; background: none; }
   .ts-gallery { position: static; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; height: auto; }
   .ts-panel { flex: none; aspect-ratio: 4/3; border-radius: 16px; filter: none; }
-  /* Unterschrift dezent halten – das Foto soll dominieren */
   .ts-panel::after { opacity: .32; }
-  .ts-panel__caption {
-    opacity: 1; transform: none;
-    font-size: .72rem; font-weight: 500; line-height: 1.25;
-    left: 10px; right: 10px; bottom: 8px; text-shadow: 0 1px 6px rgba(0, 0, 0, .55);
-  }
 }
 
 /* Hero – Vollbild (Foto als Hintergrund über die gesamte Breite) */
