@@ -102,7 +102,7 @@ auch die nicht genannten (`welpen-grunderziehung`, `tierschutzhund-eingewoehnen`
 - [x] **9. Rückruf:** „Schritt für Schritt" streichen.
 
 **Umsetzung 04.08.2026 – alle neun Punkte erledigt.** Zusätzlich mit aufgeräumt:
-- **Gelöscht:** `leinenfuehrigkeit.html`, `hund-und-kind.html` → **14 Artikel**. Verweise entfernt aus
+- **Gelöscht:** `leinenfuehrigkeit.html`, `hund-und-kind.html` (danach zusätzlich die zwei zu dünnen, s. u. → **12 Artikel**). Verweise entfernt aus
   Übersicht, Sitemap, `llms.txt`, Startseiten-Teaser und den „Weitere Beiträge"-Blöcken von
   fünf Artikeln.
 - **Startseiten-Teaser:** Leinenführigkeit ersetzt durch „Welcher Hund passt zu mir?" (Annas
@@ -125,14 +125,20 @@ auch die nicht genannten (`welpen-grunderziehung`, `tierschutzhund-eingewoehnen`
   „Die ersten Wochen ruhig gestalten" – das ist Beratung zum Zusammenführen, keine Trainingsmethode.
   **Bewusst stehen gelassen, mit Anna klären.**
 
-### ⚠️ Folge der Streichungen: zwei Artikel sind jetzt zu dünn
-- [ ] 🟡 **`alltagstraining.html`: 208 Wörter, 1 Abschnitt.** Nach dem Streichen von Schritt 1–4,
-  „Häufige Fehler" und „Management ist kein Scheitern" bleibt nur „Warum Alltag anders ist als
-  Training". Als eigene Seite grenzwertig (Google wertet so etwas als *thin content*, was der
-  ganzen Domain schaden kann). Optionen: den „Warum"-Teil ausbauen (ohne Anleitungscharakter),
-  in einen anderen Artikel integrieren oder ganz löschen.
-- [ ] 🟡 **`rueckruf-trainieren.html`: 229 Wörter, 3 Abschnitte.** Gleiches Thema, weniger dramatisch.
-- Zum Vergleich: die unangetasteten Artikel liegen bei 500–660 Wörtern.
+### ✅ Folge der Streichungen: zwei zu dünne Artikel gelöscht (04.08.)
+- [x] **`alltagstraining.html` gelöscht** (208 Wörter, 1 Abschnitt) – nach dem Streichen von
+  Schritt 1–4, „Häufige Fehler" und „Management ist kein Scheitern" blieb zu wenig übrig, um als
+  eigene Seite zu tragen (*thin content*-Risiko für die ganze Domain).
+- [x] **`rueckruf-trainieren.html` gelöscht** (229 Wörter) – gleicher Grund.
+- → **12 Artikel.** Mitgezogen: Karten, `ItemList`-Schema (neu generiert), `sitemap.xml`,
+  `llms.txt`, Cross-Links in `hundebegegnungen` und `hund-autofahren`.
+- Dabei mitrepariert: `hund-alleine-bleiben` und `hund-und-hitze` hatten danach nur noch **einen**
+  Verweis unter „Weitere Beiträge" und – anders als alle übrigen Artikel – **keinen**
+  „Alle Ratgeber ansehen"-Link. Beides ergänzt (thematisch passend: Welpen-Grunderziehung
+  bzw. Hund im Winter als saisonales Gegenstück).
+- ⚠️ **Nächster Kandidat, falls das Kriterium konsequent angelegt wird:** `hund-beschaeftigen`
+  hat **236 Wörter** – war schon vor den Streichungen so kurz und wurde nie angefasst.
+  Bewusst stehen gelassen, weil nicht beauftragt.
 Verkraftbar, wenn der „Warum"-Teil und die FAQ dafür ausgebaut werden – sonst bleiben Hüllen übrig.
 
 ### 🟡 Offen aus dieser Session
