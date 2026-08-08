@@ -73,7 +73,8 @@ passenden Angebot und CTA „Termin anfragen".
 
 **Ebene 3 (Frage-basiert) ist abgearbeitet.** Alle 8 Fragen aus Abschnitt 3 haben einen Artikel;
 dazu kamen zwei nicht gelistete Themen (Welpen-Grunderziehung, Hund und Hitze).
-Mit den acht am 04.08. ergänzten Artikeln sind es **16 Artikel** gesamt.
+Mit den acht am 04.08. ergänzten Artikeln waren es 16; nach den Streichungen aus den
+„Anmerkungen Teil 4" (Leinenführigkeit und Hund-und-Baby gelöscht) sind es **14 Artikel**.
 
 ### ✅ Am 04.08.2026 umgesetzt
 1. **Positionierung „mobil / zu Hause / Hausbesuch"** ist jetzt im sichtbaren Text:
@@ -95,6 +96,10 @@ Mit den acht am 04.08. ergänzten Artikeln sind es **16 Artikel** gesamt.
 (NAP konsistent) – erst nach Go-Live möglich, aber der stärkste Lokal-Hebel überhaupt.
 Steht als Prio-1-Punkt im `BACKLOG.md`.
 
+**🔴 Redaktionslinie (Kundin, 04.08.):** Die Ratgeber sollen **erklären, nicht anleiten** – alle
+Schritt-für-Schritt-Teile wurden gestrichen, `leinenfuehrigkeit.html` und `hund-und-kind.html`
+gelöscht. Neue Artikel bitte von vornherein so anlegen. Details im `BACKLOG.md`.
+
 **🟡 Saison-Steuerung:** „Hund und Hitze“ trägt Mai–Sept., „Hund im Winter“ und
 „Silvester“ tragen Okt.–Jan. Der Startseiten-Teaser zeigt nur drei Artikel – dort saisonal
 rotieren; den Silvester-Artikel ab **Oktober** nach vorn holen.
@@ -104,6 +109,6 @@ interne Verlinkung Artikel ↔ Angebote weiter ausbauen.
 
 ## Nächste Schritte
 - [ ] Google Business Profil anlegen (sobald Domain live) – stärkster Lokal-Hebel
-- [x] Ratgeber-Bereich + Muster-Artikel anlegen (Demo für Anna) – erledigt, 16 Artikel + Übersicht
+- [x] Ratgeber-Bereich + Muster-Artikel anlegen (Demo für Anna) – erledigt, 14 Artikel + Übersicht
 - [ ] Einträge in lokalen Verzeichnissen (NAP konsistent: Name/Adresse/Telefon)
 - [ ] `areaServed`-Schema bereits erweitert (Berlin + Rudow-Umland)

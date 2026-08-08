@@ -85,23 +85,54 @@ auch die nicht genannten (`welpen-grunderziehung`, `tierschutzhund-eingewoehnen`
   Nummern aus `tiernotfall-kontakte.json` gegengeprüft) + Verweis auf `/tiernotfall/` und das
   Kühlschrank-Blatt. Ebenfalls korrigiert: sichtbare FAQ **und** FAQ-Schema (wortgleich),
   Meta-/OG-/Schema-Description, `dateModified`.
-- [ ] **2. Leinenführigkeit:** Artikel **komplett streichen** (Wunsch der Kundin: Ansatz nicht ihrer,
+- [x] **2. Leinenführigkeit:** Artikel **komplett streichen** (Wunsch der Kundin: Ansatz nicht ihrer,
   Thema zu individuell) – inkl. Aufräumen von Übersicht, Sitemap, llms.txt, Startseiten-Teaser und
   allen Cross-Links aus anderen Artikeln.
-- [ ] **3. Hund und Baby: komplett streichen** – ⚠️ **Rückfrage offen:** einziger Artikel, der kein
+- [x] **3. Hund und Baby: komplett streichen** – ⚠️ **Rückfrage offen:** einziger Artikel, der kein
   Trainings-, sondern ein **Sicherheitsthema** ist („nie unbeaufsichtigt", „Knurren nie bestrafen",
   Körpersprache). Vorschlag: auf diese Sicherheitskernaussagen reduzieren statt löschen.
-- [ ] **4. Silvester:** „Acht bis zwölf Wochen vorher: Vorbereitung" + „Die Nacht selbst" streichen.
-- [ ] **5. Hundebegegnungen:** „Schritt 1–3" + „Wann Unterstützung sinnvoll ist" streichen.
-- [ ] **6. Hund im Auto:** „Autofahren in kleinen Schritten aufbauen" streichen; zusätzlich den Satz
+- [x] **4. Silvester:** „Acht bis zwölf Wochen vorher: Vorbereitung" + „Die Nacht selbst" streichen.
+- [x] **5. Hundebegegnungen:** „Schritt 1–3" + „Wann Unterstützung sinnvoll ist" streichen.
+- [x] **6. Hund im Auto:** „Autofahren in kleinen Schritten aufbauen" streichen; zusätzlich den Satz
   „Wenn du selbst einen Hund in einem heißen Auto siehst: sofort 110 anrufen …" **zweimal** entfernen
   (Fließtext **und** FAQ → dann auch aus dem FAQ-Schema). ⚠️ **Rückfrage offen:** Das ist ein
   Tierschutz-Hinweis, kein Trainingstipp, und rechtlich korrekt/defensiv formuliert – Grund erfragen.
-- [ ] **7. Alltagstraining:** „Schritt 1" bis einschließlich „Management ist kein Scheitern" streichen.
-- [ ] **8. Alleine bleiben:** „Schritt für Schritt" streichen.
-- [ ] **9. Rückruf:** „Schritt für Schritt" streichen.
+- [x] **7. Alltagstraining:** „Schritt 1" bis einschließlich „Management ist kein Scheitern" streichen.
+- [x] **8. Alleine bleiben:** „Schritt für Schritt" streichen.
+- [x] **9. Rückruf:** „Schritt für Schritt" streichen.
 
-**Zu bedenken:** Ohne die Anleitungsteile werden die Artikel deutlich kürzer und verlieren SEO-Wert.
+**Umsetzung 04.08.2026 – alle neun Punkte erledigt.** Zusätzlich mit aufgeräumt:
+- **Gelöscht:** `leinenfuehrigkeit.html`, `hund-und-kind.html` → **14 Artikel**. Verweise entfernt aus
+  Übersicht, Sitemap, `llms.txt`, Startseiten-Teaser und den „Weitere Beiträge"-Blöcken von
+  fünf Artikeln.
+- **Startseiten-Teaser:** Leinenführigkeit ersetzt durch „Welcher Hund passt zu mir?" (Annas
+  Alleinstellungsthema Beratung vor der Anschaffung, vom Streichungsmuster nicht betroffen).
+- **`ItemList`-Schema der Ratgeber-Übersicht neu gebaut.** Es enthielt nur 8 von 16 Artikeln – war
+  beim Ergänzen der letzten Artikel nie mitgepflegt worden. Jetzt aus den tatsächlichen Karten
+  generiert (14) und gegen existierende Dateien geprüft.
+- **Titel „Hund lernt Alleinebleiben – Schritt für Schritt"** umbenannt in
+  „…: warum es schwerfällt" (10 Stellen), weil der Titel sonst etwas verspricht, das der Artikel
+  nicht mehr enthält. Ebenso die Intro-Texte von Startseite und Übersicht („Anleitungen … Schritt
+  für Schritt erklärt" → „Kurz erklärt, was dahintersteckt").
+- **„Kurz gesagt"-Direktantworten** von sechs Artikeln umformuliert: sie fassten teils genau die
+  gestrichenen Anleitungen zusammen. Jetzt einordnend statt anleitend, mit Hinweis auf die
+  individuelle Begleitung. Meta-/OG-/Schema-Descriptions entsprechend, `dateModified` gesetzt.
+- **Nicht angefasst:** „Schritt für Schritt" in der **Angebot-Sektion** der Startseite – das ist
+  Annas Leistungsbeschreibung, kein Ratgeber-Versprechen.
+- **Konsistenzprüfung der nicht genannten Artikel:** `welpen-grunderziehung`,
+  `tierschutzhund-eingewoehnen` und `hund-beschaeftigen` haben **keine** Anleitungslisten – dort war
+  nichts zu tun (meine frühere Sorge war überzogen). Offen: `zweithund` hat eine Liste
+  „Die ersten Wochen ruhig gestalten" – das ist Beratung zum Zusammenführen, keine Trainingsmethode.
+  **Bewusst stehen gelassen, mit Anna klären.**
+
+### ⚠️ Folge der Streichungen: zwei Artikel sind jetzt zu dünn
+- [ ] 🟡 **`alltagstraining.html`: 208 Wörter, 1 Abschnitt.** Nach dem Streichen von Schritt 1–4,
+  „Häufige Fehler" und „Management ist kein Scheitern" bleibt nur „Warum Alltag anders ist als
+  Training". Als eigene Seite grenzwertig (Google wertet so etwas als *thin content*, was der
+  ganzen Domain schaden kann). Optionen: den „Warum"-Teil ausbauen (ohne Anleitungscharakter),
+  in einen anderen Artikel integrieren oder ganz löschen.
+- [ ] 🟡 **`rueckruf-trainieren.html`: 229 Wörter, 3 Abschnitte.** Gleiches Thema, weniger dramatisch.
+- Zum Vergleich: die unangetasteten Artikel liegen bei 500–660 Wörtern.
 Verkraftbar, wenn der „Warum"-Teil und die FAQ dafür ausgebaut werden – sonst bleiben Hüllen übrig.
 
 ### 🟡 Offen aus dieser Session

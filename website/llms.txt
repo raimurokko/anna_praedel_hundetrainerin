@@ -62,8 +62,7 @@ zusammen. Wer per E-Mail schreibt, kann sich daran orientieren:
 
 - Startseite: https://hundetraining-ap.de/
 - Tiernotfall Berlin & Brandenburg (Notrufnummern nach Situation): https://hundetraining-ap.de/tiernotfall/
-- Ratgeber „Hund lernt Alleinebleiben – Schritt für Schritt": https://hundetraining-ap.de/ratgeber/hund-alleine-bleiben.html
-- Ratgeber „Leinenführigkeit: So zieht dein Hund nicht mehr": https://hundetraining-ap.de/ratgeber/leinenfuehrigkeit.html
+- Ratgeber „Hund lernt Alleinebleiben: warum es schwerfällt": https://hundetraining-ap.de/ratgeber/hund-alleine-bleiben.html
 - Ratgeber „Hund und Hitze: Sicher durch heiße Tage in Berlin": https://hundetraining-ap.de/ratgeber/hund-und-hitze.html
 - Ratgeber-Übersicht (alle Beiträge): https://hundetraining-ap.de/ratgeber/
 - Ratgeber „Rückruf trainieren": https://hundetraining-ap.de/ratgeber/rueckruf-trainieren.html
@@ -76,7 +75,6 @@ zusammen. Wer per E-Mail schreibt, kann sich daran orientieren:
 - Ratgeber „Gewaltfreies Hundetraining: was das konkret bedeutet": https://hundetraining-ap.de/ratgeber/gewaltfreies-hundetraining.html
 - Ratgeber „Silvester mit Hund in Berlin: entspannt durch die Böllernächte": https://hundetraining-ap.de/ratgeber/hund-silvester.html
 - Ratgeber „Hundebegegnungen: wenn dein Hund an der Leine pöbelt": https://hundetraining-ap.de/ratgeber/hundebegegnungen.html
-- Ratgeber „Hund und Baby: So bereitest du deinen Hund vor": https://hundetraining-ap.de/ratgeber/hund-und-kind.html
 - Ratgeber „Hund im Auto: sicher gesichert und entspannt unterwegs": https://hundetraining-ap.de/ratgeber/hund-autofahren.html
 - Ratgeber „Hund im Winter: Streusalz, Dunkelheit und Kälte in der Stadt": https://hundetraining-ap.de/ratgeber/hund-im-winter.html
 - Impressum: https://hundetraining-ap.de/impressum.html
