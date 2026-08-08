@@ -65,6 +65,45 @@ Priorität: 🔴 hoch · 🟡 mittel · 🟢 niedrig
   ⚠️ **Wartungshinweis:** Der Footer ist auf jeder Seite dupliziert (kein Include). Wer künftig eine
   Seite hinzufügt, muss die Zeile mitnehmen – am einfachsten durch Kopieren einer bestehenden Seite.
 
+### 📄 Anmerkungen Website Teil 4 (PDF der Kundin, 04.08.2026)
+Quelle: `designentwürfe/Anmerkungen Website Teil 4.pdf`. **Hinweis:** Das PDF enthält keinen normal
+extrahierbaren Text (CID-Fonts) – Inhalt wurde über die ToUnicode-Tabellen dekodiert.
+
+**Muster:** Acht von neun Anmerkungen betreffen die **Schritt-für-Schritt-Anleitungen**. Begründung
+der Kundin (bei Leinenführigkeit ausformuliert): „der Ansatz entspricht nicht genau dem, was ich
+mache, und das Thema ist zu individuell." → redaktionelle Grundsatzentscheidung:
+**Ratgeber sollen erklären, nicht anleiten.** Bei Umsetzung konsistent über **alle** Artikel ziehen,
+auch die nicht genannten (`welpen-grunderziehung`, `tierschutzhund-eingewoehnen`,
+`hund-beschaeftigen`, `zweithund` haben ebenfalls Anleitungslisten).
+
+- [x] **1. Hund und Hitze – Erste Hilfe korrigiert (erledigt 04.08.).** Der alte Text riet
+  „kühle **langsam** – zu schnelles Abkühlen ist gefährlich"; das ist bei einem echten Hitzschlag
+  fachlich falsch und im Ernstfall gefährlich. Die Kundin hat das zu Recht beanstandet.
+  Umgesetzt nach Entscheidung der Userin: **keine Erste-Hilfe-Anleitung mehr**, stattdessen
+  „Verdacht auf Hitzschlag: sofort in die Tierklinik" + unterwegs anrufen + auf dem Weg kühlen
+  (ohne Detailanleitung) + **Notfallnummern** (Tierärztekammer-Notdienst, FU-Kleintierklinik Düppel,
+  Nummern aus `tiernotfall-kontakte.json` gegengeprüft) + Verweis auf `/tiernotfall/` und das
+  Kühlschrank-Blatt. Ebenfalls korrigiert: sichtbare FAQ **und** FAQ-Schema (wortgleich),
+  Meta-/OG-/Schema-Description, `dateModified`.
+- [ ] **2. Leinenführigkeit:** Artikel **komplett streichen** (Wunsch der Kundin: Ansatz nicht ihrer,
+  Thema zu individuell) – inkl. Aufräumen von Übersicht, Sitemap, llms.txt, Startseiten-Teaser und
+  allen Cross-Links aus anderen Artikeln.
+- [ ] **3. Hund und Baby: komplett streichen** – ⚠️ **Rückfrage offen:** einziger Artikel, der kein
+  Trainings-, sondern ein **Sicherheitsthema** ist („nie unbeaufsichtigt", „Knurren nie bestrafen",
+  Körpersprache). Vorschlag: auf diese Sicherheitskernaussagen reduzieren statt löschen.
+- [ ] **4. Silvester:** „Acht bis zwölf Wochen vorher: Vorbereitung" + „Die Nacht selbst" streichen.
+- [ ] **5. Hundebegegnungen:** „Schritt 1–3" + „Wann Unterstützung sinnvoll ist" streichen.
+- [ ] **6. Hund im Auto:** „Autofahren in kleinen Schritten aufbauen" streichen; zusätzlich den Satz
+  „Wenn du selbst einen Hund in einem heißen Auto siehst: sofort 110 anrufen …" **zweimal** entfernen
+  (Fließtext **und** FAQ → dann auch aus dem FAQ-Schema). ⚠️ **Rückfrage offen:** Das ist ein
+  Tierschutz-Hinweis, kein Trainingstipp, und rechtlich korrekt/defensiv formuliert – Grund erfragen.
+- [ ] **7. Alltagstraining:** „Schritt 1" bis einschließlich „Management ist kein Scheitern" streichen.
+- [ ] **8. Alleine bleiben:** „Schritt für Schritt" streichen.
+- [ ] **9. Rückruf:** „Schritt für Schritt" streichen.
+
+**Zu bedenken:** Ohne die Anleitungsteile werden die Artikel deutlich kürzer und verlieren SEO-Wert.
+Verkraftbar, wenn der „Warum"-Teil und die FAQ dafür ausgebaut werden – sonst bleiben Hüllen übrig.
+
 ### 🟡 Offen aus dieser Session
 - [ ] 🟢 Optional: pro Kontaktkarte ein eigener „Nummer stimmt nicht?"-Link, der den Eintragsnamen
   schon in die Mail einsetzt (Generator kennt Name und `id`). Bewusst zurückgestellt: bläht die Karten auf.
