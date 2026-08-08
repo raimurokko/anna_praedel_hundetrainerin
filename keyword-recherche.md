@@ -30,15 +30,15 @@ Kombinationsmuster: [Leistung] + [Ort]
 - Alltagstraining Hund · Welpe Grunderziehung · Tierschutzhund Training/Eingewöhnung
 - Beratung vor Hundeanschaffung · welcher Hund passt zu mir · Zweithund Beratung
 
-## 2b) Weitere Themen (ergänzt 04.08.2026) – ✅ alle umgesetzt
-Aus dem Wettbewerbs- und Alltagsmuster abgeleitet. Alle fünf haben inzwischen einen Artikel:
+## 2b) Weitere Themen (ergänzt 04.08.2026) – 4 von 5 umgesetzt
+Aus dem Wettbewerbs- und Alltagsmuster abgeleitet:
 - ✅ **Hundebegegnungen / Leinenaggression** → `hundebegegnungen.html`
   Sehr häufiges Alltagsproblem, hohe Nachfrage; koppelt an Alltagstraining.
 - ✅ **Angsthund & Silvester** → `hund-silvester.html`
   Saisonal (Vorbereitung ab Okt., wie „Hund und Hitze“ im Sommer), dazu Geräuschangst allgemein.
   Berlin-Kontext: es wird tagelang geböllert, nicht nur am 31.
-- ✅ **Hund und Baby / Kind** → `hund-und-kind.html`
-  Starkes Beratungsthema mit klarem Anlass.
+- ❌ **Hund und Baby / Kind** – Artikel existierte, wurde auf Wunsch der Kundin gelöscht.
+  Thema damit wieder unbesetzt. Starkes Beratungsthema mit klarem Anlass.
 - ✅ **Entspanntes Autofahren** → `hund-autofahren.html`
   Inklusive Sicherungspflicht im Straßenverkehrsrecht.
 - ✅ **Hund im Winter** → `hund-im-winter.html`
@@ -58,7 +58,7 @@ Diese Fragen sind Content-Gold für Antwort-Boxen und LLM-Zitate:
   Gewinnbar für eine lokale Trainerin: **lokal + erfahrungsbasiert** (eigene Fälle aus
   Berlin, konkrete Schritt-für-Schritt-Anleitungen, „In meiner Praxis in Berlin …").
 
-## 4) Empfohlene erste 2 Muster-Ratgeber (für #3)
+## 4) Empfohlene erste 2 Muster-Ratgeber (für #3) — *historisch, Juni 2026*
 1. **„Hund lernt Alleinebleiben – Schritt für Schritt (Berlin)"** – hohe Nachfrage,
    direkt an Angebot „Alleine bleiben" gekoppelt.
 2. **„Leinenführigkeit: So zieht dein Hund nicht mehr"** – hohe Nachfrage, koppelt an
@@ -71,11 +71,27 @@ passenden Angebot und CTA „Termin anfragen".
 
 ## Abdeckungs-Stand (04.08.2026)
 
-**Ebene 3 (Frage-basiert) ist abgearbeitet.** Alle 8 Fragen aus Abschnitt 3 haben einen Artikel;
-dazu kamen zwei nicht gelistete Themen (Welpen-Grunderziehung, Hund und Hitze).
-Mit den acht am 04.08. ergänzten Artikeln waren es 16; nach den Streichungen aus den
-„Anmerkungen Teil 4" (Leinenführigkeit und Hund-und-Baby gelöscht) sind es **11 Artikel** (danach wurden `alltagstraining`, `rueckruf-trainieren` und
-`hund-beschaeftigen` als zu dünn ebenfalls gelöscht).
+**Stand nach den Streichungen aus „Anmerkungen Teil 4": 11 Artikel.**
+Am 04.08. waren es zwischenzeitlich 16; danach wurden fünf gelöscht – zwei auf ausdrücklichen
+Wunsch der Kundin (`leinenfuehrigkeit`, `hund-und-kind`) und drei, weil nach dem Entfernen der
+Anleitungsteile zu wenig Substanz übrig blieb (`alltagstraining`, `rueckruf-trainieren`,
+`hund-beschaeftigen`).
+
+**⚠️ Ebene 3 ist dadurch nicht mehr vollständig.** Drei der acht Kernfragen aus Abschnitt 3 haben
+keinen Artikel mehr:
+
+| Kernfrage | Status |
+|---|---|
+| Wie übe ich Leinenführigkeit? | **bewusst aufgegeben** – Kundin: Ansatz nicht ihrer, Thema zu individuell |
+| Wie trainiere ich einen zuverlässigen Rückruf? | offen – Artikel war nach dem Kürzen zu dünn |
+| Wie beschäftige ich meinen Hund sinnvoll? | offen – Artikel war schon vorher zu kurz |
+
+Rückruf und Beschäftigung ließen sich **neu schreiben**, wenn sie von vornherein *erklärend* statt
+*anleitend* angelegt werden (Redaktionslinie s. u.) und auf 400+ Wörter kommen. Leinenführigkeit
+bleibt auf Wunsch der Kundin unbesetzt.
+
+**Ebenfalls betroffen: Abschnitt 2b.** „Hund und Baby/Kind" hatte einen Artikel, der auf Wunsch der
+Kundin gelöscht wurde – das Thema ist damit wieder unbesetzt.
 
 ### ✅ Am 04.08.2026 umgesetzt
 1. **Positionierung „mobil / zu Hause / Hausbesuch"** ist jetzt im sichtbaren Text:

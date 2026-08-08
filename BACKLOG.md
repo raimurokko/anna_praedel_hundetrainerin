@@ -42,11 +42,11 @@ Priorität: 🔴 hoch · 🟡 mittel · 🟢 niedrig
 - [x] 🟡 **Drei neue Ratgeber:** `alltagstraining.html`, `zweithund.html`,
   `gewaltfreies-hundetraining.html` (je BlogPosting + BreadcrumbList + FAQPage, „Kurz gesagt",
   4 FAQ sichtbar = Schema, Cross-Linking; in Übersicht, Sitemap und llms.txt eingehängt).
-  → zusammen mit den fünf weiteren unten: 16 Artikel gesamt.
+  → zusammen mit den fünf weiteren unten: 16 Artikel (Zwischenstand; nach den Streichungen unten: 11).
 - [x] 🟡 **Fünf weitere Ratgeber** (Abschnitt 2b der `keyword-recherche.md` komplett abgearbeitet):
   `hund-silvester.html` (Berlin-Kontext: es wird tagelang geböllert – inkl. Notfallplan mit Verweis
   auf /tiernotfall/), `hundebegegnungen.html`, `hund-und-kind.html`, `hund-autofahren.html`,
-  `hund-im-winter.html`. → **16 Artikel** gesamt.
+  `hund-im-winter.html`. → 16 Artikel (Zwischenstand; nach den Streichungen unten: **11**).
 - [x] 🟢 Startseiten-Teaser: „Alleinebleiben" gegen „Gewaltfreies Hundetraining" getauscht –
   Alleinebleiben ist bereits eine **Angebot-Karte** auf derselben Seite und war damit doppelt.
 - [x] 🟢 `llms.txt`: Umlandorte und „mobil/Hausbesuch" an drei weiteren Stellen nachgezogen.
@@ -157,6 +157,41 @@ Verkraftbar, wenn der „Warum"-Teil und die FAQ dafür ausgebaut werden – son
   Print-CSS liesse sich dort ein Hinweis auf die Kühlschrank-Fassung einblenden.
 - [ ] 🟢 Optional: fertige `.pdf`-Datei zum Download mitliefern (statt „im Druckdialog als PDF sichern").
   Bewusst nicht gemacht – müsste bei jeder JSON-Änderung neu erzeugt werden und veraltet sonst still.
+
+---
+
+### 🔍 Integritätsprüfung 04.08.2026 (vollständig, Website + Doku)
+
+Geprüft: HTML-Wohlgeformtheit, Encoding, interne Links inkl. **Anker-Fragmente**, `srcset`-Bilder,
+`alt`-Attribute, JSON-LD (Syntax, `@id`-Auflösung, URL-Ziele, `ItemList`-Positionen, FAQ-Parität),
+`canonical`, doppelte Titles/Descriptions, `sitemap.xml` ↔ tatsächliche Seiten in beide Richtungen,
+`robots.txt`, `llms.txt`, Generator-Idempotenz, verwaiste CSS-Klassen, ungenutzte Bilder,
+JS-Selektoren und 36 externe Links.
+
+**Ergebnis: keine Fehler in der Website.** Struktur 0, Links 0, Schema 0, Encoding 0.
+Der Generator erzeugt bit-identischen Output (idempotent). 35 von 36 externen Links antworten mit
+HTTP 200 – darunter **alle** Quell-URLs der Tiernotfall-Rubrik; Instagram liefert 429 (Bot-Schutz,
+kein defekter Link).
+
+**Ein echter Fehler gefunden und behoben – in der Doku, nicht im Code:**
+`keyword-recherche.md` behauptete weiterhin „Ebene 3 ist abgearbeitet", obwohl durch die
+Streichungen **drei der acht Kernfragen** ihren Artikel verloren haben. Korrigiert; die Tabelle im
+Abdeckungs-Stand zeigt jetzt, welche Frage warum unbesetzt ist. Ebenso: Abschnitt 2b stand auf
+„alle fünf umgesetzt", obwohl `hund-und-kind` gelöscht wurde.
+
+### 🟢 Restbefunde – bewusst nicht angefasst (nicht beauftragt)
+- [ ] 🟢 **Zwei ungenutzte Bilddateien im Deploy-Ordner:** `bilder/hero01.jpeg` (**579 KB**) und
+  `bilder/social/anna-mit-hund.webp` (71 KB) werden nirgends referenziert – zusammen ~650 KB von
+  6,6 MB. `hero01.jpeg` ist vermutlich das **Master-Original** der AVIF/WebP-Varianten; deshalb
+  nicht gelöscht. Empfehlung: Master aus `website/` heraus in einen nicht deployten Ordner
+  verschieben, `anna-mit-hund.webp` löschen (OG braucht ohnehin JPEG/PNG).
+- [ ] 🟢 **Zwei verwaiste CSS-Klassen:** `.btn--inverse` und `.ts-panel__caption` haben keine
+  Entsprechung mehr im HTML. Toter Code, minimal.
+- Kein Handlungsbedarf: `.a11y-fab` / `.a11y-panel` erscheinen als „fehlend", werden aber zur
+  Laufzeit von `main.js` injiziert. Ebenso sind die FAQ-Schemas von Startseite und Tiernotfall
+  vollständig sichtbar – nur unter anderer Überschrift bzw. als Akkordeon.
+- [ ] 🟢 `og:title` fehlt auf Impressum, Datenschutz und Barrierefreiheit. Für Rechtsseiten
+  verschmerzbar.
 
 ---
 
